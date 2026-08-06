@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Fórmula dos Prós | Dicas de Futebol e Alta Performance</title>
+<meta name="description" content="Artigos sobre futebol, treino, mentalidade, nutrição e como evoluir como jogador. Conteúdo gratuito da Fórmula dos Prós.">
+<link rel="canonical" href="https://formuladospros.com/blog/">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:#000;color:#fff;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+
+:root{--yellow:#FFCB00;--blue:#0062FF;--max:1100px}
+
+/* NAV */
+nav{background:#000;border-bottom:1px solid rgba(255,255,255,0.07);padding:16px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:99}
+.nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1em;letter-spacing:.06em;color:var(--yellow)}
+.nav-cta{background:var(--yellow);color:#000;font-family:'Sora',sans-serif;font-weight:700;font-size:.85em;padding:10px 22px;border-radius:40px;text-transform:uppercase;letter-spacing:.06em;transition:filter .2s}
+.nav-cta:hover{filter:brightness(1.1)}
+@media(max-width:600px){nav{padding:14px 20px}.nav-logo{font-size:.95em}}
+
+/* HERO */
+.blog-hero{padding:80px 40px 60px;max-width:var(--max);margin:0 auto;text-align:left}
+.blog-hero-tag{display:inline-block;background:var(--yellow);color:#000;font-family:'Sora',sans-serif;font-size:.75em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+.blog-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2em,5vw,3.2em);font-weight:800;line-height:1.1;color:#fff;margin-bottom:14px}
+.blog-hero h1 span{color:var(--yellow)}
+.blog-hero p{font-size:1em;color:#888;max-width:560px;line-height:1.7}
+@media(max-width:600px){.blog-hero{padding:50px 20px 40px}}
+
+/* GRID */
+.blog-wrap{max-width:var(--max);margin:0 auto;padding:0 40px 80px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+@media(max-width:600px){.blog-wrap{padding:0 20px 60px}.blog-grid{grid-template-columns:1fr;gap:20px}}
+
+/* CARD */
+.post-card{background:#0d0d0d;border:1px solid rgba(255,255,255,0.07);border-top:2px solid var(--yellow);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.post-card:hover{transform:translateY(-5px);box-shadow:0 12px 40px rgba(255,203,0,0.1)}
+.post-card-img{width:100%;aspect-ratio:16/9;overflow:hidden;background:#111;display:flex;align-items:center;justify-content:center;font-size:3em}
+.post-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.post-card:hover .post-card-img img{transform:scale(1.05)}
+.post-card-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.post-tag{display:inline-block;background:rgba(255,203,0,0.12);color:var(--yellow);font-size:.7em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.post-card h2{font-family:'Montserrat',sans-serif;font-size:1.05em;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.4}
+.post-card p{font-size:.85em;color:#777;line-height:1.65;flex:1;margin-bottom:16px}
+.post-card .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.8em;font-weight:600;color:var(--yellow);letter-spacing:.04em;text-transform:uppercase;transition:gap .2s}
+.post-card:hover .read-more{gap:10px}
+
+/* CTA BANNER */
+.cta-banner{background:linear-gradient(135deg,#0a0f1e 0%,#000 100%);border:1px solid rgba(255,203,0,0.3);border-radius:16px;padding:48px 40px;margin:0 40px 80px;max-width:var(--max);margin-left:auto;margin-right:auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-banner-text h3{font-family:'Montserrat',sans-serif;font-size:clamp(1.4em,3vw,1.9em);font-weight:800;color:#fff;margin-bottom:8px}
+.cta-banner-text p{font-size:.9em;color:#888}
+.btn-cta{background:var(--yellow);color:#000;font-family:'Sora',sans-serif;font-weight:900;font-size:1em;letter-spacing:.04em;text-transform:uppercase;padding:18px 36px;border-radius:40px;white-space:nowrap;box-shadow:0 4px 20px rgba(255,203,0,0.3);transition:filter .2s,transform .2s;animation:pulse 2s infinite}
+.btn-cta:hover{filter:brightness(1.1);transform:translateY(-2px);animation:none}
+@keyframes pulse{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,203,0,0.7)}70%{transform:scale(1.03);box-shadow:0 0 0 8px rgba(255,203,0,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(255,203,0,0)}}
+@media(max-width:600px){.cta-banner{margin:0 20px 60px;padding:32px 24px;flex-direction:column}}
+
+/* FOOTER */
+footer{background:#000;border-top:1px solid rgba(255,255,255,0.06);padding:28px 40px;text-align:center;font-size:.8em;color:#444}
+footer a{color:#666;text-decoration:underline}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">⚽ Fórmula dos Prós</a>
+  <a href="/#pricing" class="nav-cta">Garantir minha vaga →</a>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-tag">📝 Blog</div>
+  <h1>Dicas para você evoluir<br><span>de verdade</span> no futebol</h1>
+  <p>Conteúdo gratuito sobre treino, mentalidade, nutrição e alta performance para jogadores que querem sair do comum.</p>
+</div>
+
+<div class="blog-wrap">
+  <div class="blog-grid">
+
+    <a href="/blog/guia-completo-instinto-futebol.html" class="post-card" style="border-top-color:#0062FF;box-shadow:0 0 30px rgba(0,98,255,0.12);grid-column:1/-1;">
+      <div class="post-card-img" style="background:linear-gradient(135deg,#0a0f1e 0%,#000d3a 100%);aspect-ratio:unset;padding:40px;flex-direction:column;gap:10px;text-align:center;">
+        <span style="font-size:2.5em">⚡🧠</span>
+        <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:.75em;color:#FFCB00;letter-spacing:.15em;text-transform:uppercase;">Guia Premium · Exclusivo</span>
+      </div>
+      <div class="post-card-body">
+        <span class="post-tag" style="background:rgba(0,98,255,0.15);color:#0062FF;">🔐 Com Senha de Acesso</span>
+        <h2 style="font-size:1.2em;">Guia Completo do Instinto no Futebol — Protocolo de 15 Dias</h2>
+        <p>10 exercícios práticos, neurociência aplicada ao futebol, protocolo semanal e a mentalidade dos jogadores que decidem mais rápido. Conteúdo premium com senha exclusiva.</p>
+        <span class="read-more" style="color:#0062FF;">Acessar guia premium →</span>
+      </div>
+    </a>
+
+    <a href="/blog/por-que-jogadores-serios-treinam-sozinhos.html" class="post-card">
+      <div class="post-card-img" style="background:linear-gradient(135deg,#0a0a00,#0d0d0d);font-size:2.5em;">🌙</div>
+      <div class="post-card-body">
+        <span class="post-tag">🧠 Mentalidade</span>
+        <h2>Por que os jogadores sérios treinam sozinhos? (E por que você deveria fazer o mesmo)</h2>
+        <p>A matemática não mente: 18.000 toques por mês vs 1.200. Veja os números reais, a mentalidade dos campeões e um plano prático de 7 dias para começar hoje.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/7-habilidades-mortais-futebol.html" class="post-card" style="border-top-color:#ff4d4d;">
+      <div class="post-card-img" style="background:linear-gradient(135deg,#1a0000,#0d0000);font-size:2.5em;">⚡</div>
+      <div class="post-card-body">
+        <span class="post-tag" style="background:rgba(255,77,77,0.12);color:#ff6b6b;">🔥 Técnica</span>
+        <h2>7 Habilidades MORTAIS para Destruir Qualquer Defensor</h2>
+        <p>Controle com cabeça levantada, finta de corpo, proteção de bola, pedalada, sola, chute falso e mudança de ritmo — com exercícios práticos, progressão e vídeos tutoriais.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/como-treinar-fascia-no-futebol.html" class="post-card">
+      <div class="post-card-img">🏃</div>
+      <div class="post-card-body">
+        <span class="post-tag">Físico</span>
+        <h2>O que é a Fáscia e por que ela muda tudo no seu jogo</h2>
+        <p>Descubra o tecido que conecta seu corpo inteiro e como treiná-lo pode aumentar sua agilidade, potência e prevenir lesões.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/modulo-flow-futebol.html" class="post-card">
+      <div class="post-card-img">🧠</div>
+      <div class="post-card-body">
+        <span class="post-tag">Mentalidade</span>
+        <h2>Flow no futebol: como entrar no estado de concentração máxima</h2>
+        <p>O estado de flow é o segredo dos grandes jogadores. Aprenda as técnicas para ativar sua mente e jogar no seu limite.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/instinto-decisao-rapida-futebol.html" class="post-card">
+      <div class="post-card-img">⚡</div>
+      <div class="post-card-body">
+        <span class="post-tag">Tática</span>
+        <h2>Instinto no futebol: como tomar decisões em frações de segundo</h2>
+        <p>Os melhores jogadores do mundo não pensam — reagem. Veja como treinar seu instinto tático para antecipar jogadas.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/nutricao-para-jogador-de-futebol.html" class="post-card">
+      <div class="post-card-img">🥗</div>
+      <div class="post-card-body">
+        <span class="post-tag">Nutrição</span>
+        <h2>O que comer antes e depois do treino de futebol</h2>
+        <p>A alimentação certa pode ser a diferença entre render 70% ou 100% em campo. Guia prático para jogadores de todos os níveis.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/como-se-destacar-em-peneiras.html" class="post-card">
+      <div class="post-card-img">🏆</div>
+      <div class="post-card-body">
+        <span class="post-tag">Carreira</span>
+        <h2>Como se destacar em peneiras e impressionar olheiros</h2>
+        <p>Guia completo com o que os clubes realmente avaliam nas peneiras e como você pode se preparar para brilhar na seleção.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+    <a href="/blog/treino-em-casa-futebol.html" class="post-card">
+      <div class="post-card-img">🏠</div>
+      <div class="post-card-body">
+        <span class="post-tag">Treino</span>
+        <h2>5 treinos de futebol que você pode fazer em casa sem bola</h2>
+        <p>Sem campo, sem bola, sem desculpa. Exercícios práticos para desenvolver físico, agilidade e técnica de onde estiver.</p>
+        <span class="read-more">Ler artigo →</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="cta-banner">
+  <div class="cta-banner-text">
+    <h3>Pronto para evoluir de verdade?</h3>
+    <p>Junte-se a +10.000 jogadores que já transformaram seu futebol com a Fórmula dos Prós.</p>
+  </div>
+  <a href="/#pricing" class="btn-cta">⚡ Quero Evoluir Agora</a>
+</div>
+
+<footer>
+  <p>© 2026 Fórmula dos Prós · <a href="/">Voltar ao site</a> · CNPJ: 57.403.588/0001-41</p>
+</footer>
+
+</body>
+</html>
