@@ -109,25 +109,33 @@
     return new Set(events.filter((item) => item.event_name === name && (step == null || item.step_number === step)).map((item) => item.session_id)).size;
   }
 
+  function sessionIds(events, name, predicate) {
+    return new Set(events.filter((item) => item.event_name === name && (!predicate || predicate(item))).map((item) => item.session_id));
+  }
+
   function metricCard(label, value, detail) {
     return '<article class="metric-card"><span class="metric-label">' + escapeHtml(label) + '</span><strong class="metric-value">' + escapeHtml(value) + '</strong><span class="metric-detail">' + escapeHtml(detail || '') + '</span></article>';
   }
 
   function renderMetrics(sessions, events) {
-    const total = sessions.length;
+    const quizIds = sessionIds(events, 'funnel_started');
+    const total = quizIds.size;
+    const directLpIds = sessionIds(events, 'offer_viewed', (item) => item.metadata?.entry_mode === 'direct');
     const started = uniqueSessions(events, 'step_viewed', 2);
-    const completed = sessions.filter((item) => item.is_completed).length;
-    const unlocked = sessions.filter((item) => item.landing_unlocked_at).length;
-    const checkout = sessions.filter((item) => item.checkout_clicked_at).length;
+    const completed = uniqueSessions(events, 'quiz_completed');
+    const unlocked = uniqueSessions(events, 'landing_unlocked');
+    const lpViews = uniqueSessions(events, 'offer_viewed');
+    const checkout = uniqueSessions(events, 'checkout_clicked');
     const comfort = uniqueSessions(events, 'comfort_exit');
     const completedEvents = events.filter((item) => item.event_name === 'quiz_completed' && item.metadata?.duration_ms);
     const averageMs = completedEvents.length ? completedEvents.reduce((sum, item) => sum + Number(item.metadata.duration_ms || 0), 0) / completedEvents.length : 0;
     elements.metricGrid.innerHTML = [
-      metricCard('Entraram no funil', number(total), '100% das sessões'),
+      metricCard('Entraram no funil', number(total), '100% das entradas no quiz'),
+      metricCard('Entradas diretas na LP', number(directLpIds.size), 'Acessaram /LP sem concluir o quiz'),
       metricCard('Começaram o quiz', number(started), percent(started, total) + '% das entradas'),
       metricCard('Concluíram o quiz', number(completed), percent(completed, total) + '% das entradas'),
       metricCard('LP liberada', number(unlocked), percent(unlocked, total) + '% das entradas'),
-      metricCard('Cliques no checkout', number(checkout), percent(checkout, unlocked) + '% de quem viu a LP'),
+      metricCard('Cliques no checkout', number(checkout), percent(checkout, lpViews) + '% de quem viu a LP'),
       metricCard('Saíram no confortável', number(comfort), percent(comfort, total) + '% das entradas'),
       metricCard('Tempo médio do quiz', duration(averageMs), completedEvents.length + ' conclusões medidas'),
       metricCard('Abandono antes da LP', percent(Math.max(0, total - unlocked), total) + '%', number(Math.max(0, total - unlocked)) + ' sessões')
@@ -135,11 +143,13 @@
   }
 
   function renderFunnel(sessions, events) {
-    const total = sessions.length;
+    const quizIds = sessionIds(events, 'funnel_started');
+    const quizEvents = events.filter((item) => quizIds.has(item.session_id));
+    const total = quizIds.size;
     let previous = total;
     const rows = Object.entries(STAGES).map(([numberStep, label]) => {
       const step = Number(numberStep);
-      const count = step === 1 ? total : uniqueSessions(events, 'step_viewed', step);
+      const count = step === 1 ? total : uniqueSessions(quizEvents, 'step_viewed', step);
       const drop = previous ? Math.max(0, Math.round((previous - count) / previous * 100)) : 0;
       const width = Math.max(count ? 2 : 0, percent(count, total));
       const html = '<div class="funnel-row"><span class="step-number">' + step + '</span><span class="step-name" title="' + escapeHtml(label) + '">' + escapeHtml(label) + '</span><div class="funnel-track"><div class="funnel-fill" style="width:' + width + '%"></div></div><span class="funnel-count">' + number(count) + ' · ' + percent(count, total) + '%</span><span class="funnel-drop">-' + drop + '%</span></div>';
@@ -193,10 +203,20 @@
     }).join('') || '<div class="empty-state">Nenhuma resposta registrada no período.</div>';
   }
 
-  function renderSessions(sessions) {
+  function renderSessions(sessions, events) {
+    const quizIds = sessionIds(events, 'funnel_started');
+    const directLpIds = sessionIds(events, 'offer_viewed', (item) => item.metadata?.entry_mode === 'direct');
     elements.sessionsTable.innerHTML = sessions.slice(0, 100).map((item) => {
-      const status = item.checkout_clicked_at ? '<span class="badge success">Checkout</span>' : item.is_completed ? '<span class="badge">Quiz completo</span>' : '<span class="badge muted">Abandonou</span>';
-      return '<tr><td>' + dateTime(item.started_at) + '</td><td>' + escapeHtml(item.utm_source || 'Direto') + '</td><td>' + escapeHtml(item.country || '—') + '</td><td>' + escapeHtml(item.position || '—') + '</td><td>' + escapeHtml(item.device_type || '—') + '</td><td>' + escapeHtml(item.max_step || 1) + '/21</td><td>' + status + '</td></tr>';
+      const isDirectLp = directLpIds.has(item.id) && !quizIds.has(item.id);
+      const status = item.checkout_clicked_at
+        ? '<span class="badge success">Checkout' + (isDirectLp ? ' · LP direta' : '') + '</span>'
+        : isDirectLp
+          ? '<span class="badge">LP direta</span>'
+          : item.is_completed
+            ? '<span class="badge">Quiz completo</span>'
+            : '<span class="badge muted">Abandonou</span>';
+      const progress = isDirectLp ? 'LP' : escapeHtml(item.max_step || 1) + '/21';
+      return '<tr><td>' + dateTime(item.started_at) + '</td><td>' + escapeHtml(item.utm_source || 'Direto') + '</td><td>' + escapeHtml(item.country || '—') + '</td><td>' + escapeHtml(item.position || '—') + '</td><td>' + escapeHtml(item.device_type || '—') + '</td><td>' + progress + '</td><td>' + status + '</td></tr>';
     }).join('') || '<tr><td colspan="7" class="empty-state">Nenhuma sessão encontrada.</td></tr>';
   }
 
@@ -232,7 +252,7 @@
       renderSources(sessions);
       renderAudience(sessions);
       renderAnswers(answers);
-      renderSessions(sessions);
+      renderSessions(sessions, events);
       elements.status.textContent = number(sessions.length) + ' sessões no período · atualizado às ' + new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     } catch (error) {
       console.error(error);

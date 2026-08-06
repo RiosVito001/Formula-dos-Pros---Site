@@ -8,6 +8,7 @@
   const SESSION_KEY = 'fdp_funnel_session_v1';
   const VISITOR_KEY = 'fdp_visitor_id_v1';
   const QUEUE_KEY = 'fdp_analytics_queue_v1';
+  const QUIZ_CONTEXT_KEY = 'fdp_quiz_context_v1';
   const SITE_ID = 'formula-dos-pros';
   const MAX_QUEUE = 80;
 
@@ -99,13 +100,27 @@
 
   const visitorId = getVisitorId();
   const session = getSession();
+  const pageType = document.documentElement.dataset.page || 'quiz';
+  const savedQuizContext = readJson(QUIZ_CONTEXT_KEY, null);
+  const quizContext = savedQuizContext && savedQuizContext.session_id === session.id ? savedQuizContext : null;
   const pageStartedAt = Date.now();
-  let currentStep = 1;
+  let currentStep = pageType === 'landing' ? 22 : 1;
   let stepStartedAt = Date.now();
-  let completed = false;
+  let completed = Boolean(quizContext && quizContext.completed_at);
   let exitSent = false;
   let flushing = false;
-  const knownAnswers = {};
+  const knownAnswers = { ...((quizContext && quizContext.answers) || {}) };
+
+  function persistQuizContext(completedAt) {
+    const previous = readJson(QUIZ_CONTEXT_KEY, null);
+    const context = {
+      session_id: session.id,
+      answers: { ...knownAnswers },
+      completed_at: completedAt || (previous && previous.session_id === session.id ? previous.completed_at : null)
+    };
+    writeJson(QUIZ_CONTEXT_KEY, context);
+    return context;
+  }
 
   function context() {
     return {
@@ -195,6 +210,7 @@
 
   function answer(questionKey, answerValue, step) {
     knownAnswers[questionKey] = answerValue;
+    persistQuizContext();
     event('answer_selected', {
       step,
       questionKey,
@@ -210,6 +226,8 @@
   function complete(allAnswers) {
     if (completed) return;
     completed = true;
+    if (allAnswers && typeof allAnswers === 'object') Object.assign(knownAnswers, allAnswers);
+    persistQuizContext(new Date().toISOString());
     event('quiz_completed', {
       step: currentStep,
       metadata: {
@@ -220,8 +238,9 @@
   }
 
   function landingUnlocked(allAnswers) {
+    if (allAnswers && typeof allAnswers === 'object') Object.assign(knownAnswers, allAnswers);
+    persistQuizContext();
     event('landing_unlocked', { step: currentStep, metadata: { answers: allAnswers || knownAnswers } });
-    event('offer_viewed', { step: currentStep, metadata: { country: knownAnswers.country || null } });
   }
 
   function trackCheckout(anchor) {
@@ -274,9 +293,25 @@
     landingUnlocked,
     checkout: trackCheckout,
     flush: flushQueue,
-    getSessionId: () => session.id
+    getSessionId: () => session.id,
+    getAnswers: () => ({ ...knownAnswers }),
+    getQuizContext: () => {
+      const context = readJson(QUIZ_CONTEXT_KEY, null);
+      return context && context.session_id === session.id ? context : null;
+    }
   };
 
-  event('funnel_started', { step: 1, metadata: { session_started_at: session.startedAt } });
+  if (pageType === 'landing') {
+    event('offer_viewed', {
+      step: 22,
+      metadata: {
+        entry_mode: quizContext && quizContext.completed_at ? 'quiz' : 'direct',
+        country: knownAnswers.country || null,
+        position: knownAnswers.position || null
+      }
+    });
+  } else {
+    event('funnel_started', { step: 1, metadata: { session_started_at: session.startedAt } });
+  }
   void flushQueue();
 })();
