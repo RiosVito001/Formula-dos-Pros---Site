@@ -35,11 +35,11 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ── VARIABLES ── */
 :root {
-  --yellow: #C9A84C;
-  --yellow-dim: #b8922e;
-  --red: #C9A84C;
-  --blue: #C9A84C;
-  --accent: #C9A84C;
+  --yellow: #DDB827;
+  --yellow-dim: #B99100;
+  --red: #DDB827;
+  --blue: #DDB827;
+  --accent: #DDB827;
   --dark: #f5f7fa;
   --dark2: #eef1f6;
   --dark3: #e4e8f0;
@@ -2060,26 +2060,26 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 }
 .q-primary:hover { filter: brightness(1.08); }
 .q-primary:disabled { opacity: .5; cursor: not-allowed; }
+.q-select-goal + .q-primary { margin-top: 30px; }
 .q-helper { margin-top: 18px; color: #7b7159; font-size: .66rem; }
 .q-feedback {
   padding: 8px 2px 12px;
   text-align: center;
 }
 .q-feedback-icon { margin: 8px 0 10px; font-size: 3.2rem; }
-.q-feedback-card {
-  margin-top: 14px;
-  padding: 18px 15px;
-  color: #322603;
-  background: #fff9e5;
-  border: 1px dashed #d6aa35;
-  border-radius: 9px;
+.q-feedback-copy {
+  max-width: 520px;
+  margin: 14px auto 0;
+  color: #3e341b;
+  font-size: .9rem;
+  line-height: 1.6;
 }
-.q-feedback-card p { margin: 0 0 13px; font-size: .87rem; line-height: 1.5; }
 .q-feedback-callout {
-  display: inline;
-  color: #161107;
+  display: block;
+  margin: 10px auto 0;
+  color: #9a7600;
   font-weight: 900;
-  background: #f2c62e;
+  background: none;
 }
 .q-compare {
   display: grid;
@@ -2246,7 +2246,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   min-height: 74px;
   padding-top: 0;
 }
-.q-logo { color: #f0d477; }
+.q-logo { color: #e2b600; }
 #prelp-quiz .q-back { color: #f0d477 !important; }
 .q-back:hover { background: rgba(201,168,76,.12); }
 .q-progress { background: #3b2d0b; }
@@ -2358,11 +2358,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   box-shadow: 0 10px 30px rgba(201,168,76,.34), inset 0 1px rgba(255,255,255,.24);
 }
 .q-helper { color: rgba(255,255,255,.68); }
-.q-feedback-card {
-  color: #fff;
-  background: rgba(201,168,76,.11);
-  border-color: #c9a84c;
-}
 .q-feedback-callout {
   color: #f3d77f;
   background: none;
@@ -2389,7 +2384,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 #prelp-quiz,
 #prelp-quiz.is-semantic {
   background:
-    radial-gradient(circle at 50% -10%, rgba(201,168,76,.22), transparent 42%),
+    radial-gradient(circle at 50% -10%, rgba(221,184,39,.22), transparent 42%),
     #fbfaf6;
 }
 #prelp-quiz::before,
@@ -2397,37 +2392,37 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   display: block;
   opacity: .16;
   background-image:
-    linear-gradient(rgba(201,168,76,.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,.18) 1px, transparent 1px);
+    linear-gradient(rgba(221,184,39,.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,184,39,.18) 1px, transparent 1px);
 }
 .prelp-card,
 .prelp-card.is-stage-mode {
   color: #2a220d;
   background: #fff;
-  border-color: #c9a84c;
+  border-color: #ddb827;
   box-shadow: 0 28px 80px rgba(100,75,15,.18);
 }
 .prelp-eyebrow {
-  color: #8a6618;
+  color: #987500;
   background: #fff8df;
-  border-color: rgba(201,168,76,.48);
+  border-color: rgba(221,184,39,.48);
 }
 .prelp-title,
 .prelp-copy,
 .prelp-prompt,
 .prelp-proof { color: #2a220d; }
 .q-screen { color: #2a220d; }
-#prelp-quiz .q-back { color: #9b7418 !important; }
+#prelp-quiz .q-back { color: #b58f00 !important; }
 .q-back:hover { background: #fff5d4; }
 .q-progress { background: #efe6cc; }
 .q-title,
 .q-title-sm { color: #211a09; }
-.q-highlight { color: #a57915; }
+.q-highlight { color: #b58f00; }
 .q-subtitle { color: #3e341b; }
 .q-stage-icon {
-  color: #8a6618;
+  color: #987500;
   background: #fff8df;
-  border-color: rgba(201,168,76,.55);
+  border-color: rgba(221,184,39,.55);
 }
 .q-stage-image { background: #fff; box-shadow: 0 14px 32px rgba(100,75,15,.16); }
 .q-note,
@@ -2439,20 +2434,18 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-option,
 .q-age-card,
 .q-position-list .q-option {
-  color: #fff !important;
-  background: linear-gradient(145deg, #d2ae48, #a77c18);
-  border-color: #b98c22;
-  box-shadow: 0 7px 18px rgba(158,116,19,.18);
+  background: linear-gradient(145deg, #e6c74f, #be9500);
+  border-color: #a87e00;
+  box-shadow: 0 7px 18px rgba(153,114,0,.2);
 }
 .q-option:hover,
 .q-option:focus-visible {
-  background: linear-gradient(145deg, #ddbc59, #b18420);
-  border-color: #8f6912;
+  background: linear-gradient(145deg, #efd35f, #caa309);
+  border-color: #987000;
 }
 .q-option.is-selected {
-  color: #fff !important;
-  background: linear-gradient(145deg, #a77c18, #74540d);
-  border-color: #6c4d08;
+  background: linear-gradient(145deg, #d1ab18, #a47800);
+  border-color: #765700;
 }
 .q-option-icon {
   color: #fff;
@@ -2464,13 +2457,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-age-visual { background: rgba(255,255,255,.12); }
 .q-age-label { color: #fff; background: rgba(91,64,4,.18); }
 .q-check { border-color: rgba(255,255,255,.72); }
+#prelp-quiz .q-option { color: #fff !important; }
 .q-helper { color: #75653b; }
-.q-feedback-card {
-  color: #34290c;
-  background: #fff9e8;
-  border-color: #c9a84c;
-}
-.q-feedback-callout { color: #936d14; }
+.q-feedback-callout { color: #b08600; }
 .q-gift-hero {
   color: #34290c;
   background: #fff9e8;
@@ -2516,7 +2505,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   height: 78px;
   object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
 }
 .q-age-card {
   min-height: 0;
@@ -2546,6 +2534,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 /* Artes geradas para simbolizar as etapas 8–21 */
 .q-symbolic-image {
   width: min(100%, 360px);
+  aspect-ratio: 16 / 9;
   margin: 0 auto 20px;
   overflow: hidden;
   background: #fff;
@@ -2557,9 +2546,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-symbolic-image img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 .q-quiz-video {
   width: min(100%, 330px);
@@ -2613,6 +2602,284 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   line-height: 1.16;
   text-align: center;
   background: linear-gradient(150deg, #d0aa43, #997115);
+}
+
+/* Etapa dos brindes: visual limpo, gratuito em destaque e urgência */
+#prelp-quiz .q-gift-hero {
+  min-height: 0;
+  margin: 0 0 14px;
+  padding: 0 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.q-gift-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: #987500;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#prelp-quiz .q-gift-hero .q-title { margin-bottom: 10px; }
+#prelp-quiz .q-gift-hero .q-subtitle { margin-bottom: 0; }
+.q-free-badge {
+  display: inline-flex;
+  min-height: 32px;
+  margin: 0 0 12px;
+  padding: 6px 14px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  background: #16a34a;
+  border: 1px solid #12823c;
+  border-radius: 999px;
+  box-shadow: 0 7px 18px rgba(22,163,74,.22);
+}
+#prelp-quiz .q-gift-card {
+  position: relative;
+  border-color: rgba(221,184,39,.72);
+  box-shadow: 0 9px 22px rgba(100,75,15,.13);
+}
+#prelp-quiz .q-gift-card span {
+  min-height: 48px;
+  padding: 8px 5px;
+  color: #34290c;
+  background: transparent;
+  border-top: 1px solid rgba(221,184,39,.28);
+}
+.q-gift-card-free {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+  padding: 4px 6px;
+  color: #fff;
+  font-size: .52rem;
+  font-weight: 950;
+  letter-spacing: .05em;
+  background: #16a34a;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(22,163,74,.25);
+}
+.q-benefits {
+  display: grid;
+  gap: 7px;
+  margin: 15px 0 18px;
+  text-align: left;
+}
+#prelp-quiz .q-benefit {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+  gap: 9px;
+  color: #34290c;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.q-benefit::before {
+  content: '✓';
+  display: grid;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 950;
+  background: #16a34a;
+  border-radius: 50%;
+}
+.q-gift-countdown {
+  margin: 4px 0 18px;
+  padding: 14px 12px;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #e11d48;
+  border-radius: 14px;
+  box-shadow: 0 9px 24px rgba(225,29,72,.12);
+}
+.q-gift-countdown > span {
+  display: block;
+  color: #9f1239;
+  font-size: .64rem;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.q-gift-countdown strong {
+  display: block;
+  margin: 3px 0;
+  color: #e11d48;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 10vw, 2.7rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+.q-gift-countdown small {
+  color: #5f4d20;
+  font-size: .68rem;
+  font-weight: 700;
+}
+#prelp-quiz .q-gift-claim { margin-top: 0; }
+.q-gift-note {
+  margin: 9px 0 0;
+  color: #75653b;
+  font-size: .65rem;
+  font-weight: 700;
+}
+@media (max-width: 390px) {
+  .q-gift-grid { gap: 6px; }
+  #prelp-quiz .q-gift-card span { min-height: 52px; font-size: .58rem; }
+  .q-gift-card-free { top: 4px; right: 4px; padding: 3px 5px; font-size: .46rem; }
+}
+
+/* Análise final: checklist progressivo com estados reais */
+#prelp-quiz .q-loading {
+  min-height: 0;
+  padding: 10px 2px 24px;
+  justify-content: flex-start;
+  color: #2a220d;
+  text-align: left;
+}
+.q-analysis-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.q-analysis-live {
+  display: inline-flex;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 7px;
+  color: #987500;
+  font-size: .65rem;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.q-analysis-live::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(34,197,94,.13);
+  animation: qAnalysisPulse 1.3s ease-in-out infinite;
+}
+@keyframes qAnalysisPulse { 50% { opacity: .45; transform: scale(.78); } }
+.q-analysis-header .q-title { margin-bottom: 8px; }
+.q-analysis-header .q-subtitle { margin-bottom: 0; }
+.q-analysis-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.q-analysis-item {
+  display: grid;
+  min-height: 58px;
+  padding: 10px 11px;
+  grid-template-columns: 27px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid #e8dfc4;
+  border-radius: 12px;
+  opacity: .64;
+  transition: border-color .2s ease, box-shadow .2s ease, opacity .2s ease, transform .2s ease;
+}
+.q-analysis-status {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  color: #9a8e70;
+  font-size: .8rem;
+  font-weight: 950;
+  background: #f3efe4;
+  border: 1px solid #ded5bf;
+  border-radius: 50%;
+}
+.q-analysis-status::before { content: '•'; }
+.q-analysis-copy { min-width: 0; }
+.q-analysis-copy strong {
+  display: block;
+  color: #30270f;
+  font-size: .75rem;
+  line-height: 1.3;
+}
+.q-analysis-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #756b55;
+  font-size: .62rem;
+  line-height: 1.3;
+}
+.q-analysis-state {
+  color: #8b8067;
+  font-size: .58rem;
+  font-style: normal;
+  font-weight: 850;
+  white-space: nowrap;
+}
+.q-analysis-item.is-active {
+  opacity: 1;
+  border-color: #ddb827;
+  box-shadow: 0 7px 20px rgba(153,114,0,.12);
+  transform: translateY(-1px);
+}
+.q-analysis-item.is-active .q-analysis-status {
+  background: transparent;
+  border: 3px solid #eadbaf;
+  border-top-color: #b58f00;
+  animation: qAnalysisSpin .8s linear infinite;
+}
+.q-analysis-item.is-active .q-analysis-status::before { content: ''; }
+.q-analysis-item.is-active .q-analysis-state { color: #987500; }
+.q-analysis-item.is-done {
+  opacity: 1;
+  border-color: #bbdfc7;
+  background: #fbfffc;
+}
+.q-analysis-item.is-done .q-analysis-status {
+  color: #fff;
+  background: #16a34a;
+  border-color: #16a34a;
+}
+.q-analysis-item.is-done .q-analysis-status::before { content: '✓'; }
+.q-analysis-item.is-done .q-analysis-state { color: #15803d; }
+@keyframes qAnalysisSpin { to { transform: rotate(360deg); } }
+.q-analysis-progress {
+  padding: 0 2px;
+}
+.q-analysis-progress .q-loading-row { margin-bottom: 9px; }
+.q-analysis-progress .q-loading-track { height: 10px; background: #efe6cc; }
+.q-analysis-progress .q-loading-bar {
+  background: linear-gradient(90deg, #ddb827, #16a34a);
+  transition: width .12s linear;
+}
+.q-analysis-progress .q-loading-copy {
+  margin: 10px 0 0;
+  color: #5f5232;
+  font-size: .7rem;
+  text-align: center;
+}
+@media (max-width: 390px) {
+  .q-analysis-item { padding: 9px; grid-template-columns: 25px minmax(0, 1fr); }
+  .q-analysis-state { grid-column: 2; margin-top: -4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .q-analysis-live::before, .q-analysis-item.is-active .q-analysis-status { animation: none; }
 }
 .q-options .q-option:not(:has(.q-option-icon)):not(:has(.q-option-letter)) {
   justify-content: center;
@@ -2862,6 +3129,8 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   let changing = false;
   let loadingTimer = null;
   let loadingInterval = null;
+  let giftCountdownInterval = null;
+  let giftDeadline = 0;
 
   const generatedStageImages = {
     physical: 'images/embedded-01.webp',
@@ -2949,8 +3218,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function clearLoading() {
     if (loadingTimer) window.clearTimeout(loadingTimer);
     if (loadingInterval) window.clearInterval(loadingInterval);
+    if (giftCountdownInterval) window.clearInterval(giftCountdownInterval);
     loadingTimer = null;
     loadingInterval = null;
+    giftCountdownInterval = null;
   }
 
   function showUnlockedPopup() {
@@ -3256,23 +3527,33 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       ['fun', 'Jogar por diversão'],
       ['respect', 'Parar de ser zoado no grupo']
     ];
+    const selectedGoals = Array.isArray(answers.mainGoals)
+      ? [...answers.mainGoals]
+      : (answers.mainGoal ? [answers.mainGoal] : []);
+    answers.mainGoals = selectedGoals;
     renderScreen(7,
       '<h1 class="q-title q-title-sm">Qual é o seu principal objetivo como <span class="q-highlight">' + escapeHtml(position) + '?</span></h1>' +
-      '<p class="q-subtitle">Escolha uma opção para continuar.</p>' +
+      '<p class="q-subtitle">Escolha uma ou mais opções para continuar.</p>' +
       '<div class="q-options q-select-goal">' + choices.map((item) =>
-        '<button class="q-option' + (answers.mainGoal === item[0] ? ' is-selected' : '') + '" type="button" data-value="' + item[0] + '"><span class="q-check">✓</span><span class="q-option-text">' + item[1] + '</span></button>'
+        '<button class="q-option' + (selectedGoals.includes(item[0]) ? ' is-selected' : '') + '" type="button" data-value="' + item[0] + '" aria-pressed="' + selectedGoals.includes(item[0]) + '"><span class="q-check">✓</span><span class="q-option-text">' + item[1] + '</span></button>'
       ).join('') + '</div>' +
       '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
     stageContent.querySelectorAll('.q-option').forEach((button) => {
       button.addEventListener('click', () => {
-        answers.mainGoal = button.dataset.value;
-        window.FunnelAnalytics?.answer('mainGoal', button.dataset.value, 7);
-        stageContent.querySelectorAll('.q-option').forEach((item) => item.classList.remove('is-selected'));
-        button.classList.add('is-selected');
+        const value = button.dataset.value;
+        const selectedIndex = selectedGoals.indexOf(value);
+        if (selectedIndex >= 0) selectedGoals.splice(selectedIndex, 1);
+        else selectedGoals.push(value);
+        answers.mainGoals = [...selectedGoals];
+        answers.mainGoal = selectedGoals[0] || '';
+        window.FunnelAnalytics?.answer('mainGoals', [...selectedGoals], 7);
+        const isSelected = selectedGoals.includes(value);
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
       });
     });
     stageContent.querySelector('[data-continue]').addEventListener('click', () => {
-      if (!answers.mainGoal) return showToast('Escolha uma opção para continuar.');
+      if (!selectedGoals.length) return showToast('Escolha pelo menos uma opção para continuar.');
       goToStage(8);
     });
   }
@@ -3297,7 +3578,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     renderScreen(stage,
       symbolicImage(resolvedImageKey, resolvedImageAlt) + '<div class="q-feedback">' +
       '<h1 class="q-title"><span class="q-highlight">' + data.title + '</span></h1>' +
-      '<div class="q-feedback-card"><p>' + data.body + '</p><strong class="q-feedback-callout">' + data.callout + '</strong></div>' +
+      '<p class="q-feedback-copy">' + data.body + '</p><strong class="q-feedback-callout">' + data.callout + '</strong>' +
       '<button class="q-primary" type="button" data-continue>Bora!</button></div>');
     bindContinue(stage + 1);
   }
@@ -3400,19 +3681,45 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     bindAutoChoices('flow', 19);
   }
 
+  function startGiftCountdown() {
+    const display = stageContent.querySelector('[data-gift-countdown]');
+    const note = stageContent.querySelector('[data-gift-countdown-note]');
+    if (!display) return;
+    if (!giftDeadline || giftDeadline <= Date.now()) giftDeadline = Date.now() + (5 * 60 * 1000);
+
+    const updateCountdown = () => {
+      const remaining = Math.max(0, giftDeadline - Date.now());
+      const totalSeconds = Math.ceil(remaining / 1000);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      display.textContent = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+      display.setAttribute('aria-label', minutes + ' minutos e ' + seconds + ' segundos restantes');
+      if (remaining <= 0) {
+        window.clearInterval(giftCountdownInterval);
+        giftCountdownInterval = null;
+        if (note) note.textContent = 'Última chance: resgate seus brindes agora.';
+      }
+    };
+
+    updateCountdown();
+    giftCountdownInterval = window.setInterval(updateCountdown, 1000);
+  }
+
   function renderStage20() {
     renderScreen(20,
       symbolicImage('gifts', 'Conjunto de brindes de treinamento de futebol') +
-      '<div class="q-gift-hero"><h1 class="q-title q-title-sm"><span class="q-highlight">Antes de tudo!</span></h1><p class="q-subtitle">Antes de mostrar o treinamento, vou liberar <strong>três brindes gratuitos</strong> para você.</p></div>' +
+      '<div class="q-gift-hero"><span class="q-gift-kicker">🎁 Brindes liberados</span><h1 class="q-title q-title-sm">Você desbloqueou <span class="q-highlight">3 brindes especiais</span></h1><span class="q-free-badge">✓ 100% GRATUITOS</span><p class="q-subtitle">Resgate agora seus materiais extras para acelerar sua evolução.</p></div>' +
       '<div class="q-gift-grid">' +
-        '<div class="q-gift-card"><img src="images/043-Hzh1y-2.png" alt="Brinde Playlist de dribles" loading="eager"><span>Playlist de dribles</span></div>' +
-        '<div class="q-gift-card"><img src="images/042-eOoIY-1.png" alt="Brinde Treinos em casa" loading="eager"><span>Treinos em casa</span></div>' +
-        '<div class="q-gift-card"><img src="images/041-puqjV-3.png" alt="Brinde Rotina personalizada" loading="eager"><span>Rotina personalizada</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/043-Hzh1y-2.png" alt="Brinde Playlist de dribles" loading="eager"><span>Playlist de dribles</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/042-eOoIY-1.png" alt="Brinde Treinos em casa" loading="eager"><span>Treinos em casa</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/041-puqjV-3.png" alt="Brinde Rotina personalizada" loading="eager"><span>Rotina personalizada</span></div>' +
       '</div>' +
-      '<div class="q-benefit">Mais de 10 dribles para evoluir seu 1x1.</div>' +
+      '<div class="q-benefits"><div class="q-benefit">Mais de 10 dribles para evoluir seu 1x1.</div>' +
       '<div class="q-benefit">Treinos completos para fazer em casa.</div>' +
-      '<div class="q-benefit">Rotina personalizada para seus objetivos.</div>' +
-      '<button class="q-primary" type="button" data-continue>QUERO RESGATAR O BRINDE!</button>');
+      '<div class="q-benefit">Rotina personalizada para seus objetivos.</div></div>' +
+      '<div class="q-gift-countdown" role="timer" aria-live="off"><span>Tempo para resgatar gratuitamente</span><strong data-gift-countdown>05:00</strong><small data-gift-countdown-note>Garanta os 3 brindes antes que o tempo termine.</small></div>' +
+      '<button class="q-primary q-gift-claim" type="button" data-continue>RESGATAR 3 BRINDES GRÁTIS</button><p class="q-gift-note">✓ Resgate gratuito e liberação imediata</p>');
+    startGiftCountdown();
     stageContent.querySelector('[data-continue]').addEventListener('click', () => {
       answers.gift = 'claimed';
       window.FunnelAnalytics?.answer('gift', 'claimed', 20);
@@ -3422,22 +3729,51 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   }
 
   function renderStage21() {
+    const position = answers.position || 'perfil versátil';
     renderScreen(21,
-      '<div class="q-loading">' + symbolicImage('analysis', 'Plano de futebol sendo analisado e montado', true) + '<div class="q-loading-row"><span>Por favor, aguarde...</span><strong data-loading-percent>8%</strong></div>' +
-      '<div class="q-loading-track"><div class="q-loading-bar" data-loading-bar></div></div><p class="q-loading-copy">Estamos analisando seus dados e montando seu treinamento!</p></div>', false);
+      '<div class="q-loading"><div class="q-analysis-header"><span class="q-analysis-live">Análise em andamento</span><h1 class="q-title q-title-sm">Montando seu <span class="q-highlight">plano personalizado</span></h1><p class="q-subtitle">Estamos verificando suas respostas para criar a melhor recomendação.</p></div>' +
+      '<div class="q-analysis-list" aria-label="Etapas da análise">' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Validando respostas do quiz</strong><small>Conferindo se todas as informações foram recebidas.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Identificando seu perfil de jogador</strong><small>Posição selecionada: ' + escapeHtml(position) + '.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Analisando objetivos físicos e mentais</strong><small>Cruzando seus objetivos com suas principais dificuldades.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Avaliando instinto e estado de flow</strong><small>Personalizando foco, confiança e tomada de decisão.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Finalizando plano e benefícios</strong><small>Organizando seu treinamento e os brindes liberados.</small></div><em class="q-analysis-state">Aguardando</em></div></div>' +
+      '<div class="q-analysis-progress"><div class="q-loading-row"><span>Processando recomendações...</span><strong data-loading-percent>4%</strong></div><div class="q-loading-track"><div class="q-loading-bar" data-loading-bar></div></div><p class="q-loading-copy">Não feche esta página. Seu resultado será exibido automaticamente.</p></div></div>', false);
     const bar = stageContent.querySelector('[data-loading-bar]');
     const percent = stageContent.querySelector('[data-loading-percent]');
-    let value = 8;
-    loadingInterval = window.setInterval(() => {
-      value = Math.min(96, value + Math.floor(Math.random() * 8) + 3);
+    const steps = [...stageContent.querySelectorAll('[data-analysis-step]')];
+    const thresholds = [4, 22, 43, 64, 82];
+    const startedAt = Date.now();
+    const analysisDuration = 6200;
+
+    const updateProgress = (value) => {
       bar.style.width = value + '%';
       percent.textContent = value + '%';
-    }, 170);
-    loadingTimer = window.setTimeout(() => {
-      bar.style.width = '100%';
-      percent.textContent = '100%';
-      window.setTimeout(revealLandingPage, 300);
-    }, 2700);
+      steps.forEach((item, index) => {
+        const nextThreshold = thresholds[index + 1] || 100;
+        const isDone = value >= nextThreshold;
+        const isActive = value >= thresholds[index] && !isDone;
+        const state = item.querySelector('.q-analysis-state');
+        item.classList.toggle('is-done', isDone);
+        item.classList.toggle('is-active', isActive);
+        if (isActive) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+        state.textContent = isDone ? 'Concluído' : (isActive ? 'Verificando...' : 'Aguardando');
+      });
+    };
+
+    updateProgress(4);
+    loadingInterval = window.setInterval(() => {
+      const elapsed = Date.now() - startedAt;
+      const value = Math.min(100, 4 + Math.floor((elapsed / analysisDuration) * 96));
+      updateProgress(value);
+      if (value >= 100) {
+        window.clearInterval(loadingInterval);
+        loadingInterval = null;
+        window.FunnelAnalytics?.action('analysis_completed', { duration_ms: analysisDuration }, 21);
+        loadingTimer = window.setTimeout(revealLandingPage, 650);
+      }
+    }, 100);
   }
 
   function goToStage(stage) {
