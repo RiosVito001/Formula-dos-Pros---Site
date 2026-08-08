@@ -1601,6 +1601,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   border: 1px solid rgba(201,168,76,.25);
   border-radius: 999px;
 }
+.prelp-logo {
+  display: block;
+  width: min(100%, 250px);
+  height: auto;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
 .prelp-title {
   max-width: 520px;
   margin: 0 auto 14px;
@@ -2383,24 +2390,19 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 /* Paleta final da introdução e do quiz: branco + dourado */
 #prelp-quiz,
 #prelp-quiz.is-semantic {
-  background:
-    radial-gradient(circle at 50% -10%, rgba(221,184,39,.22), transparent 42%),
-    #fbfaf6;
+  background: #fbfaf6;
 }
 #prelp-quiz::before,
 #prelp-quiz.is-semantic::before {
-  display: block;
-  opacity: .16;
-  background-image:
-    linear-gradient(rgba(221,184,39,.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(221,184,39,.18) 1px, transparent 1px);
+  display: none;
 }
 .prelp-card,
 .prelp-card.is-stage-mode {
   color: #2a220d;
-  background: #fff;
-  border-color: #ddb827;
-  box-shadow: 0 28px 80px rgba(100,75,15,.18);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .prelp-eyebrow {
   color: #987500;
@@ -2428,8 +2430,11 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-note,
 .q-note.alert {
   color: #34290c;
-  background: #fff9e8;
-  border-color: rgba(201,168,76,.58);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .q-option,
 .q-age-card,
@@ -3057,7 +3062,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 @media(max-width: 600px) {
   #prelp-quiz { align-items: flex-start; padding: 14px 12px calc(18px + env(safe-area-inset-bottom)); }
   .prelp-card { padding: 22px 16px; border-radius: 18px; }
-  .prelp-eyebrow { margin-bottom: 12px; font-size: .63rem; }
+  .prelp-logo { width: min(100%, 210px); margin-bottom: 14px; }
   .prelp-title { margin-bottom: 12px; }
   .prelp-copy { margin-bottom: 16px; line-height: 1.52; }
   .prelp-cover { margin-bottom: 15px; border-radius: 12px; }
@@ -3090,7 +3095,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   <div class="prelp-shell">
     <div class="prelp-card">
       <div id="prelp-intro" class="prelp-view">
-        <div class="prelp-eyebrow">⚽ Avaliação gratuita</div>
+        <img class="prelp-logo" src="images/048-wrIkC-banner-do-modulo-1.png" alt="Fórmula dos Prós" fetchpriority="high">
         <h1 id="prelp-title" class="prelp-title">Descubra o plano ideal para evoluir seu futebol</h1>
         <p class="prelp-copy">Em poucos minutos, vamos montar um caminho de treino ideal pra você evoluir em até 30 dias, baseado na sua posição, estilo de jogo e no que mais trava seu futebol hoje.</p>
         <img class="prelp-cover" src="images/002-ySfNs-thumbnail.png" alt="Descubra seu plano ideal de evolução no futebol" fetchpriority="high">
