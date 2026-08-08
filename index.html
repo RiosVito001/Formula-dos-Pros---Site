@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cloudfront.inlead.cloud" crossorigin>
-<link rel="preload" as="image" href="images/001-E6dwyvo.png">
+<link rel="preload" as="image" href="images/001-E6dwyvo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* ── RESET & BASE ── */
@@ -3079,7 +3079,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 }
 @media(prefers-reduced-motion: reduce) {
   #prelp-quiz, .prelp-progress-bar, .prelp-main-btn, .prelp-answer { transition: none; }
+  .prelp-stage-content.q-fade-in { animation: none !important; }
 }
+@keyframes qStageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.prelp-stage-content.q-fade-in { animation: qStageFadeIn .35s ease both; }
 </style>
 <!-- Rastreamento carregado na HEAD antes do quiz e da LP -->
 <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
@@ -3095,10 +3101,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   <div class="prelp-shell">
     <div class="prelp-card">
       <div id="prelp-intro" class="prelp-view">
-        <img class="prelp-logo" src="images/048-wrIkC-banner-do-modulo-1.png" alt="Fórmula dos Prós" fetchpriority="high">
+        <img class="prelp-logo" src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós" fetchpriority="high">
         <h1 id="prelp-title" class="prelp-title">Descubra o plano ideal para evoluir seu futebol</h1>
         <p class="prelp-copy">Em poucos minutos, vamos montar um caminho de treino ideal pra você evoluir em até 30 dias, baseado na sua posição, estilo de jogo e no que mais trava seu futebol hoje.</p>
-        <img class="prelp-cover" src="images/002-ySfNs-thumbnail.png" alt="Descubra seu plano ideal de evolução no futebol" fetchpriority="high">
+        <img class="prelp-cover" src="images/002-ySfNs-thumbnail.webp" alt="Descubra seu plano ideal de evolução no futebol" fetchpriority="high">
         <p class="prelp-prompt">Responda o quiz e descubra o caminho ideal pra evoluir mais rápido.</p>
         <button id="prelp-start" class="prelp-main-btn" type="button">ENCONTRAR MEU PLANO ⚽🔥</button>
         <p class="prelp-proof">Milhares de jogadores já usam o método.</p>
@@ -3350,7 +3356,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     const progress = Math.max(4, Math.round((stage / totalStages) * 100));
     return '<header class="q-header">' +
       (allowBack ? '<button class="q-back" type="button" aria-label="Voltar">‹</button>' : '<span></span>') +
-      '<div class="q-logo"><img src="images/048-wrIkC-banner-do-modulo-1.png" alt="Fórmula dos Prós"></div>' +
+      '<div class="q-logo"><img src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós"></div>' +
       '<span></span><div class="q-progress" aria-label="Progresso do quiz"><span style="width:' + progress + '%"></span></div>' +
       '</header>';
   }
@@ -3477,8 +3483,8 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '<h1 class="q-title">A Fórmula dos Prós virou movimento mundial.</h1>' +
       '<p class="q-subtitle">De qual país você é?</p>' +
       '<div class="q-options q-country">' +
-        option('Brasil', 'Sou do Brasil!', optionImage('images/052-znz8O-flag-of-brazilsvg-1.png', 'Bandeira do Brasil')) +
-        option('Portugal', 'Sou de Portugal!', optionImage('images/053-kT9fs-112121.png', 'Bandeira de Portugal')) +
+        option('Brasil', 'Sou do Brasil!', optionImage('images/052-znz8O-flag-of-brazilsvg-1.webp', 'Bandeira do Brasil')) +
+        option('Portugal', 'Sou de Portugal!', optionImage('images/053-kT9fs-112121.webp', 'Bandeira de Portugal')) +
       '</div><p class="q-helper">Clique para continuar.</p>');
     bindAutoChoices('country', 5);
   }
@@ -3486,14 +3492,14 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function renderStage5() {
     const positions = [
       ['Várias posições', 'Jogo em várias posições', 'images/054-ReXan-assets-task-01jyz1czv2e23vms5skkatnaxd-1751240929-img-1.webp'],
-      ['Ainda não sei', 'Ainda não sei', 'images/055-l5e2d-aindanaosei-1.png'],
-      ['Atacante', 'Atacante', 'images/056-es2bx-atacante-1.png'],
-      ['Ponta', 'Ponta', 'images/057-8Ewd5-subcabecalho-3.png'],
-      ['Meio-campo', 'Meio-campo', 'images/058-ixtys-meio-campo-1.png'],
-      ['Lateral', 'Lateral', 'images/059-4w8x2-lateral-1.png'],
-      ['Zagueiro', 'Zagueiro', 'images/060-x840y-zagueiro-1.png'],
-      ['Volante', 'Volante', 'images/061-yj1qo-volante-1.png'],
-      ['Goleiro', 'Goleiro', 'images/062-5mwc4-goleiro-1.png']
+      ['Ainda não sei', 'Ainda não sei', 'images/055-l5e2d-aindanaosei-1.webp'],
+      ['Atacante', 'Atacante', 'images/056-es2bx-atacante-1.webp'],
+      ['Ponta', 'Ponta', 'images/057-8Ewd5-subcabecalho-3.webp'],
+      ['Meio-campo', 'Meio-campo', 'images/058-ixtys-meio-campo-1.webp'],
+      ['Lateral', 'Lateral', 'images/059-4w8x2-lateral-1.webp'],
+      ['Zagueiro', 'Zagueiro', 'images/060-x840y-zagueiro-1.webp'],
+      ['Volante', 'Volante', 'images/061-yj1qo-volante-1.webp'],
+      ['Goleiro', 'Goleiro', 'images/062-5mwc4-goleiro-1.webp']
     ];
     renderScreen(5,
       '<h1 class="q-title q-title-sm">Qual sua posição <span class="q-highlight">dentro de campo?</span></h1>' +
@@ -3715,9 +3721,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       symbolicImage('gifts', 'Conjunto de brindes de treinamento de futebol') +
       '<div class="q-gift-hero"><span class="q-gift-kicker">🎁 Brindes liberados</span><h1 class="q-title q-title-sm">Você desbloqueou <span class="q-highlight">3 brindes especiais</span></h1><span class="q-free-badge">✓ 100% GRATUITOS</span><p class="q-subtitle">Resgate agora seus materiais extras para acelerar sua evolução.</p></div>' +
       '<div class="q-gift-grid">' +
-        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/043-Hzh1y-2.png" alt="Brinde Playlist de dribles" loading="eager"><span>Playlist de dribles</span></div>' +
-        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/042-eOoIY-1.png" alt="Brinde Treinos em casa" loading="eager"><span>Treinos em casa</span></div>' +
-        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/041-puqjV-3.png" alt="Brinde Rotina personalizada" loading="eager"><span>Rotina personalizada</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/043-Hzh1y-2.webp" alt="Brinde Playlist de dribles" loading="eager"><span>Playlist de dribles</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/042-eOoIY-1.webp" alt="Brinde Treinos em casa" loading="eager"><span>Treinos em casa</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/041-puqjV-3.webp" alt="Brinde Rotina personalizada" loading="eager"><span>Rotina personalizada</span></div>' +
       '</div>' +
       '<div class="q-benefits"><div class="q-benefit">Mais de 10 dribles para evoluir seu 1x1.</div>' +
       '<div class="q-benefit">Treinos completos para fazer em casa.</div>' +
@@ -3781,8 +3787,19 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     }, 100);
   }
 
+  let quizImagesPreloaded = false;
+  function preloadQuizImages() {
+    if (quizImagesPreloaded) return;
+    quizImagesPreloaded = true;
+    Object.values(generatedStageImages).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
   function goToStage(stage) {
     clearLoading();
+    preloadQuizImages();
     currentStage = stage;
     intro.hidden = true;
     stageView.hidden = false;
@@ -3812,6 +3829,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       case 21: renderStage21(); break;
       default: revealLandingPage();
     }
+
+    stageContent.classList.remove('q-fade-in');
+    void stageContent.offsetWidth;
+    stageContent.classList.add('q-fade-in');
   }
 
   const startButton = document.getElementById('prelp-start');
