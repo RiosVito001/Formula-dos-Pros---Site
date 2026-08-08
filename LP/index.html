@@ -3255,7 +3255,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       </div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full">⚡ QUERO O COMPLETO POR R$37</a>
+    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37</a>
     <button onclick="irBasico()" class="upsell-btn-basic">Não, quero apenas o básico por R$27 →</button>
   </div>
 </div>
@@ -3437,6 +3437,22 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   const quizContext = window.FunnelAnalytics?.getQuizContext?.() || null;
   const answers = quizContext?.answers || {};
 
+  const CHECKOUT_BY_POSITION = {
+    default: 'https://seguro.riosfutebolclube.com.br/r/P26SWL29LQ',
+    'Atacante': 'https://seguro.riosfutebolclube.com.br/r/2IBAW87A6P',
+    'Meio-campo': 'https://seguro.riosfutebolclube.com.br/r/TC96UUME75',
+    'Volante': 'https://seguro.riosfutebolclube.com.br/r/TLZ5SGIETJ',
+    'Lateral': 'https://seguro.riosfutebolclube.com.br/r/5BDLCKS6OR',
+    'Zagueiro': 'https://seguro.riosfutebolclube.com.br/r/EF0IE7VV0C',
+    'Goleiro': 'https://seguro.riosfutebolclube.com.br/r/5AS0FYDVEO',
+    'Ainda não sei': 'https://seguro.riosfutebolclube.com.br/r/N0IT3XBETY',
+    'Ponta': 'https://seguro.riosfutebolclube.com.br/r/DKBCAQLL3S',
+    'Várias posições': 'https://seguro.riosfutebolclube.com.br/r/L2MBS7ID9K'
+  };
+  function getCheckoutUrlByPosition() {
+    return CHECKOUT_BY_POSITION[answers.position] || CHECKOUT_BY_POSITION.default;
+  }
+
   const monthName = new Intl.DateTimeFormat('pt-BR', { month: 'long' })
     .format(new Date())
     .toLocaleUpperCase('pt-BR');
@@ -3448,6 +3464,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     const priceNote = document.getElementById('offer-price-note');
     const installments = document.getElementById('offer-installments');
     const checkout = document.getElementById('offer-checkout');
+    const upsellCheckout = document.getElementById('upsell-checkout-full');
     const safe = document.getElementById('offer-safe');
     if (!price || !checkout) return;
 
@@ -3457,15 +3474,18 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       if (priceNote) priceNote.textContent = 'Condição especial para Portugal';
       if (installments) installments.textContent = 'Pagamento seguro pela Hotmart · Acesso imediato';
       checkout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
+      if (upsellCheckout) upsellCheckout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
       if (safe) safe.textContent = '🔒 Pagamento 100% seguro pela Hotmart · Acesso imediato';
       return;
     }
 
+    const checkoutUrl = getCheckoutUrlByPosition();
     price.textContent = 'R$ 37';
     if (oldPrice) { oldPrice.hidden = false; oldPrice.textContent = 'R$ 97'; }
     if (priceNote) priceNote.textContent = '↓ Hoje apenas';
     if (installments) installments.textContent = 'ou em até 12x de R$ 3,69 · Sem mensalidades';
-    checkout.href = 'https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg';
+    checkout.href = checkoutUrl;
+    if (upsellCheckout) upsellCheckout.href = checkoutUrl;
     if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
   }
 
