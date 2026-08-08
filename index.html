@@ -3079,13 +3079,18 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 }
 @media(prefers-reduced-motion: reduce) {
   #prelp-quiz, .prelp-progress-bar, .prelp-main-btn, .prelp-answer { transition: none; }
-  .prelp-stage-content.q-fade-in { animation: none !important; }
+  .prelp-stage-content.q-fade-in, .prelp-stage-content.q-fade-out { animation: none !important; }
 }
 @keyframes qStageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
-.prelp-stage-content.q-fade-in { animation: qStageFadeIn .35s ease both; }
+@keyframes qStageFadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-10px) scale(.985); }
+}
+.prelp-stage-content.q-fade-in { animation: qStageFadeIn .55s cubic-bezier(.16,1,.3,1) both; }
+.prelp-stage-content.q-fade-out { animation: qStageFadeOut .26s ease both; }
 </style>
 <!-- Rastreamento carregado na HEAD antes do quiz e da LP -->
 <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
@@ -3797,9 +3802,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     });
   }
 
-  function goToStage(stage) {
-    clearLoading();
-    preloadQuizImages();
+  function renderStageContent(stage) {
     currentStage = stage;
     intro.hidden = true;
     stageView.hidden = false;
@@ -3830,13 +3833,31 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       default: revealLandingPage();
     }
 
+    stageContent.classList.remove('q-fade-out');
     stageContent.classList.remove('q-fade-in');
     void stageContent.offsetWidth;
     stageContent.classList.add('q-fade-in');
   }
 
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function goToStage(stage) {
+    clearLoading();
+    preloadQuizImages();
+
+    const hasContent = stageContent.innerHTML.trim().length > 0;
+    if (hasContent && !reduceMotion) {
+      stageContent.classList.remove('q-fade-in');
+      stageContent.classList.add('q-fade-out');
+      window.setTimeout(() => renderStageContent(stage), 260);
+    } else {
+      renderStageContent(stage);
+    }
+  }
+
   const startButton = document.getElementById('prelp-start');
   window.FunnelAnalytics?.stage(1, 'Introdução do quiz');
+  preloadQuizImages();
   if (startButton) startButton.addEventListener('click', () => {
     window.FunnelAnalytics?.action('intro_cta_clicked', {}, 1);
     goToStage(2);
