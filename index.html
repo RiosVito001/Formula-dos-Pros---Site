@@ -606,7 +606,9 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .pillars-section .wrap { position: relative; z-index: 1; }
 .pillars-flags { display: flex; align-items: center; justify-content: flex-start; gap: 14px; margin-bottom: 16px; }
-.pillars-flags img { height: 28px; border: 1px solid rgba(255,255,255,.22); border-radius: 7px; box-shadow: 0 6px 14px rgba(0,0,0,.22); }
+.pillars-flags img { height: 28px; width: auto; object-fit: contain; border: 1px solid rgba(255,255,255,.22); border-radius: 7px; box-shadow: 0 6px 14px rgba(0,0,0,.22); }
+.pillars-flags img:first-child { aspect-ratio: 1280 / 896; }
+.pillars-flags img:last-of-type { aspect-ratio: 1280 / 674; }
 .pillars-flags .sep { font-size: 16px; color: #C9A84C; font-weight: 900; }
 .pillars-section .sec-tag { color: #f0d477; border-color: rgba(201,168,76,.45); background: rgba(201,168,76,.1); }
 .pillars-section .sec-title { color: #fff; }
