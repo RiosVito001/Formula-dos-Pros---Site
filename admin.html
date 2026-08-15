@@ -32,7 +32,7 @@
         <div>
           <span class="eyebrow">FÓRMULA DOS PRÓS</span>
           <h1>Analytics do Quiz + LP</h1>
-          <p id="dashboard-subtitle">Visão completa do funil e dos acessos diretos à página de venda.</p>
+          <p id="dashboard-subtitle">Dados da nova versão: retenção da VSL, avanço nas telas e intenção de compra.</p>
         </div>
         <div class="topbar-actions">
           <button class="ghost-button" id="export-button" type="button">Exportar CSV</button>
@@ -43,7 +43,6 @@
       <section class="filters panel">
         <label>De<input id="date-from" type="date"></label>
         <label>Até<input id="date-to" type="date"></label>
-        <label>País<select id="filter-country"><option value="">Todos</option><option>Brasil</option><option>Portugal</option></select></label>
         <label>Dispositivo<select id="filter-device"><option value="">Todos</option><option value="mobile">Mobile</option><option value="desktop">Computador</option><option value="tablet">Tablet</option></select></label>
         <label>Origem<select id="filter-source"><option value="">Todas</option></select></label>
         <button class="primary-button filter-button" id="refresh-button" type="button">ATUALIZAR</button>
@@ -61,28 +60,25 @@
         <div class="funnel-list" id="funnel-list"></div>
       </section>
 
+      <section class="panel section-panel">
+        <div class="section-heading">
+          <div><span class="eyebrow">VSL</span><h2>Retenção do vídeo</h2></div>
+          <span class="section-note">Percentual de pessoas que chegou a cada ponto do vídeo</span>
+        </div>
+        <div class="retention-grid" id="retention-grid"></div>
+      </section>
+
       <div class="two-column">
         <section class="panel section-panel">
           <div class="section-heading"><div><span class="eyebrow">AQUISIÇÃO</span><h2>Origem dos acessos</h2></div></div>
           <div class="table-wrap"><table><thead><tr><th>Origem</th><th>Sessões</th><th>Concluíram</th><th>Checkout</th></tr></thead><tbody id="source-table"></tbody></table></div>
         </section>
-        <section class="panel section-panel">
-          <div class="section-heading"><div><span class="eyebrow">PERFIL</span><h2>Resumo do público</h2></div></div>
-          <div class="audience-grid" id="audience-grid"></div>
-        </section>
+        <section class="panel section-panel"><div class="section-heading"><div><span class="eyebrow">CONVERSÃO</span><h2>Ações importantes</h2></div></div><div class="action-grid" id="action-grid"></div></section>
       </div>
 
       <section class="panel section-panel">
-        <div class="section-heading">
-          <div><span class="eyebrow">RESPOSTAS</span><h2>O que os jogadores escolheram</h2></div>
-          <span class="section-note">Considera a resposta final de cada sessão</span>
-        </div>
-        <div class="answers-grid" id="answers-grid"></div>
-      </section>
-
-      <section class="panel section-panel">
         <div class="section-heading"><div><span class="eyebrow">SESSÕES</span><h2>Acessos mais recentes</h2></div></div>
-        <div class="table-wrap"><table><thead><tr><th>Horário</th><th>Origem</th><th>País</th><th>Posição</th><th>Dispositivo</th><th>Etapa máxima</th><th>Status</th></tr></thead><tbody id="sessions-table"></tbody></table></div>
+        <div class="table-wrap"><table><thead><tr><th>Horário</th><th>Origem</th><th>Dispositivo</th><th>VSL</th><th>Última tela</th><th>Status</th></tr></thead><tbody id="sessions-table"></tbody></table></div>
       </section>
     </section>
   </main>
