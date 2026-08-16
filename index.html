@@ -3365,6 +3365,12 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-final-pillar { padding: 12px 8px; color: #fff; font-size: .76rem; font-weight: 900; text-align: center; background: linear-gradient(145deg,#2c1c12,#100c09); border: 1px solid #5d351c; border-radius: 12px; }
 #prelp-quiz .q-final-stage .q-primary { color: #fff !important; background: linear-gradient(135deg,#ff861e,#e65d00); box-shadow: 0 7px 0 #9c3c00,0 14px 28px rgba(174,68,0,.23); }
 @media (max-width: 380px) { .q-final-modules,.q-final-pillars { grid-template-columns: 1fr; } }
+.q-receive-list { display: grid; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.q-receive-list li { padding: 11px 12px; color: #2b1b11; font-size: .78rem; font-weight: 800; line-height: 1.25; background: #fff; border: 1px solid #efd8c7; border-radius: 11px; box-shadow: 0 5px 14px rgba(88,42,9,.06); }
+.q-team-proof { margin: 0 0 20px; padding: 16px 12px; background: #fff; border: 1px solid #eadbce; border-radius: 15px; box-shadow: 0 9px 22px rgba(72,38,13,.08); }
+.q-team-proof h2 { margin: 0 0 12px; color: #21150e; font-size: 1rem; line-height: 1.2; text-align: center; }
+.q-team-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
+.q-team-gallery img { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; background: #fff; border: 1px solid #eee5de; border-radius: 9px; }
 .q-course-list { display: grid; gap: 12px; }
 .q-course-card { overflow: hidden; background: #fff; border: 1px solid #eadbce; border-radius: 15px; box-shadow: 0 9px 22px rgba(72,38,13,.09); }
 .q-course-card > img { display: block; width: 100%; aspect-ratio: 1460/752; object-fit: cover; }
@@ -4049,10 +4055,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     <div class="prelp-card">
       <div id="prelp-intro" class="prelp-view prelp-intro-v2">
         <div class="prelp-version-badge"><span aria-hidden="true"></span>1.327 JOGADORES ESTÃO USANDO A FÓRMULA</div>
-        <h1 id="prelp-title" class="prelp-title">Eu vou revelar o que está <span class="prelp-promise-highlight">travando</span> o seu futebol e mostrar o caminho para você jogar mais solto, confiante e decisivo nos próximos <span class="prelp-promise-highlight">30 dias.</span></h1>
-        <p class="prelp-copy">Mesmo que você treine muito, trave nos jogos ou ainda não saiba exatamente o que precisa melhorar.</p>
+        <h1 id="prelp-title" class="prelp-title">Descubra o que está <span class="prelp-promise-highlight">travando</span> seu jogo e evolua nos próximos <span class="prelp-promise-highlight">30 dias.</span></h1>
+        <p class="prelp-copy">Responda rápido e encare o desafio.</p>
         <img class="prelp-intro-thumbnail" src="images/002-ySfNs-thumbnail.webp" alt="Fórmula dos Prós com dois jovens jogadores" loading="eager">
-        <div class="prelp-no-hype">Aqui você não vai encontrar treinos aleatórios, promessas mágicas ou exercícios sem sentido.</div>
+        <div class="prelp-no-hype">Sem enrolação. Só o que ajuda no campo.</div>
         <div id="prelp-start" class="prelp-swipe-control" role="slider" aria-label="Arraste a seta para a direita para iniciar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
           <span class="prelp-swipe-fill" aria-hidden="true"></span>
           <span class="prelp-swipe-label">Iniciar agora</span>
@@ -4300,6 +4306,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       card.classList.remove('is-stage-mode');
       return;
     }
+    if (currentStage === 3.6) return goToStage(3.5);
+    if (currentStage === 3.5) return goToStage(3.4);
+    if (currentStage === 3.4) return goToStage(3.3);
+    if (currentStage === 3.3) return goToStage(3.2);
+    if (currentStage === 3.2) return goToStage(3.1);
+    if (currentStage === 3.1) return goToStage(3);
+    if (currentStage === 4) return goToStage(3.6);
     goToStage(currentStage - 1);
   }
 
@@ -4400,26 +4413,21 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function renderStage2() {
     renderScreen(2,
       '<div class="q-belief-stage">' +
-        '<h1 class="q-belief-title">Você não precisa de dom, estrutura profissional ou treinar horas por dia.</h1>' +
-        '<p class="q-belief-thought">Talvez você esteja pensando:<br><strong>“Mas eu já treino muito… por que continuo travando nos jogos?”</strong></p>' +
-        '<div class="q-belief-metric">' +
-          '<small>JOGADORES JÁ USANDO A FÓRMULA</small>' +
-          '<strong class="q-belief-number">1.327+</strong>' +
-          '<p>um método organizado para jogar mais solto e confiante</p>' +
-        '</div>' +
+        '<h1 class="q-belief-title">Você não precisa nascer com dom para jogar bem.</h1>' +
+        '<p class="q-belief-thought"><strong>Treina muito, mas ainda trava no jogo?</strong></p>' +
+        '<div class="q-belief-metric"><small>JOGADORES NO MÉTODO</small><strong class="q-belief-number">1.327+</strong><p>treinando com mais direção</p></div>' +
         '<div class="q-belief-pillars" aria-label="Pilares do método">' +
           '<div class="q-belief-pillar"><span>🧠</span>INSTINTO</div>' +
           '<div class="q-belief-pillar"><span>⚡</span>FLOW</div>' +
           '<div class="q-belief-pillar"><span>⚽</span>CORPO</div>' +
         '</div>' +
-        '<h2 class="q-belief-core">A evolução não vem de treinar mais. Vem de treinar <mark>o que realmente está travando o seu jogo.</mark></h2>' +
-        '<p class="q-belief-explain">A Fórmula dos Prós organiza o caminho e mostra onde colocar sua energia para evoluir de verdade.</p>' +
+        '<h2 class="q-belief-core">Não é treinar mais. É treinar <mark>o que falta no seu jogo.</mark></h2>' +
         '<div class="q-belief-list">' +
-          '<div class="q-belief-item"><span>✓</span>Sem precisar nascer com “dom”</div>' +
-          '<div class="q-belief-item"><span>✓</span>Sem treinar por horas todos os dias</div>' +
-          '<div class="q-belief-item"><span>✓</span>Sem depender de equipamentos caros</div>' +
+          '<div class="q-belief-item"><span>✓</span>Sem equipamento caro</div>' +
+          '<div class="q-belief-item"><span>✓</span>Sem treino aleatório</div>' +
+          '<div class="q-belief-item"><span>✓</span>Sem horas de enrolação</div>' +
         '</div>' +
-        '<button class="q-primary" type="button" data-continue>DESCOBRIR O QUE ME TRAVA →</button>' +
+        '<button class="q-primary" type="button" data-continue>QUERO DESCOBRIR →</button>' +
       '</div>');
     bindContinue(3);
   }
@@ -4438,40 +4446,114 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function renderStage3() {
     renderScreen(3,
       '<div class="q-method-stage">' +
-        '<h1 class="q-method-title">Você não precisa de mais um treino. Precisa parar de alimentar <mark>o que trava seu jogo.</mark></h1>' +
-        '<p class="q-method-opening">Se você já tentou copiar o treino de um craque, seguir desafios de 30 dias ou repetir exercícios até cansar, talvez tenha melhorado no treino… <strong>mas continuado travando no jogo.</strong></p>' +
-        '<p class="q-method-explain">Isso acontece porque movimentos soltos não viram desempenho automaticamente. Seu cérebro precisa <strong>reconhecer o cenário, decidir e executar sob pressão.</strong></p>' +
+        '<h1 class="q-method-title">Copiar treino de craque não resolve <mark>o seu problema.</mark></h1>' +
+        '<p class="q-method-opening">Você pode mandar bem no treino e travar no jogo. Isso acontece quando falta <strong>leitura, decisão e confiança.</strong></p>' +
         '<div class="q-method-panel">' +
-          '<span class="q-method-panel-label">COMPARAÇÃO ENTRE CAMINHOS</span>' +
-          '<div class="q-method-row">' +
-            '<span class="q-method-row-icon">✕</span><span><strong>Treinos aleatórios</strong><small>Muitos exercícios, pouca transferência para o jogo</small></span><span class="q-method-row-arrow">⌄</span>' +
-          '</div>' +
-          '<div class="q-method-row is-active">' +
-            '<span class="q-method-row-icon">V2</span><span><strong>Fórmula dos Prós V2</strong><small>Identificar → priorizar → aplicar no jogo</small></span><span class="q-method-row-arrow">⌃</span>' +
-          '</div>' +
-          '<div class="q-method-row">' +
-            '<span class="q-method-row-icon">✕</span><span><strong>Copiar jogadores profissionais</strong><small>O treino deles não foi feito para o seu bloqueio</small></span><span class="q-method-row-arrow">⌄</span>' +
-          '</div>' +
+          '<span class="q-method-panel-label">DOIS CAMINHOS</span>' +
+          '<div class="q-method-row"><span class="q-method-row-icon">✕</span><span><strong>Treino aleatório</strong><small>Muito exercício, pouca evolução no jogo</small></span><span class="q-method-row-arrow">⌄</span></div>' +
+          '<div class="q-method-row is-active"><span class="q-method-row-icon">V2</span><span><strong>Fórmula dos Prós V2</strong><small>Identificar → treinar → aplicar</small></span><span class="q-method-row-arrow">⌃</span></div>' +
         '</div>' +
-        '<div class="q-method-alert"><strong>ATENÇÃO:</strong> a Fórmula não joga por você. Ela mostra o que está faltando, organiza suas prioridades e evita que você desperdice energia no treino errado.</div>' +
-        '<button class="q-primary" type="button" data-continue>VER NA PRÁTICA →</button>' +
+        '<div class="q-method-alert"><strong>Seu desafio:</strong> descobrir o que está travando você.</div>' +
+        '<button class="q-primary" type="button" data-continue>COMEÇAR O QUIZ →</button>' +
       '</div>');
-    bindContinue(4);
+    bindContinue(3.1);
+  }
+
+  function renderStagePosition() {
+    renderScreen(3.1,
+      '<h1 class="q-title">Qual posição você joga?</h1>' +
+      '<p class="q-subtitle">Escolha a sua ⚽</p>' +
+      '<div class="q-options">' +
+        option('Goleiro', 'Goleiro', '🧤') +
+        option('Zagueiro', 'Zagueiro', '🛡️') +
+        option('Lateral', 'Lateral', '🏃') +
+        option('Volante', 'Volante', '🔒') +
+        option('Meia', 'Meia', '🎯') +
+        option('Atacante', 'Atacante', '⚡') +
+      '</div>');
+    bindAutoChoices('position', 3.2);
+  }
+
+  function renderStageDifficulty() {
+    renderScreen(3.2,
+      '<h1 class="q-title">Qual é a sua maior dificuldade?</h1>' +
+      '<p class="q-subtitle">Escolha o que mais trava seu jogo.</p>' +
+      '<div class="q-options">' +
+        option('Finalização', 'Finalização', '🎯') +
+        option('Domínio', 'Domínio', '⚽') +
+        option('Velocidade', 'Velocidade', '⚡') +
+        option('Visão de jogo', 'Visão de jogo', '👀') +
+        option('Marcação', 'Marcação', '🛡️') +
+        option('Confiança', 'Confiança', '🧠') +
+      '</div>');
+    bindAutoChoices('difficulty', 3.3);
+  }
+
+  function renderStageMatchPressure() {
+    renderScreen(3.3,
+      '<h1 class="q-title">No jogo valendo, o que mais acontece?</h1>' +
+      '<p class="q-subtitle">Marca a situação que mais parece com você.</p>' +
+      '<div class="q-options">' +
+        option('think', 'Penso demais e travo', '😵') +
+        option('slow', 'Demoro para decidir', '🐢') +
+        option('hide', 'Me escondo do jogo', '🙈') +
+        option('rush', 'Faço tudo com pressa', '🔥') +
+      '</div>');
+    bindAutoChoices('matchPressure', 3.4);
+  }
+
+  function renderStageOnBall() {
+    renderScreen(3.4,
+      '<h1 class="q-title">Quando a bola chega, qual é o problema?</h1>' +
+      '<p class="q-subtitle">Escolha o que mais atrapalha sua jogada.</p>' +
+      '<div class="q-options">' +
+        option('headDown', 'Abaixo a cabeça', '👇') +
+        option('badTouch', 'Meu domínio escapa', '🧱') +
+        option('late', 'Vejo a jogada tarde', '⏳') +
+        option('fear', 'Tenho medo de arriscar', '😰') +
+      '</div>');
+    bindAutoChoices('onBallProblem', 3.5);
+  }
+
+  function renderStageAfterMistake() {
+    renderScreen(3.5,
+      '<h1 class="q-title">Depois de errar, como você reage?</h1>' +
+      '<p class="q-subtitle">Seja sincero. Isso muda seu jogo.</p>' +
+      '<div class="q-options">' +
+        option('confidenceDrop', 'Perco a confiança', '💔') +
+        option('stopAsking', 'Paro de pedir a bola', '🤐') +
+        option('angry', 'Fico nervoso comigo', '😤') +
+        option('force', 'Tento resolver tudo sozinho', '🦸') +
+      '</div>');
+    bindAutoChoices('afterMistake', 3.6);
+  }
+
+  function renderStageTrainingBlock() {
+    renderScreen(3.6,
+      '<h1 class="q-title">O que mais trava sua evolução?</h1>' +
+      '<p class="q-subtitle">Escolha seu maior bloqueio hoje.</p>' +
+      '<div class="q-options">' +
+        option('noDirection', 'Não sei o que treinar', '❓') +
+        option('noRoutine', 'Não consigo ter rotina', '📆') +
+        option('noSpace', 'Tenho pouco espaço', '🏠') +
+        option('noTransfer', 'Treino bem, mas não levo para o jogo', '🔄') +
+      '</div>');
+    bindAutoChoices('trainingBlock', 4);
   }
 
   function renderStage4() {
     renderScreen(4,
       '<div class="q-growth-stage-content">' +
-        '<span class="q-growth-kicker">Informativo</span>' +
-        '<h1 class="q-growth-title">Veja o crescimento da <mark>Fórmula dos Prós</mark> em 2026 🔥</h1>' +
-        '<p class="q-growth-copy">Um método criado para organizar o treino e ajudar jogadores a desenvolver instinto, confiança e liberdade dentro de campo.</p>' +
+        '<span class="q-growth-kicker">Desafio aceito</span>' +
+        '<h1 class="q-growth-title">Seu próximo nível começa <mark>agora.</mark> 🔥</h1>' +
+        '<p class="q-growth-copy">Vamos atacar sua dificuldade com treino certo e atitude.</p>' +
         '<div class="q-growth-stats">' +
-          '<div class="q-growth-stat"><small>JOGADORES USANDO</small><strong>1.327+</strong><span>▲ comunidade crescendo</span></div>' +
-          '<div class="q-growth-stat"><small>PILARES PRINCIPAIS</small><strong>3</strong><span>Instinto · Flow · Corpo</span></div>' +
+          '<div class="q-growth-stat"><small>JOGADORES NO MÉTODO</small><strong>1.327+</strong><span>▲ time crescendo</span></div>' +
+          '<div class="q-growth-stat"><small>SEU FOCO</small><strong>1</strong><span>evoluir de verdade</span></div>' +
         '</div>' +
         '<div class="q-growth-chart">' +
-          '<small>CRESCIMENTO DA COMUNIDADE</small>' +
-          '<strong>1.327+ jogadores</strong>' +
+          '<small>EVOLUÇÃO DA COMUNIDADE</small>' +
+          '<strong>Junte-se ao time</strong>' +
           '<svg viewBox="0 0 320 145" role="img" aria-label="Gráfico ilustrativo do crescimento da comunidade Fórmula dos Prós">' +
             '<defs><linearGradient id="qOrangeArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a00" stop-opacity=".42"/><stop offset="1" stop-color="#ff7a00" stop-opacity="0"/></linearGradient></defs>' +
             '<path d="M8 126 C45 120 55 101 83 100 S122 78 145 82 S182 55 208 58 S246 35 275 37 S299 20 314 16 L314 139 L8 139 Z" fill="url(#qOrangeArea)"/>' +
@@ -4480,7 +4562,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
           '</svg>' +
           '<div class="q-growth-axis"><span>Início</span><span>V1</span><span>V2</span><span>Agora</span></div>' +
         '</div>' +
-        '<button class="q-primary" type="button" data-growth-continue>CONTINUAR →</button>' +
+        '<button class="q-primary" type="button" data-growth-continue>BORA CONTINUAR →</button>' +
       '</div>');
     stageContent.querySelector('.q-screen').classList.add('q-growth-screen');
     stageContent.querySelector('[data-growth-continue]').addEventListener('click', () => {
@@ -4492,31 +4574,25 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function renderStage5() {
     renderScreen(5,
       '<div class="q-benefits-stage">' +
-        '<h1 class="q-benefits-title">A decisão agora é sua: continuar treinando no escuro ou entender o que realmente muda o seu jogo.</h1>' +
-        '<p class="q-benefits-opening">Seu objetivo não é acumular exercícios. É deixar o medo, a dúvida e a falta de direção <strong>pararem de controlar seu futebol.</strong></p>' +
+        '<h1 class="q-benefits-title">Treinar no escuro ou evoluir com direção?</h1>' +
+        '<p class="q-benefits-opening">A escolha é sua. <strong>Seu jogo também.</strong></p>' +
         '<div class="q-benefit-compare">' +
           '<section class="q-benefit-box is-without"><h2><span>✕</span>SEM A FÓRMULA</h2><ul class="q-benefit-list">' +
-            '<li>Treina muito, mas não sabe o que corrigir</li>' +
-            '<li>Trava quando o jogo fica rápido ou pressionado</li>' +
-            '<li>Copia treinos que não foram feitos para você</li>' +
-            '<li>Melhora no exercício, mas não transfere para o jogo</li>' +
-            '<li>Joga com medo de errar e perder a bola</li>' +
-            '<li>Não consegue manter uma rotina com direção</li>' +
+            '<li>Treino aleatório</li>' +
+            '<li>Medo de errar</li>' +
+            '<li>Jogo travado</li>' +
           '</ul></section>' +
           '<section class="q-benefit-box is-with"><h2><span>✓</span>COM A FÓRMULA</h2><ul class="q-benefit-list">' +
-            '<li>Clareza sobre o que está travando seu futebol</li>' +
-            '<li>Prioridades certas para a sua posição e objetivo</li>' +
-            '<li>Decisões mais naturais através do instinto</li>' +
-            '<li>Mais confiança para tentar, errar e continuar jogando</li>' +
-            '<li>Corpo mais solto e conectado ao movimento</li>' +
-            '<li>Uma rotina organizada para medir sua evolução</li>' +
+            '<li>Treino com direção</li>' +
+            '<li>Decisão mais rápida</li>' +
+            '<li>Mais confiança</li>' +
           '</ul><img class="q-benefit-proof-image" src="images/fdp-v2-beneficios.webp" alt="Fórmula dos Prós V2 apresentada por jogador profissional" loading="lazy"></section>' +
         '</div>' +
         '<div class="q-benefit-cards">' +
-          '<article class="q-benefit-info is-orange"><span>ACESSO AO TREINAMENTO</span><strong>A Fórmula dos Prós V2 é um treinamento completo e pago para quem decidiu evoluir com método.</strong><p>Ao final, você poderá conhecer o acesso, tudo o que está incluído e a condição liberada para entrar.</p></article>' +
-          '<article class="q-benefit-info is-green"><span>VOUCHER PREMIADO LIBERADO</span><strong>Você ganhou um voucher especial para garantir o treinamento por uma condição exclusiva.</strong><p>O voucher será aplicado na finalização caso você decida entrar para a Fórmula dos Prós V2.</p></article>' +
+          '<article class="q-benefit-info is-orange"><span>TREINAMENTO COMPLETO</span><strong>Método pago para quem quer subir de nível.</strong></article>' +
+          '<article class="q-benefit-info is-green"><span>VOUCHER LIBERADO</span><strong>Condição especial nesta sessão.</strong></article>' +
         '</div>' +
-        '<button class="q-primary" type="button" data-benefits-continue>CONTINUAR PARA FINALIZAÇÃO →</button>' +
+        '<button class="q-primary" type="button" data-benefits-continue>ACEITAR O DESAFIO →</button>' +
       '</div>');
     stageContent.querySelector('[data-benefits-continue]').addEventListener('click', () => goToStage(6));
   }
@@ -4525,11 +4601,11 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     renderScreen(6,
       '<div class="q-voucher-stage">' +
         '<h1 class="q-voucher-title">Resgate seu voucher 🎁</h1>' +
-        '<p class="q-voucher-copy">Seu voucher premiado foi reservado nesta sessão. Clique abaixo para revelar a condição liberada.</p>' +
+        '<p class="q-voucher-copy">Sua condição especial está pronta.</p>' +
         '<div class="q-voucher-ticket"><div class="q-voucher-paper">' +
           '<div class="q-voucher-mark">V2</div>' +
           '<h2>Resgate seu voucher</h2>' +
-          '<p>Condição exclusiva para a Fórmula dos Prós V2</p>' +
+          '<p>Condição exclusiva da Fórmula V2</p>' +
           '<div class="q-voucher-barcode" aria-hidden="true"></div><div class="q-voucher-code">237849560123</div>' +
         '</div></div>' +
         '<button class="q-primary" type="button" data-redeem-voucher>RESGATAR AGORA</button>' +
@@ -4545,7 +4621,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     renderScreen(6,
       '<div class="q-voucher-stage q-voucher-redeemed">' +
         '<h1 class="q-voucher-title">Voucher resgatado! 🎉</h1>' +
-        '<p class="q-voucher-copy">A condição foi liberada para esta sessão. Finalize abaixo para continuar seu acesso.</p>' +
+        '<p class="q-voucher-copy">Desconto liberado. Bora avançar.</p>' +
         '<div class="q-voucher-ticket"><div class="q-voucher-paper">' +
           '<div class="q-voucher-mark">✓</div>' +
           '<strong class="q-voucher-discount">83% OFF</strong>' +
@@ -4562,65 +4638,84 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     const modules = [
       {
         title: 'Comece Aqui', image: 'images/module-comece-aqui.png',
-        description: 'Descubra seu ponto de partida e monte um plano claro para os próximos 30 dias.',
-        lessons: ['Sua jornada na Fórmula dos Prós V2', 'Diagnóstico do jogador e regra 80/20', 'Como usar aulas e treinos guiados', 'Plano de evolução de 30 dias', 'Bônus: gerador de rotina', 'Fundamentos: liderança e postura']
+        description: 'Descubra seu ponto de partida.',
+        lessons: ['Diagnóstico do jogador', 'Plano de 30 dias', 'Gerador de rotina']
       },
       {
         title: 'Domínio da Bola', image: 'images/module-dominio-bola.png',
-        description: 'Construa controle corporal, primeiro toque e domínio para jogar com mais tempo e confiança.',
-        lessons: ['O corpo antes da bola', 'Primeiro toque que dá tempo', 'Os 3 primeiros toques', 'Ball Mastery: 6 dias guiados', 'Sola, parte interna e externa', 'Puxadas em V e movimentos brasileiros']
+        description: 'Controle a bola com confiança.',
+        lessons: ['Primeiro toque', 'Ball Mastery', 'Controle completo']
       },
       {
         title: 'Instinto & 1x1', image: 'images/module-instinto-1x1.png',
-        description: 'Pare de colecionar dribles e aprenda a vencer o defensor com leitura, reação e mudança de direção.',
-        lessons: ['O que é instinto no futebol', 'Seu arsenal de 3 movimentos', 'Como treinar sem automatizar', 'Leia o defensor antes de driblar', 'Teoria IDP: Messi e Neymar', 'As 5 armas para ganhar o 1x1']
+        description: 'Vença o marcador sem pensar demais.',
+        lessons: ['Instinto no futebol', 'Leitura do defensor', 'Armas do 1x1']
       },
       {
         title: 'Inteligência de Jogo', image: 'images/module-inteligencia-jogo.png',
-        description: 'Veja antes, receba melhor e tome decisões mais rápidas sem depender apenas do talento.',
-        lessons: ['Como melhorar seu QI no futebol', 'Leitura de espaço e posicionamento', 'Táticas aplicadas ao jogo', 'E-book de inteligência tática']
+        description: 'Veja antes e decida mais rápido.',
+        lessons: ['Leitura de espaço', 'Posicionamento', 'Tática no jogo']
       },
       {
         title: 'Finalização & Ataque', image: 'images/module-finalizacao-ataque.png',
-        description: 'Transforme chegada ao ataque em ações mais perigosas, fortes e decisivas.',
-        lessons: ['Como chutar muito forte', 'Mecânica e transferência de força', 'Finalização com confiança', 'Tomada de decisão no último terço']
+        description: 'Seja mais perigoso no ataque.',
+        lessons: ['Chute forte', 'Mecânica correta', 'Finalização confiante']
       },
       {
         title: 'Físico de Jogador', image: 'images/module-fisico-jogador.png',
-        description: 'Desenvolva velocidade, potência, mobilidade e resistência específicas para o futebol.',
-        lessons: ['O físico que o futebol exige', 'Aquecimento e ativação', 'Velocidade explosiva e máxima', 'Pliometria, core e rotação de quadril', 'Fáscia: teoria e treino prático', 'Mobilidade pós-treino']
+        description: 'Ganhe força, velocidade e resistência.',
+        lessons: ['Explosão', 'Pliometria', 'Fáscia e mobilidade']
       },
       {
         title: 'Mentalidade & Flow', image: 'images/module-mentalidade-flow.png',
-        description: 'Entre em campo mais confiante, recupere-se dos erros e jogue com a mente conectada.',
-        lessons: ['Metas claras e visualização', 'Diálogo interno positivo', 'Técnicas de respiração', 'Teoria da excitação', 'Como alcançar o estado de Flow', 'Flow em todos os jogos + arquivos']
+        description: 'Jogue solto mesmo sob pressão.',
+        lessons: ['Visualização', 'Respiração', 'Estado de Flow']
       },
       {
         title: 'Rotina de Atleta', image: 'images/module-rotina-atleta.png',
-        description: 'Organize os bastidores da sua evolução: carreira, alimentação, peneiras e preparação pré-jogo.',
-        lessons: ['Como ser notado por olheiros', 'Empresários e carreira', 'Peneiras no futebol', 'Planos para perder, ganhar ou manter peso', 'Hidratação e e-book alimentar', 'Rotina pré-jogo']
+        description: 'Organize sua evolução fora do campo.',
+        lessons: ['Peneiras', 'Alimentação', 'Rotina pré-jogo']
       }
     ];
     const moduleCards = modules.map((module) =>
       '<article class="q-course-card"><img src="' + module.image + '" alt="Módulo ' + escapeHtml(module.title) + '" loading="lazy">' +
-      '<details><summary>' + escapeHtml(module.title) + '</summary><div class="q-course-body"><p>' + escapeHtml(module.description) + '</p><ul class="q-course-lessons">' +
+      '<details open><summary>' + escapeHtml(module.title) + '</summary><div class="q-course-body"><p>' + escapeHtml(module.description) + '</p><ul class="q-course-lessons">' +
       module.lessons.map((lesson) => '<li>' + escapeHtml(lesson) + '</li>').join('') +
       '</ul></div></details></article>'
     ).join('');
     const methodVideo = (id, title) => '<div class="q-method-video"><strong>' + escapeHtml(title) + '</strong><lt-v2 v="' + id + '" ar="9:16" sc="0" st="0" ap="0" pc="ef6c00" pe="4x" ph="8"></lt-v2></div>';
     renderScreen(8,
       '<div class="q-final-stage">' +
-        '<h1 class="q-title">Tudo que você vai receber</h1>' +
-        '<p class="q-final-intro">Abra cada módulo para conhecer os principais conteúdos que vão guiar sua evolução.</p>' +
+        '<h1 class="q-title">O Que Você Recebe</h1>' +
+        '<p class="q-final-intro">Tudo que você precisa em um só lugar</p>' +
+        '<ul class="q-receive-list">' +
+          '<li>📱 Treino direto no celular</li>' +
+          '<li>💬 Suporte via WhatsApp</li>' +
+          '<li>🛡️ Comunidade 100% segura</li>' +
+          '<li>🎮 Comunidade no Discord</li>' +
+          '<li>🔄 Conteúdo sempre atualizado</li>' +
+          '<li>🌎 Comunidade global (+10.000 jogadores)</li>' +
+        '</ul>' +
+        '<section class="q-team-proof" aria-labelledby="q-team-proof-title"><h2 id="q-team-proof-title">Nossos alunos estão passando em base</h2><div class="q-team-gallery">' +
+          '<img src="images/006-RErCOTt.webp" alt="Aluno aprovado em base 1" loading="lazy">' +
+          '<img src="images/007-a2lsHo4.webp" alt="Aluno aprovado em base 2" loading="lazy">' +
+          '<img src="images/008-Pf1aABg.webp" alt="Aluno aprovado em base 3" loading="lazy">' +
+          '<img src="images/009-4MPO47q.webp" alt="Aluno aprovado em base 4" loading="lazy">' +
+          '<img src="images/010-7loQLKW.webp" alt="Aluno aprovado em base 5" loading="lazy">' +
+          '<img src="images/011-HJjnTEU.webp" alt="Aluno aprovado em base 6" loading="lazy">' +
+        '</div></section>' +
+        '<p class="q-final-label">Seus módulos</p>' +
         '<div class="q-course-list">' + moduleCards + '</div>' +
         '<section class="q-method-block"><div class="q-method-flags"><img src="images/012-1akQLYU.webp" alt="Brasil"><strong>×</strong><img src="images/013-F3vlMIV.webp" alt="Estados Unidos"></div>' +
-          '<span class="q-method-kicker">Método Americano</span><h2>Os 3 pilares que trouxemos dos EUA</h2>' +
-          '<p>A base científica usada para desenvolver atletas de elite — agora aplicada ao seu jogo.</p>' +
+          '<span class="q-method-kicker">Método Americano</span><h2>3 pilares para subir de nível</h2>' +
+          '<p>Instinto, Fáscia e Flow no seu jogo.</p>' +
           '<div class="q-method-videos">' + methodVideo('01f750aa-3f9a-4594-88e4-4e56a896d861', 'Módulo do Flow') + methodVideo('d81e8906-b404-48e3-a5f0-14ea66fdac77', 'Módulo da Fáscia') + methodVideo('d364f25a-24ca-4fbe-b914-602978b1b0cb', 'Módulo do Instinto') + '</div>' +
         '</section>' +
         '<button class="q-primary" type="button" data-final-continue>CONTINUAR</button>' +
       '</div>', false);
-    stageContent.querySelector('[data-final-continue]').addEventListener('click', () => goToStage(9));
+    stageContent.querySelector('[data-final-continue]').addEventListener('click', () => {
+      window.location.href = 'oferta.html';
+    });
   }
 
   function renderStage9Purchase() {
@@ -4981,6 +5076,12 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       case 1.1: renderStageVsl(); break;
       case 2: renderStage2(); break;
       case 3: renderStage3(); break;
+      case 3.1: renderStagePosition(); break;
+      case 3.2: renderStageDifficulty(); break;
+      case 3.3: renderStageMatchPressure(); break;
+      case 3.4: renderStageOnBall(); break;
+      case 3.5: renderStageAfterMistake(); break;
+      case 3.6: renderStageTrainingBlock(); break;
       case 4: renderStage4(); break;
       case 5: renderStage5(); break;
       case 6: renderStage6(); break;

@@ -3396,12 +3396,12 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 #prelp-quiz.is-purchase-stage .q-progress { background: rgba(255,255,255,.13); }
 #prelp-quiz.is-purchase-stage .q-progress > span { background: linear-gradient(90deg,#ff9b3d,#ef6c00); }
 .q-purchase-alert { margin: 0 0 16px; padding: 11px 13px; color: #7a3b00; font-size: .82rem; font-weight: 800; line-height: 1.4; text-align: center; background: #fff1d9; border: 1px solid #ffbd68; border-radius: 10px; }
-.q-purchase-stage .q-title { margin-bottom: 7px; color: #fff; }
-.q-purchase-hero { display: block; width: 100%; margin: 12px auto 15px; border: 2px solid rgba(255,174,62,.75); border-radius: 14px; box-shadow: 0 12px 28px rgba(0,0,0,.32); }
-.q-purchase-intro { margin: 0 auto 20px; color: rgba(255,255,255,.82); font-size: .95rem; line-height: 1.55; text-align: center; }
+.q-purchase-stage .q-title { margin-bottom: 7px; color: #fff; font-size: clamp(2rem, 8vw, 3rem); }
+.q-purchase-hero { display: block; width: 100%; margin: 12px auto 15px; }
+.q-purchase-intro { max-width: 620px; margin: 0 auto 20px; color: rgba(255,255,255,.9); font-size: clamp(1.1rem, 4.4vw, 1.3rem); font-weight: 700; line-height: 1.5; text-align: center; }
 .q-plan-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: stretch; }
 .q-plan-card { position: relative; display: flex; min-width: 0; padding: 20px 16px 18px; flex-direction: column; color: #21170f; background: #fff; border: 2px solid #ded7d1; border-radius: 16px; box-shadow: 0 12px 28px rgba(0,0,0,.22); }
-.q-plan-card.is-featured { border-color: #ff7b16; box-shadow: 0 0 0 2px rgba(255,123,22,.17),0 16px 32px rgba(0,0,0,.28); }
+.q-plan-card.is-featured { border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34,197,94,.18),0 16px 32px rgba(0,0,0,.28); }
 .q-plan-card.is-anchor { opacity: .82; }
 .q-plan-card.is-anchor .q-plan-old { text-decoration: none; }
 .q-plan-card.is-anchor .q-plan-price { color: #8e8781; text-decoration-line: line-through; text-decoration-thickness: 4px; text-decoration-color: #ef6c00; }
@@ -3427,9 +3427,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-plan-list { display: grid; margin: 0; padding: 0; gap: 10px; list-style: none; }
 .q-plan-list li { display: flex; align-items: flex-start; gap: 8px; color: #463d37; font-size: .82rem; font-weight: 700; line-height: 1.45; }
 .q-plan-list li::before { content: '✓'; flex: 0 0 19px; min-height: 19px; color: #fff; font-size: .65rem; line-height: 19px; text-align: center; background: #ef6c00; border-radius: 50%; }
+.q-plan-card.is-featured .q-plan-list li::before { background: #16a34a; box-shadow: 0 0 0 2px rgba(34,197,94,.14); }
 .q-community-highlight { margin: 16px 0 2px; padding: 14px; color: #3a250f; font-size: .82rem; font-weight: 800; line-height: 1.5; background: #fff3df; border: 1px solid #ffb45d; border-radius: 10px; }
 .q-community-highlight strong { display: block; margin-bottom: 4px; color: #d95700; font-size: .92rem; }
-.q-card-buy { display: block; margin-top: 17px; padding: 17px 12px; color: #fff !important; font-size: .9rem; font-weight: 900; line-height: 1.25; text-align: center; text-decoration: none; background: linear-gradient(135deg,#27cf65,#119742); border: 1px solid #4ae582; border-radius: 10px; box-shadow: 0 6px 0 #08732e,0 10px 22px rgba(18,177,77,.32); animation: qBuyPulse 1.65s ease-in-out infinite; }
+.q-card-buy { display: block; margin-top: 17px; padding: 17px 18px; color: #fff !important; font-size: .9rem; font-weight: 900; line-height: 1.25; text-align: center; text-decoration: none; background: linear-gradient(135deg,#27cf65,#119742); border: 1px solid #4ae582; border-radius: 999px; box-shadow: 0 6px 0 #08732e,0 10px 22px rgba(18,177,77,.32); animation: qBuyPulse 1.65s ease-in-out infinite; }
 .q-card-buy:active { transform: translateY(3px); box-shadow: 0 2px 0 #08732e; }
 @keyframes qBuyPulse { 0%,100% { transform: scale(1); box-shadow: 0 6px 0 #08732e,0 10px 22px rgba(18,177,77,.28); } 50% { transform: scale(1.035); box-shadow: 0 6px 0 #08732e,0 12px 30px rgba(38,211,101,.55); } }
 @media (prefers-reduced-motion: reduce) { .q-card-buy { animation: none; } }
@@ -3454,7 +3455,8 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-proof-feedbacks { display: grid; grid-auto-columns: 73%; grid-auto-flow: column; gap: 9px; padding: 2px 1px 8px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: inline mandatory; scrollbar-color: #ef6c00 rgba(255,255,255,.12); }
 .q-proof-feedbacks img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; background: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 11px; scroll-snap-align: center; }
 @media (min-width: 700px) { .q-proof-audios { grid-template-columns: repeat(3,minmax(0,1fr)); } .q-proof-feedbacks { grid-auto-flow: initial; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: visible; } }
-.q-guarantee-mini { margin: 0 0 16px; padding: 16px; color: #40332b; font-size: .84rem; line-height: 1.55; background: #fff; border: 1px solid #ffb168; border-radius: 13px; }
+.q-guarantee-mini { display: grid; margin: 0 0 16px; padding: 16px; grid-template-columns: minmax(82px, 108px) 1fr; align-items: center; gap: 14px; color: #40332b; font-size: .84rem; line-height: 1.55; background: #fff; border: 1px solid #ffb168; border-radius: 13px; }
+.q-guarantee-mini img { display: block; width: 100%; height: auto; object-fit: contain; }
 .q-guarantee-mini strong { display: block; margin-bottom: 5px; color: #1d140f; font-size: .96rem; }
 .q-whatsapp-specialist { display: flex; margin: 0 0 17px; padding: 15px 11px; align-items: center; justify-content: center; gap: 7px; color: #fff !important; font-size: .84rem; font-weight: 900; line-height: 1.3; text-align: center; text-decoration: none; background: linear-gradient(135deg,#28d367,#16a94c); border: 1px solid #43e27d; border-radius: 11px; box-shadow: 0 6px 0 #087d32,0 12px 24px rgba(0,0,0,.2); }
 .q-whatsapp-specialist:active { transform: translateY(4px); box-shadow: 0 2px 0 #087d32; }
@@ -4313,7 +4315,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     const progress = Math.max(4, Math.round((stage / totalStages) * 100));
     return '<header class="q-header">' +
       (allowBack ? '<button class="q-back" type="button" aria-label="Voltar">‹</button>' : '<span></span>') +
-      (stage === 6 ? '<span></span>' : '<div class="q-logo"><img src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós"></div>') +
+      '<span></span>' +
       '<span></span><div class="q-progress" aria-label="Progresso do quiz"><span style="width:' + progress + '%"></span></div>' +
       '</header>';
   }
@@ -4648,7 +4650,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         '</div><div class="q-proof-subtitle">Feedbacks enviados pelos jogadores</div><div class="q-proof-feedbacks">' +
           '<img src="images/032-YNKqllR.webp" alt="Feedback de aluno 1" loading="lazy"><img src="images/033-jXyzyaP.webp" alt="Feedback de aluno 2" loading="lazy"><img src="images/034-LYWwxcy.webp" alt="Feedback de aluno 3" loading="lazy"><img src="images/035-FIBCfBo.webp" alt="Feedback de aluno 4" loading="lazy"><img src="images/036-4HMMcWa.webp" alt="Feedback de aluno 5" loading="lazy"><img src="images/037-haHlXHF.webp" alt="Feedback de aluno 6" loading="lazy"><img src="images/038-QkyCgog.webp" alt="Feedback de aluno 7" loading="lazy"><img src="images/039-kSN6Mvg.webp" alt="Feedback de aluno 8" loading="lazy">' +
         '</div></section>' +
-        '<div class="q-guarantee-mini"><strong>🛡️ Garantia incondicional de 7 dias</strong>Entre, conheça o treinamento e decida com calma. Se não fizer sentido para você, basta solicitar o reembolso dentro do prazo.</div>' +
+        '<div class="q-guarantee-mini"><img src="images/047-PM66zDW.webp" alt="Selo de garantia de 7 dias" loading="lazy"><div><strong>🛡️ Garantia incondicional de 7 dias</strong>Entre, conheça o treinamento e decida com calma. Se não fizer sentido para você, basta solicitar o reembolso dentro do prazo.</div></div>' +
         '<a class="q-whatsapp-specialist" href="https://wa.me/5519998201534?text=Ol%C3%A1%2C%20quero%20comprar%20mas%20estou%20com%20d%C3%BAvidas" target="_blank" rel="noopener">💬 QUERO COMPRAR MAS TENHO DÚVIDAS</a>' +
         '<h2 class="q-purchase-faq-title">Perguntas frequentes</h2><div class="q-purchase-faq">' +
           '<details><summary>Quando recebo meu acesso?</summary><p>Logo após a confirmação do pagamento, você recebe as instruções para entrar na Fórmula dos Prós V2.</p></details>' +
