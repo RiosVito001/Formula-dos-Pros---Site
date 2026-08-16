@@ -2635,7 +2635,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-age-visual { background: rgba(255,255,255,.12); }
 .q-age-label { color: #fff; background: rgba(91,64,4,.18); }
 .q-check { border-color: rgba(255,255,255,.72); }
-#prelp-quiz .q-option { color: #fff !important; }
+#prelp-quiz .q-option { color: #fff !important; text-shadow: 0 1px 3px rgba(0,0,0,.4); }
 .q-helper { color: #75653b; }
 .q-feedback-callout { color: #b08600; }
 .q-gift-hero {
@@ -4460,18 +4460,43 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   }
 
   function renderStagePosition() {
+    const positionChoices = [
+      ['Goleiro', 'Goleiro', '🧤'],
+      ['Zagueiro', 'Zagueiro', '🛡️'],
+      ['Lateral', 'Lateral', '🏃'],
+      ['Volante', 'Volante', '🔒'],
+      ['Meia', 'Meia', '🎯'],
+      ['Atacante', 'Atacante', '⚡']
+    ];
+    const selectedPositions = Array.isArray(answers.positions)
+      ? [...answers.positions]
+      : (answers.position ? [answers.position] : []);
+    answers.positions = selectedPositions;
     renderScreen(3.1,
       '<h1 class="q-title">Qual posição você joga?</h1>' +
-      '<p class="q-subtitle">Escolha a sua ⚽</p>' +
-      '<div class="q-options">' +
-        option('Goleiro', 'Goleiro', '🧤') +
-        option('Zagueiro', 'Zagueiro', '🛡️') +
-        option('Lateral', 'Lateral', '🏃') +
-        option('Volante', 'Volante', '🔒') +
-        option('Meia', 'Meia', '🎯') +
-        option('Atacante', 'Atacante', '⚡') +
-      '</div>');
-    bindAutoChoices('position', 3.2);
+      '<p class="q-subtitle">Escolha uma ou mais opções ⚽</p>' +
+      '<div class="q-options">' + positionChoices.map((item) =>
+        '<button class="q-option' + (selectedPositions.includes(item[0]) ? ' is-selected' : '') + '" type="button" data-value="' + item[0] + '" aria-pressed="' + selectedPositions.includes(item[0]) + '"><span class="q-check">✓</span><span class="q-option-icon">' + item[2] + '</span><span class="q-option-text">' + item[1] + '</span></button>'
+      ).join('') + '</div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    stageContent.querySelectorAll('.q-option').forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.value;
+        const selectedIndex = selectedPositions.indexOf(value);
+        if (selectedIndex >= 0) selectedPositions.splice(selectedIndex, 1);
+        else selectedPositions.push(value);
+        answers.positions = [...selectedPositions];
+        answers.position = selectedPositions.length > 1 ? 'Várias posições' : (selectedPositions[0] || '');
+        window.FunnelAnalytics?.answer('positions', [...selectedPositions], 3.1);
+        const isSelected = selectedPositions.includes(value);
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+    });
+    stageContent.querySelector('[data-continue]').addEventListener('click', () => {
+      if (!selectedPositions.length) return showToast('Escolha pelo menos uma posição para continuar.');
+      goToStage(3.2);
+    });
   }
 
   function renderStageDifficulty() {
@@ -4631,89 +4656,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         '</div></div>' +
         '<button class="q-primary" type="button" data-finalize-voucher>FINALIZAR ACESSO</button>' +
       '</div>');
-    stageContent.querySelector('[data-finalize-voucher]').addEventListener('click', () => goToStage(8));
-  }
-
-  function renderStage8Finalization() {
-    const modules = [
-      {
-        title: 'Comece Aqui', image: 'images/module-comece-aqui.png',
-        description: 'Descubra seu ponto de partida.',
-        lessons: ['Diagnóstico do jogador', 'Plano de 30 dias', 'Gerador de rotina']
-      },
-      {
-        title: 'Domínio da Bola', image: 'images/module-dominio-bola.png',
-        description: 'Controle a bola com confiança.',
-        lessons: ['Primeiro toque', 'Ball Mastery', 'Controle completo']
-      },
-      {
-        title: 'Instinto & 1x1', image: 'images/module-instinto-1x1.png',
-        description: 'Vença o marcador sem pensar demais.',
-        lessons: ['Instinto no futebol', 'Leitura do defensor', 'Armas do 1x1']
-      },
-      {
-        title: 'Inteligência de Jogo', image: 'images/module-inteligencia-jogo.png',
-        description: 'Veja antes e decida mais rápido.',
-        lessons: ['Leitura de espaço', 'Posicionamento', 'Tática no jogo']
-      },
-      {
-        title: 'Finalização & Ataque', image: 'images/module-finalizacao-ataque.png',
-        description: 'Seja mais perigoso no ataque.',
-        lessons: ['Chute forte', 'Mecânica correta', 'Finalização confiante']
-      },
-      {
-        title: 'Físico de Jogador', image: 'images/module-fisico-jogador.png',
-        description: 'Ganhe força, velocidade e resistência.',
-        lessons: ['Explosão', 'Pliometria', 'Fáscia e mobilidade']
-      },
-      {
-        title: 'Mentalidade & Flow', image: 'images/module-mentalidade-flow.png',
-        description: 'Jogue solto mesmo sob pressão.',
-        lessons: ['Visualização', 'Respiração', 'Estado de Flow']
-      },
-      {
-        title: 'Rotina de Atleta', image: 'images/module-rotina-atleta.png',
-        description: 'Organize sua evolução fora do campo.',
-        lessons: ['Peneiras', 'Alimentação', 'Rotina pré-jogo']
-      }
-    ];
-    const moduleCards = modules.map((module) =>
-      '<article class="q-course-card"><img src="' + module.image + '" alt="Módulo ' + escapeHtml(module.title) + '" loading="lazy">' +
-      '<details open><summary>' + escapeHtml(module.title) + '</summary><div class="q-course-body"><p>' + escapeHtml(module.description) + '</p><ul class="q-course-lessons">' +
-      module.lessons.map((lesson) => '<li>' + escapeHtml(lesson) + '</li>').join('') +
-      '</ul></div></details></article>'
-    ).join('');
-    const methodVideo = (id, title) => '<div class="q-method-video"><strong>' + escapeHtml(title) + '</strong><lt-v2 v="' + id + '" ar="9:16" sc="0" st="0" ap="0" pc="ef6c00" pe="4x" ph="8"></lt-v2></div>';
-    renderScreen(8,
-      '<div class="q-final-stage">' +
-        '<h1 class="q-title">O Que Você Recebe</h1>' +
-        '<p class="q-final-intro">Tudo que você precisa em um só lugar</p>' +
-        '<ul class="q-receive-list">' +
-          '<li>📱 Treino direto no celular</li>' +
-          '<li>💬 Suporte via WhatsApp</li>' +
-          '<li>🛡️ Comunidade 100% segura</li>' +
-          '<li>🎮 Comunidade no Discord</li>' +
-          '<li>🔄 Conteúdo sempre atualizado</li>' +
-          '<li>🌎 Comunidade global (+10.000 jogadores)</li>' +
-        '</ul>' +
-        '<section class="q-team-proof" aria-labelledby="q-team-proof-title"><h2 id="q-team-proof-title">Nossos alunos estão passando em base</h2><div class="q-team-gallery">' +
-          '<img src="images/006-RErCOTt.webp" alt="Aluno aprovado em base 1" loading="lazy">' +
-          '<img src="images/007-a2lsHo4.webp" alt="Aluno aprovado em base 2" loading="lazy">' +
-          '<img src="images/008-Pf1aABg.webp" alt="Aluno aprovado em base 3" loading="lazy">' +
-          '<img src="images/009-4MPO47q.webp" alt="Aluno aprovado em base 4" loading="lazy">' +
-          '<img src="images/010-7loQLKW.webp" alt="Aluno aprovado em base 5" loading="lazy">' +
-          '<img src="images/011-HJjnTEU.webp" alt="Aluno aprovado em base 6" loading="lazy">' +
-        '</div></section>' +
-        '<p class="q-final-label">Seus módulos</p>' +
-        '<div class="q-course-list">' + moduleCards + '</div>' +
-        '<section class="q-method-block"><div class="q-method-flags"><img src="images/012-1akQLYU.webp" alt="Brasil"><strong>×</strong><img src="images/013-F3vlMIV.webp" alt="Estados Unidos"></div>' +
-          '<span class="q-method-kicker">Método Americano</span><h2>3 pilares para subir de nível</h2>' +
-          '<p>Instinto, Fáscia e Flow no seu jogo.</p>' +
-          '<div class="q-method-videos">' + methodVideo('01f750aa-3f9a-4594-88e4-4e56a896d861', 'Módulo do Flow') + methodVideo('d81e8906-b404-48e3-a5f0-14ea66fdac77', 'Módulo da Fáscia') + methodVideo('d364f25a-24ca-4fbe-b914-602978b1b0cb', 'Módulo do Instinto') + '</div>' +
-        '</section>' +
-        '<button class="q-primary" type="button" data-final-continue>CONTINUAR</button>' +
-      '</div>', false);
-    stageContent.querySelector('[data-final-continue]').addEventListener('click', () => {
+    stageContent.querySelector('[data-finalize-voucher]').addEventListener('click', () => {
       window.location.href = 'oferta.html';
     });
   }
@@ -5085,7 +5028,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       case 4: renderStage4(); break;
       case 5: renderStage5(); break;
       case 6: renderStage6(); break;
-      case 8: renderStage8Finalization(); break;
       case 9: renderStage9Purchase(); break;
       default: revealLandingPage();
     }
