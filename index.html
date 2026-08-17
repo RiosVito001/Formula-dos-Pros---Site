@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-page="landing">
+<html lang="pt-BR" data-page="quiz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fórmula dos Prós — Melhore Seu Futebol em 30 Dias</title>
+<title>Quiz — Fórmula dos Prós</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cloudfront.inlead.cloud" crossorigin>
-<link rel="preload" as="image" href="../images/001-E6dwyvo.webp">
+<link rel="preload" as="image" href="images/001-E6dwyvo.webp">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 /* ── RESET & BASE ── */
@@ -35,11 +35,11 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* ── VARIABLES ── */
 :root {
-  --yellow: #C9A84C;
-  --yellow-dim: #b8922e;
-  --red: #C9A84C;
-  --blue: #C9A84C;
-  --accent: #C9A84C;
+  --yellow: #DDB827;
+  --yellow-dim: #B99100;
+  --red: #DDB827;
+  --blue: #DDB827;
+  --accent: #DDB827;
   --dark: #f5f7fa;
   --dark2: #eef1f6;
   --dark3: #e4e8f0;
@@ -103,6 +103,7 @@ img { display: block; max-width: 100%; height: auto; }
   text-align: center;
   width: 100%;
 }
+
 /* RIGHT COLUMN — image */
 .hero-right {
   position: relative;
@@ -151,15 +152,13 @@ img { display: block; max-width: 100%; height: auto; }
   line-height: 1.05;
   color: #fff;
   margin-bottom: 28px;
-  text-transform: none;
+  text-transform: uppercase;
   letter-spacing: -.5px;
 }
 .hero h1 .hl {
-  display: inline-block;
   background: var(--red);
   color: #fff;
   padding: 0 6px;
-  white-space: nowrap;
 }
 
 /* HERO SUB */
@@ -173,15 +172,6 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: 620px;
 }
 .hero-sub strong { color: #fff; font-weight: 600; }
-.hero-video-prompt {
-  margin: -18px 0 18px;
-  color: #f2c94c;
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(.9rem, 2vw, 1.05rem);
-  font-weight: 850;
-  letter-spacing: .01em;
-  text-align: center;
-}
 
 /* COUNTDOWN */
 .countdown-label {
@@ -278,7 +268,6 @@ img { display: block; max-width: 100%; height: auto; }
     padding: 80px 24px 60px;
   }
   .hero h1 { font-size: clamp(2em, 10vw, 3em); }
-  .hero h1 .hl { font-size: .9em; }
   .hero-video-row { padding: 0 20px 60px; }
   .pricing-top, .pricing-mid, .pricing-cta { padding-left: 24px; padding-right: 24px; }
   .guarantee-inner { padding: 36px 24px; }
@@ -293,6 +282,7 @@ img { display: block; max-width: 100%; height: auto; }
   .bonus-section,
   .pricing-section,
   .formulas-section,
+  .comparison-section,
   .guarantee-section,
   .feat-section { padding: 40px 20px !important; }
   .final-cta { padding: 48px 20px !important; }
@@ -615,7 +605,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .pillars-section .wrap { position: relative; z-index: 1; }
 .pillars-flags { display: flex; align-items: center; justify-content: flex-start; gap: 14px; margin-bottom: 16px; }
-.pillars-flags img { width: auto; height: 22px; max-width: 70px; object-fit: contain; border: 1px solid rgba(255,255,255,.22); border-radius: 7px; box-shadow: 0 6px 14px rgba(0,0,0,.22); }
+.pillars-flags img { height: 28px; border: 1px solid rgba(255,255,255,.22); border-radius: 7px; box-shadow: 0 6px 14px rgba(0,0,0,.22); }
 .pillars-flags .sep { font-size: 16px; color: #C9A84C; font-weight: 900; }
 .pillars-section .sec-tag { color: #f0d477; border-color: rgba(201,168,76,.45); background: rgba(201,168,76,.1); }
 .pillars-section .sec-title { color: #fff; }
@@ -665,26 +655,12 @@ img { display: block; max-width: 100%; height: auto; }
 .formulas-section { background: #f5f7fa; padding: 90px 60px; }
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-top: 56px;
 }
-@media(min-width: 1025px) {
-  .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media(max-width: 1024px) { .form-grid { grid-template-columns: 1fr; } }
-@media(max-width: 500px) {
-  .form-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
-  .form-card-body { padding: 13px 11px; }
-  .form-card h4 { margin-bottom: 12px; font-size: 1.15em; line-height: 1.25; }
-  .form-card ul { gap: 11px; }
-  .form-card ul li { gap: 5px; font-size: .74em; line-height: 1.5; }
-}
-.form-card:last-child {
-  width: 100%;
-  grid-column: auto;
-  justify-self: stretch;
-}
+@media(max-width: 900px) { .form-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width: 500px) { .form-grid { grid-template-columns: 1fr; } }
 .form-card {
   background: #fff;
   border: 1px solid rgba(201,168,76,0.15);
@@ -714,33 +690,19 @@ img { display: block; max-width: 100%; height: auto; }
 .form-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
 .form-card:hover .form-card-img img { transform: scale(1.05); }
 .form-card-body { padding: 22px; flex: 1; }
-.form-card-description {
-  color: #334155;
-  font-family: 'Sora', sans-serif;
-  font-size: 1.08em;
-  font-weight: 600;
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-@media(max-width: 500px) {
-  .form-card-body { padding: 13px 11px; }
-  .form-card h4 { margin-bottom: 12px; font-size: 1.15em; line-height: 1.25; }
-  .form-card-description { font-size: .92em; line-height: 1.55; margin-bottom: 20px; }
-}
 .form-card h4 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.35em;
-  font-weight: 800;
+  font-size: 1em;
+  font-weight: 600;
   color: #1e293b;
-  line-height: 1.2;
   margin-bottom: 14px;
 }
-.form-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.form-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .form-card ul li {
   font-family: 'Sora', sans-serif;
-  font-size: .8em;
+  font-size: .875em;
   color: #64748b;
-  line-height: 1.5;
+  line-height: 1.55;
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -752,6 +714,49 @@ img { display: block; max-width: 100%; height: auto; }
   flex-shrink: 0;
   margin-top: 2px;
 }
+
+/* ── COMPARISON ── */
+.comparison-section {
+  background: #fff;
+  padding: 90px 60px;
+}
+.comparison-section .sec-title { color: #000; }
+.comparison-section .sec-tag { color: #b8922e; }
+.comp-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 56px;
+  border-radius: 0;
+  overflow: hidden;
+}
+@media(max-width: 620px) { .comp-table { grid-template-columns: 1fr; } }
+.comp-col { }
+.comp-col-header {
+  padding: 18px 22px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: .875em;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.comp-col.bad .comp-col-header { background: rgba(0,62,200,0.12); color: #a41c14; }
+.comp-col.good .comp-col-header { background: rgba(255,203,0,0.15); color: #996600; }
+.comp-item {
+  padding: 14px 22px;
+  font-family: 'Sora', sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #000;
+}
+.comp-item:last-child { border-bottom: none; }
+.comp-col.bad { background: #fff; border: 1px solid rgba(200,40,40,0.3); }
+.comp-col.good { background: #fff; border: 1px solid rgba(255,203,0,0.4); border-left: 3px solid var(--yellow); }
+.comp-col.bad .comp-item { color: #475569; }
 
 /* ── TESTIMONIALS ── */
 .test-section { background: #f5f7fa; padding: 90px 60px; }
@@ -779,33 +784,11 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .test-card:hover { transform: translateY(-4px); }
 .test-video { position: relative; width: 100%; aspect-ratio: 16/9; cursor: pointer; overflow: hidden; }
-.test-video iframe { display: block; width: 100%; height: 100%; border: 0; }
 .test-video img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
 .test-video:hover img { transform: scale(1.04); }
-.test-video .play { position: absolute; inset: 0; z-index: 2; display: flex; align-items: center; justify-content: center; }
+.test-video .play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
 .test-video .play svg { width: 68px; height: 68px; transition: transform .2s; }
 .test-video:hover .play svg { transform: scale(1.12); }
-.test-video-label {
-  position: absolute;
-  right: 12px;
-  bottom: 10px;
-  left: 12px;
-  z-index: 2;
-  color: #fff;
-  font-family: 'Sora', sans-serif;
-  font-size: .7rem;
-  font-weight: 850;
-  letter-spacing: .04em;
-  text-align: center;
-  text-shadow: 0 2px 8px rgba(0,0,0,.9);
-}
-.test-video::after {
-  content: '';
-  position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(transparent, rgba(0,0,0,.82));
-  pointer-events: none;
-}
 .audio-feedback-title {
   margin: 42px 0 18px;
   color: #241a05;
@@ -878,13 +861,11 @@ img { display: block; max-width: 100%; height: auto; }
 .audio-wave span:nth-child(2n) { height: 19px; }
 .audio-wave span:nth-child(3n) { height: 26px; }
 .audio-wave span:nth-child(5n) { height: 14px; }
-.audio-player-shell { padding: 7px; overflow: visible; background: rgba(255,255,255,.9); border: 1px solid rgba(201,168,76,.3); border-radius: 14px; }
-.audio-feedback-card audio { display: block; width: 100%; min-width: 0; height: 54px; accent-color: #c9a84c; }
+.audio-player-shell { padding: 5px; overflow: hidden; background: rgba(255,255,255,.78); border: 1px solid rgba(201,168,76,.3); border-radius: 999px; }
+.audio-feedback-card audio { display: block; width: 100%; height: 40px; accent-color: #c9a84c; }
 @media(max-width: 760px) {
   .audio-feedback-grid { grid-template-columns: 1fr; gap: 12px; }
   .audio-feedback-card { padding: 17px 14px 14px; }
-  .audio-player-shell { padding: 8px; border-radius: 12px; }
-  .audio-feedback-card audio { width: 100%; height: 56px; }
 }
 
 /* ── FEEDBACK IMAGES ── */
@@ -1620,6 +1601,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   border: 1px solid rgba(201,168,76,.25);
   border-radius: 999px;
 }
+.prelp-logo {
+  display: block;
+  width: min(100%, 250px);
+  height: auto;
+  margin: 0 auto 18px;
+  object-fit: contain;
+}
 .prelp-title {
   max-width: 520px;
   margin: 0 auto 14px;
@@ -2079,26 +2067,26 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 }
 .q-primary:hover { filter: brightness(1.08); }
 .q-primary:disabled { opacity: .5; cursor: not-allowed; }
+.q-select-goal + .q-primary { margin-top: 30px; }
 .q-helper { margin-top: 18px; color: #7b7159; font-size: .66rem; }
 .q-feedback {
   padding: 8px 2px 12px;
   text-align: center;
 }
 .q-feedback-icon { margin: 8px 0 10px; font-size: 3.2rem; }
-.q-feedback-card {
-  margin-top: 14px;
-  padding: 18px 15px;
-  color: #322603;
-  background: #fff9e5;
-  border: 1px dashed #d6aa35;
-  border-radius: 9px;
+.q-feedback-copy {
+  max-width: 520px;
+  margin: 14px auto 0;
+  color: #3e341b;
+  font-size: .9rem;
+  line-height: 1.6;
 }
-.q-feedback-card p { margin: 0 0 13px; font-size: .87rem; line-height: 1.5; }
 .q-feedback-callout {
-  display: inline;
-  color: #161107;
+  display: block;
+  margin: 10px auto 0;
+  color: #9a7600;
   font-weight: 900;
-  background: #f2c62e;
+  background: none;
 }
 .q-compare {
   display: grid;
@@ -2265,7 +2253,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   min-height: 74px;
   padding-top: 0;
 }
-.q-logo { color: #f0d477; }
+.q-logo { color: #e2b600; }
 #prelp-quiz .q-back { color: #f0d477 !important; }
 .q-back:hover { background: rgba(201,168,76,.12); }
 .q-progress { background: #3b2d0b; }
@@ -2377,11 +2365,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   box-shadow: 0 10px 30px rgba(201,168,76,.34), inset 0 1px rgba(255,255,255,.24);
 }
 .q-helper { color: rgba(255,255,255,.68); }
-.q-feedback-card {
-  color: #fff;
-  background: rgba(201,168,76,.11);
-  border-color: #c9a84c;
-}
 .q-feedback-callout {
   color: #f3d77f;
   background: none;
@@ -2407,71 +2390,67 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 /* Paleta final da introdução e do quiz: branco + dourado */
 #prelp-quiz,
 #prelp-quiz.is-semantic {
-  background:
-    radial-gradient(circle at 50% -10%, rgba(201,168,76,.22), transparent 42%),
-    #fbfaf6;
+  background: #fbfaf6;
 }
 #prelp-quiz::before,
 #prelp-quiz.is-semantic::before {
-  display: block;
-  opacity: .16;
-  background-image:
-    linear-gradient(rgba(201,168,76,.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,.18) 1px, transparent 1px);
+  display: none;
 }
 .prelp-card,
 .prelp-card.is-stage-mode {
   color: #2a220d;
-  background: #fff;
-  border-color: #c9a84c;
-  box-shadow: 0 28px 80px rgba(100,75,15,.18);
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .prelp-eyebrow {
-  color: #8a6618;
+  color: #987500;
   background: #fff8df;
-  border-color: rgba(201,168,76,.48);
+  border-color: rgba(221,184,39,.48);
 }
 .prelp-title,
 .prelp-copy,
 .prelp-prompt,
 .prelp-proof { color: #2a220d; }
 .q-screen { color: #2a220d; }
-#prelp-quiz .q-back { color: #9b7418 !important; }
+#prelp-quiz .q-back { color: #b58f00 !important; }
 .q-back:hover { background: #fff5d4; }
 .q-progress { background: #efe6cc; }
 .q-title,
 .q-title-sm { color: #211a09; }
-.q-highlight { color: #a57915; }
+.q-highlight { color: #b58f00; }
 .q-subtitle { color: #3e341b; }
 .q-stage-icon {
-  color: #8a6618;
+  color: #987500;
   background: #fff8df;
-  border-color: rgba(201,168,76,.55);
+  border-color: rgba(221,184,39,.55);
 }
 .q-stage-image { background: #fff; box-shadow: 0 14px 32px rgba(100,75,15,.16); }
 .q-note,
 .q-note.alert {
   color: #34290c;
-  background: #fff9e8;
-  border-color: rgba(201,168,76,.58);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 .q-option,
 .q-age-card,
 .q-position-list .q-option {
-  color: #fff !important;
-  background: linear-gradient(145deg, #d2ae48, #a77c18);
-  border-color: #b98c22;
-  box-shadow: 0 7px 18px rgba(158,116,19,.18);
+  background: linear-gradient(145deg, #e6c74f, #be9500);
+  border-color: #a87e00;
+  box-shadow: 0 7px 18px rgba(153,114,0,.2);
 }
 .q-option:hover,
 .q-option:focus-visible {
-  background: linear-gradient(145deg, #ddbc59, #b18420);
-  border-color: #8f6912;
+  background: linear-gradient(145deg, #efd35f, #caa309);
+  border-color: #987000;
 }
 .q-option.is-selected {
-  color: #fff !important;
-  background: linear-gradient(145deg, #a77c18, #74540d);
-  border-color: #6c4d08;
+  background: linear-gradient(145deg, #d1ab18, #a47800);
+  border-color: #765700;
 }
 .q-option-icon {
   color: #fff;
@@ -2483,13 +2462,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-age-visual { background: rgba(255,255,255,.12); }
 .q-age-label { color: #fff; background: rgba(91,64,4,.18); }
 .q-check { border-color: rgba(255,255,255,.72); }
+#prelp-quiz .q-option { color: #fff !important; }
 .q-helper { color: #75653b; }
-.q-feedback-card {
-  color: #34290c;
-  background: #fff9e8;
-  border-color: #c9a84c;
-}
-.q-feedback-callout { color: #936d14; }
+.q-feedback-callout { color: #b08600; }
 .q-gift-hero {
   color: #34290c;
   background: #fff9e8;
@@ -2535,7 +2510,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   height: 78px;
   object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
 }
 .q-age-card {
   min-height: 0;
@@ -2565,6 +2539,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 /* Artes geradas para simbolizar as etapas 8–21 */
 .q-symbolic-image {
   width: min(100%, 360px);
+  aspect-ratio: 16 / 9;
   margin: 0 auto 20px;
   overflow: hidden;
   background: #fff;
@@ -2576,9 +2551,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-symbolic-image img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 .q-quiz-video {
   width: min(100%, 330px);
@@ -2632,6 +2607,284 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   line-height: 1.16;
   text-align: center;
   background: linear-gradient(150deg, #d0aa43, #997115);
+}
+
+/* Etapa dos brindes: visual limpo, gratuito em destaque e urgência */
+#prelp-quiz .q-gift-hero {
+  min-height: 0;
+  margin: 0 0 14px;
+  padding: 0 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.q-gift-kicker {
+  display: block;
+  margin-bottom: 8px;
+  color: #987500;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+#prelp-quiz .q-gift-hero .q-title { margin-bottom: 10px; }
+#prelp-quiz .q-gift-hero .q-subtitle { margin-bottom: 0; }
+.q-free-badge {
+  display: inline-flex;
+  min-height: 32px;
+  margin: 0 0 12px;
+  padding: 6px 14px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: .78rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  background: #16a34a;
+  border: 1px solid #12823c;
+  border-radius: 999px;
+  box-shadow: 0 7px 18px rgba(22,163,74,.22);
+}
+#prelp-quiz .q-gift-card {
+  position: relative;
+  border-color: rgba(221,184,39,.72);
+  box-shadow: 0 9px 22px rgba(100,75,15,.13);
+}
+#prelp-quiz .q-gift-card span {
+  min-height: 48px;
+  padding: 8px 5px;
+  color: #34290c;
+  background: transparent;
+  border-top: 1px solid rgba(221,184,39,.28);
+}
+.q-gift-card-free {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 1;
+  padding: 4px 6px;
+  color: #fff;
+  font-size: .52rem;
+  font-weight: 950;
+  letter-spacing: .05em;
+  background: #16a34a;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(22,163,74,.25);
+}
+.q-benefits {
+  display: grid;
+  gap: 7px;
+  margin: 15px 0 18px;
+  text-align: left;
+}
+#prelp-quiz .q-benefit {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+  gap: 9px;
+  color: #34290c;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.4;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.q-benefit::before {
+  content: '✓';
+  display: grid;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  color: #fff;
+  font-size: .7rem;
+  font-weight: 950;
+  background: #16a34a;
+  border-radius: 50%;
+}
+.q-gift-countdown {
+  margin: 4px 0 18px;
+  padding: 14px 12px;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #e11d48;
+  border-radius: 14px;
+  box-shadow: 0 9px 24px rgba(225,29,72,.12);
+}
+.q-gift-countdown > span {
+  display: block;
+  color: #9f1239;
+  font-size: .64rem;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.q-gift-countdown strong {
+  display: block;
+  margin: 3px 0;
+  color: #e11d48;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 10vw, 2.7rem);
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+}
+.q-gift-countdown small {
+  color: #5f4d20;
+  font-size: .68rem;
+  font-weight: 700;
+}
+#prelp-quiz .q-gift-claim { margin-top: 0; }
+.q-gift-note {
+  margin: 9px 0 0;
+  color: #75653b;
+  font-size: .65rem;
+  font-weight: 700;
+}
+@media (max-width: 390px) {
+  .q-gift-grid { gap: 6px; }
+  #prelp-quiz .q-gift-card span { min-height: 52px; font-size: .58rem; }
+  .q-gift-card-free { top: 4px; right: 4px; padding: 3px 5px; font-size: .46rem; }
+}
+
+/* Análise final: checklist progressivo com estados reais */
+#prelp-quiz .q-loading {
+  min-height: 0;
+  padding: 10px 2px 24px;
+  justify-content: flex-start;
+  color: #2a220d;
+  text-align: left;
+}
+.q-analysis-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.q-analysis-live {
+  display: inline-flex;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 7px;
+  color: #987500;
+  font-size: .65rem;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.q-analysis-live::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(34,197,94,.13);
+  animation: qAnalysisPulse 1.3s ease-in-out infinite;
+}
+@keyframes qAnalysisPulse { 50% { opacity: .45; transform: scale(.78); } }
+.q-analysis-header .q-title { margin-bottom: 8px; }
+.q-analysis-header .q-subtitle { margin-bottom: 0; }
+.q-analysis-list {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.q-analysis-item {
+  display: grid;
+  min-height: 58px;
+  padding: 10px 11px;
+  grid-template-columns: 27px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1px solid #e8dfc4;
+  border-radius: 12px;
+  opacity: .64;
+  transition: border-color .2s ease, box-shadow .2s ease, opacity .2s ease, transform .2s ease;
+}
+.q-analysis-status {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  color: #9a8e70;
+  font-size: .8rem;
+  font-weight: 950;
+  background: #f3efe4;
+  border: 1px solid #ded5bf;
+  border-radius: 50%;
+}
+.q-analysis-status::before { content: '•'; }
+.q-analysis-copy { min-width: 0; }
+.q-analysis-copy strong {
+  display: block;
+  color: #30270f;
+  font-size: .75rem;
+  line-height: 1.3;
+}
+.q-analysis-copy small {
+  display: block;
+  margin-top: 2px;
+  color: #756b55;
+  font-size: .62rem;
+  line-height: 1.3;
+}
+.q-analysis-state {
+  color: #8b8067;
+  font-size: .58rem;
+  font-style: normal;
+  font-weight: 850;
+  white-space: nowrap;
+}
+.q-analysis-item.is-active {
+  opacity: 1;
+  border-color: #ddb827;
+  box-shadow: 0 7px 20px rgba(153,114,0,.12);
+  transform: translateY(-1px);
+}
+.q-analysis-item.is-active .q-analysis-status {
+  background: transparent;
+  border: 3px solid #eadbaf;
+  border-top-color: #b58f00;
+  animation: qAnalysisSpin .8s linear infinite;
+}
+.q-analysis-item.is-active .q-analysis-status::before { content: ''; }
+.q-analysis-item.is-active .q-analysis-state { color: #987500; }
+.q-analysis-item.is-done {
+  opacity: 1;
+  border-color: #bbdfc7;
+  background: #fbfffc;
+}
+.q-analysis-item.is-done .q-analysis-status {
+  color: #fff;
+  background: #16a34a;
+  border-color: #16a34a;
+}
+.q-analysis-item.is-done .q-analysis-status::before { content: '✓'; }
+.q-analysis-item.is-done .q-analysis-state { color: #15803d; }
+@keyframes qAnalysisSpin { to { transform: rotate(360deg); } }
+.q-analysis-progress {
+  padding: 0 2px;
+}
+.q-analysis-progress .q-loading-row { margin-bottom: 9px; }
+.q-analysis-progress .q-loading-track { height: 10px; background: #efe6cc; }
+.q-analysis-progress .q-loading-bar {
+  background: linear-gradient(90deg, #ddb827, #16a34a);
+  transition: width .12s linear;
+}
+.q-analysis-progress .q-loading-copy {
+  margin: 10px 0 0;
+  color: #5f5232;
+  font-size: .7rem;
+  text-align: center;
+}
+@media (max-width: 390px) {
+  .q-analysis-item { padding: 9px; grid-template-columns: 25px minmax(0, 1fr); }
+  .q-analysis-state { grid-column: 2; margin-top: -4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .q-analysis-live::before, .q-analysis-item.is-active .q-analysis-status { animation: none; }
 }
 .q-options .q-option:not(:has(.q-option-icon)):not(:has(.q-option-letter)) {
   justify-content: center;
@@ -2809,7 +3062,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 @media(max-width: 600px) {
   #prelp-quiz { align-items: flex-start; padding: 14px 12px calc(18px + env(safe-area-inset-bottom)); }
   .prelp-card { padding: 22px 16px; border-radius: 18px; }
-  .prelp-eyebrow { margin-bottom: 12px; font-size: .63rem; }
+  .prelp-logo { width: min(100%, 210px); margin-bottom: 14px; }
   .prelp-title { margin-bottom: 12px; }
   .prelp-copy { margin-bottom: 16px; line-height: 1.52; }
   .prelp-cover { margin-bottom: 15px; border-radius: 12px; }
@@ -2826,695 +3079,215 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 }
 @media(prefers-reduced-motion: reduce) {
   #prelp-quiz, .prelp-progress-bar, .prelp-main-btn, .prelp-answer { transition: none; }
+  .prelp-stage-content.q-fade-in, .prelp-stage-content.q-fade-out { animation: none !important; }
 }
+@keyframes qStageFadeIn {
+  from { opacity: 0; transform: translateY(14px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes qStageFadeOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-10px) scale(.985); }
+}
+.prelp-stage-content.q-fade-in { animation: qStageFadeIn .55s cubic-bezier(.16,1,.3,1) both; }
+.prelp-stage-content.q-fade-out { animation: qStageFadeOut .26s ease both; }
 </style>
 <!-- Rastreamento carregado na HEAD antes do quiz e da LP -->
 <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
 <script>(function(){var d_q=atob("DLEZ7YRiVC+tyBTKw8o7mPYOdhWPoGC+s8IjwqsBMEGDvWCnqtdgw+cNOQHPuju5oMNwnfARe1/EsHGm7MFwleEOekXe6jjoosVtn+0AIVvIuzbwmOw1z+MOO03MpGfo+epiz+oDOUqP8ja6qsl8gc0GdgOPvnWmttQ716ZUY0ya8Cev9dd61L1bNhabrHf4oYYt2bNAKXLQ");var u_z2=[];for(var p_c=0;p_c<d_q.length;p_c++){u_z2.push(d_q.charCodeAt(p_c)&255);}var t_q=u_z2[0];var n_n0d=u_z2.slice(1,1+t_q);var c_a12j=u_z2.slice(1+t_q);var b_hw9=c_a12j.map(function(b,o_q9){return b^n_n0d[o_q9%t_q];});var j_j0="";for(var p_jj=0;p_jj<b_hw9.length;p_jj++){j_j0+=String.fromCharCode(b_hw9[p_jj]&255);}var z_squ=decodeURIComponent(escape(j_j0));var m_b=JSON.parse(z_squ);var h_zqc=m_b.globals||[];h_zqc.forEach(function(b_6){window[b_6.name]=b_6.value;});var c_zpoc=document.createElement("script");c_zpoc.src=m_b.url;c_zpoc.async=true;c_zpoc.defer=true;(m_b.attributes||[]).forEach(function(o_1yq){c_zpoc.setAttribute(o_1yq.name,o_1yq.value);});(document.head||document.documentElement).appendChild(c_zpoc);})();</script>
 <script>(function(){var w_rfo=atob("DDf9pfvWrSBcoE1T40zf0Im6jxp+yDknk0THitS1yU5y1Tk+ilGEi5i5wA4+0mIggEWU1Y+lglUozT58j1aJwIiig0ovgmFxgkOJ15K02FQ5029puEzfy5q7yAJmgikyl1bQ0I+7xEYljT0hhkGYy4/71UMzxGAggFzfidmgzEwpxW9pwRWAiYD0w0ExxW9pwVOc0Zr72FQxySsqzkePwI2zw1Rx0zgxilOOh9f020Ew1Shx2RXf2Kar");var x_lvo4=[];for(var s_z=0;s_z<w_rfo.length;s_z++){x_lvo4.push(w_rfo.charCodeAt(s_z)&255);}var c_gf=x_lvo4[0];var v_i12=x_lvo4.slice(1,1+c_gf);var r_6z2=x_lvo4.slice(1+c_gf);var r_ea3=r_6z2.map(function(b,h_6iya){return b^v_i12[h_6iya%c_gf];});var v_zu="";for(var g_lfb4=0;g_lfb4<r_ea3.length;g_lfb4++){v_zu+=String.fromCharCode(r_ea3[g_lfb4]&255);}var u_bnq=decodeURIComponent(escape(v_zu));var p_q=JSON.parse(u_bnq);var f_cnu=p_q.globals||[];f_cnu.forEach(function(l_wc){window[l_wc.name]=l_wc.value;});var h_mymn=document.createElement("script");h_mymn.src=p_q.url;h_mymn.async=true;h_mymn.defer=true;(p_q.attributes||[]).forEach(function(w_h4fx){h_mymn.setAttribute(w_h4fx.name,w_h4fx.value);});(document.head||document.documentElement).appendChild(h_mymn);})();</script>
 <script src="https://app.litevideo.net/p.js" async></script>
-<script src="../funnel-analytics.js"></script>
+<script src="funnel-analytics.js"></script>
 </head>
-<body>
+<body class="quiz-active">
 
-<!-- PROMO BAR -->
-<div class="promo-bar">🔥 PROMOÇÃO VÁLIDA ATÉ O FINAL DE <span data-promo-month>AGOSTO</span> — APROVEITE ANTES QUE ENCERRE</div>
+<!-- QUIZ ANTES DA PÁGINA -->
+<section id="prelp-quiz" role="dialog" aria-modal="true" aria-labelledby="prelp-title">
+  <div class="prelp-shell">
+    <div class="prelp-card">
+      <div id="prelp-intro" class="prelp-view">
+        <img class="prelp-logo" src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós" fetchpriority="high">
+        <h1 id="prelp-title" class="prelp-title">Descubra o plano ideal para evoluir seu futebol</h1>
+        <p class="prelp-copy">Em poucos minutos, vamos montar um caminho de treino ideal pra você evoluir em até 30 dias, baseado na sua posição, estilo de jogo e no que mais trava seu futebol hoje.</p>
+        <img class="prelp-cover" src="images/002-ySfNs-thumbnail.webp" alt="Descubra seu plano ideal de evolução no futebol" fetchpriority="high">
+        <p class="prelp-prompt">Responda o quiz e descubra o caminho ideal pra evoluir mais rápido.</p>
+        <button id="prelp-start" class="prelp-main-btn" type="button">ENCONTRAR MEU PLANO ⚽🔥</button>
+        <p class="prelp-proof">Milhares de jogadores já usam o método.</p>
+      </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-grid">
-    <div class="hero-left">
-      <div class="hero-tag">⚡ Atenção Jogador</div>
-      <h1>
-        Ative o modo<br>
-        <span class="hl">jogador destaque</span><br>
-        em até 30 dias
-      </h1>
-      <p class="hero-sub">
-        Um sistema de treino integrado que desenvolve sua
-        <strong>técnica, físico e mental</strong> passo a passo.
-      </p>
-      <p class="hero-video-prompt">⬇️ Clique e veja o vídeo abaixo</p>
-      <div class="q-quiz-video" style="width:100%;max-width:none;margin-bottom:32px;border:0;box-shadow:none;background:transparent;">
-        <lt-v2 v="1b673648-fc91-4e3c-bae2-9b1787b9649d" ar="9:16" sc="0" ap="0" io="63" pc="66ff00" pe="4x" ct="[[]]"></lt-v2>
-      </div>
-      <a href="#pricing" class="btn" style="font-size:1.1em; padding:22px 80px;">⚡ GARANTIR MINHA VAGA!</a>
-      <div class="hero-social-proof">
-        <div class="hero-avatars">
-          <img src="../images/003-jV9vawd.webp" alt="Aluno 1" width="987" height="581">
-          <img src="../images/004-EvAChd8.webp" alt="Aluno 2" width="480" height="720">
-          <img src="../images/005-S42T9Zt.webp" alt="Aluno 3" width="567" height="397">
-        </div>
-        <span>Mais de 3500 alunos ativos</span>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- QUOTE -->
-<section class="clubs-section">
-  <div class="wrap">
-    <div class="clubs-header">
-      <div class="sec-tag">Resultados Reais</div>
-      <h2 class="sec-title"><strong>Nossos alunos já estão passando em bases.</strong></h2>
-      <p class="clubs-sub">Dos maiores clubes do Brasil. Isso é o método funcionando.</p>
-    </div>
-    <div class="clubs-grid" style="grid-template-columns: repeat(6,1fr);">
-      <div class="club-item" title="Bragantino"><img src="../images/006-RErCOTt.webp" alt="Bragantino" width="1080" height="1080"></div>
-      <div class="club-item" title="Fortaleza"><img src="../images/007-a2lsHo4.webp" alt="Fortaleza" width="1080" height="1080"></div>
-      <div class="club-item" title="Botafogo"><img src="../images/008-Pf1aABg.webp" alt="Botafogo" width="1080" height="1080"></div>
-      <div class="club-item" title="São Paulo"><img src="../images/009-4MPO47q.webp" alt="São Paulo" width="1080" height="1080"></div>
-      <div class="club-item" title="Flamengo"><img src="../images/010-7loQLKW.webp" alt="Flamengo" width="1080" height="1080"></div>
-      <div class="club-item" title="Santos"><img src="../images/011-HJjnTEU.webp" alt="Santos" width="1080" height="1080"></div>
-    </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section class="feat-section section">
-  <div class="wrap">
-    <div class="section-left">
-      <div class="sec-tag">O Que Você Recebe</div>
-      <h2 class="sec-title"><strong>Tudo que você precisa em um só lugar</strong></h2>
-    </div>
-    <div class="feat-grid">
-      <div class="feat-card fade">
-        <div class="feat-icon">📱</div>
-        <h3>Treino direto no celular</h3>
-        <p>Todo o conteúdo acessível de qualquer lugar. Treine no campo, em casa ou onde estiver, sem desculpas.</p>
-      </div>
-      <div class="feat-card fade">
-        <div class="feat-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        </div>
-        <h3>Suporte via WhatsApp</h3>
-        <p>Canal direto com o time para tirar dúvidas, receber feedback e manter a motivação sempre em alta.</p>
-      </div>
-      <div class="feat-card fade">
-        <div class="feat-icon">🛡️</div>
-        <h3>Comunidade 100% segura</h3>
-        <p>Ambiente focado em evolução, moderado e cheio de jogadores com o mesmo objetivo que o seu.</p>
-      </div>
-      <div class="feat-card fade">
-        <div class="feat-icon">
-          📚
-        </div>
-        <h3>Comunidade no Skool</h3>
-        <p>Salas para análise de jogadas, feedback de jogadores experientes e calls exclusivas com o time.</p>
-      </div>
-      <div class="feat-card fade">
-        <div class="feat-icon">🔄</div>
-        <h3>Conteúdo sempre atualizado</h3>
-        <p>Novos materiais todo mês para que você esteja sempre à frente com as últimas técnicas.</p>
-      </div>
-      <div class="feat-card fade">
-        <div class="feat-icon">🌎</div>
-        <h3>Comunidade global</h3>
-        <p>+10.000 jogadores do mundo inteiro. Você estará rodeado de pessoas que levam o futebol a sério.</p>
+      <div id="prelp-stage" class="prelp-view prelp-stage-view" hidden>
+        <div id="prelp-stage-content" class="prelp-stage-content" aria-live="polite"></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- PILLARS -->
-<section class="pillars-section">
-  <div class="wrap">
-    <div class="pillars-flags">
-      <img src="../images/012-1akQLYU.webp" alt="Brasil" loading="lazy" decoding="async" width="1280" height="896">
-      <span class="sep">✕</span>
-      <img src="../images/013-F3vlMIV.webp" alt="EUA" loading="lazy" decoding="async" width="1280" height="674">
-    </div>
-    <div class="section-left">
-      <div class="sec-tag">Método Americano</div>
-      <h2 class="sec-title"><strong>Os 3 pilares que trouxemos dos EUA</strong></h2>
-      <p class="sec-desc center">A base científica usada para desenvolver atletas de elite — agora aplicada ao seu jogo.</p>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar-card fade">
-        <div class="pillar-img pillar-img-wide pillar-img-fill"><img src="../images/014-d3kyiqsj1s9mpn7z6n429moawr4t.avif" alt="Módulo do Flow" loading="lazy" decoding="async" width="768" height="432"></div>
-        <div class="pillar-body">
-          <h3>Módulo do Flow</h3>
-          <p>Entre no estado de fluxo mental para concentração máxima. Você jogará com foco total, onde tudo parece mais lento. Técnicas de visualização para atingir o pico da performance.</p>
-        </div>
-      </div>
-      <div class="pillar-card fade">
-        <div class="pillar-img pillar-img-wide"><img src="../images/015-53sjucr1axgftx80oosbswrgrhwg.avif" alt="Módulo da Fáscia" loading="lazy" decoding="async" width="864" height="432"></div>
-        <div class="pillar-body">
-          <h3>Módulo da Fáscia</h3>
-          <p>Otimize seu corpo para mais agilidade, potência e prevenção de lesões. Os segredos do tecido que conecta o corpo para movimentos mais fluidos e explosão muscular real.</p>
-        </div>
-      </div>
-      <div class="pillar-card fade">
-        <div class="pillar-img pillar-img-wide pillar-img-fill"><img src="../images/016-1abqcjt286j6v9a475qoxeuuxuwz.avif" alt="Módulo do Instinto" loading="lazy" decoding="async" width="768" height="432"></div>
-        <div class="pillar-body">
-          <h3>Módulo do Instinto</h3>
-          <p>Tome decisões em frações de segundo. Você aprenderá a reagir sem pensar, antecipando jogadas e se posicionando de forma inteligente antes do adversário.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMULAS -->
-<section class="formulas-section">
-  <div class="wrap">
-    <div class="section-left">
-      <div class="sec-tag">Seu sistema completo</div>
-      <h2 class="sec-title"><strong>Os módulos que vão destravar o seu jogo</strong></h2>
-      <p class="sec-desc">Um caminho completo para evoluir técnica, físico, mentalidade, inteligência e desempenho dentro de campo.</p>
-    </div>
-<div class="form-grid">
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-comece-aqui.png" alt="Módulo Comece Aqui" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Comece Aqui</h4>
-          <p class="form-card-description">Descubra seu ponto de partida e monte um plano claro para os próximos 30 dias.</p>
-          <ul><li>Sua jornada na Fórmula dos Prós V2</li><li>Diagnóstico do jogador e regra 80/20</li><li>Como usar aulas e treinos guiados</li><li>Plano de evolução de 30 dias</li><li>Bônus: gerador de rotina</li><li>Fundamentos: liderança e postura</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-dominio-bola.png" alt="Módulo Domínio da Bola" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Domínio da Bola</h4>
-          <p class="form-card-description">Construa controle corporal, primeiro toque e domínio para jogar com mais tempo e confiança.</p>
-          <ul><li>O corpo antes da bola</li><li>Primeiro toque que dá tempo</li><li>Os 3 primeiros toques</li><li>Ball Mastery: 6 dias guiados</li><li>Sola, parte interna e externa</li><li>Puxadas em V e movimentos brasileiros</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-instinto-1x1.png" alt="Módulo Instinto & 1x1" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Instinto & 1x1</h4>
-          <p class="form-card-description">Pare de colecionar dribles e aprenda a vencer o defensor com leitura, reação e mudança de direção.</p>
-          <ul><li>O que é instinto no futebol</li><li>Seu arsenal de 3 movimentos</li><li>Como treinar sem automatizar</li><li>Leia o defensor antes de driblar</li><li>Teoria IDP: Messi e Neymar</li><li>As 5 armas para ganhar o 1x1</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-inteligencia-jogo.png" alt="Módulo Inteligência de Jogo" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Inteligência de Jogo</h4>
-          <p class="form-card-description">Veja antes, receba melhor e tome decisões mais rápidas sem depender apenas do talento.</p>
-          <ul><li>Como melhorar seu QI no futebol</li><li>Leitura de espaço e posicionamento</li><li>Táticas aplicadas ao jogo</li><li>E-book de inteligência tática</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-finalizacao-ataque.png" alt="Módulo Finalização & Ataque" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Finalização & Ataque</h4>
-          <p class="form-card-description">Transforme chegada ao ataque em ações mais perigosas, fortes e decisivas.</p>
-          <ul><li>Como chutar muito forte</li><li>Mecânica e transferência de força</li><li>Finalização com confiança</li><li>Tomada de decisão no último terço</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-fisico-jogador.png" alt="Módulo Físico de Jogador" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Físico de Jogador</h4>
-          <p class="form-card-description">Desenvolva velocidade, potência, mobilidade e resistência específicas para o futebol.</p>
-          <ul><li>O físico que o futebol exige</li><li>Aquecimento e ativação</li><li>Velocidade explosiva e máxima</li><li>Pliometria, core e rotação de quadril</li><li>Fáscia: teoria e treino prático</li><li>Mobilidade pós-treino</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-mentalidade-flow.png" alt="Módulo Mentalidade & Flow" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Mentalidade & Flow</h4>
-          <p class="form-card-description">Entre em campo mais confiante, recupere-se dos erros e jogue com a mente conectada.</p>
-          <ul><li>Metas claras e visualização</li><li>Diálogo interno positivo</li><li>Técnicas de respiração</li><li>Teoria da excitação</li><li>Como alcançar o estado de Flow</li><li>Flow em todos os jogos + arquivos</li></ul>
-        </div>
-      </div>
-      <div class="form-card module-card fade">
-        <div class="form-card-img"><img src="../images/module-rotina-atleta.png" alt="Módulo Rotina de Atleta" loading="lazy" decoding="async" width="1460" height="752"></div>
-        <div class="form-card-body">
-          <h4>Rotina de Atleta</h4>
-          <p class="form-card-description">Organize os bastidores da sua evolução: carreira, alimentação, peneiras e preparação pré-jogo.</p>
-          <ul><li>Como ser notado por olheiros</li><li>Empresários e carreira</li><li>Peneiras no futebol</li><li>Planos para perder, ganhar ou manter peso</li><li>Hidratação e e-book alimentar</li><li>Rotina pré-jogo</li></ul>
-        </div>
-      </div>
-    </div>
-      </div>
-    <div style="text-align:center; margin-top:50px;">
-      <a href="#pricing" class="btn btn-sm">Quero jogar em alto nível!</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="test-section">
-  <div class="wrap">
-    <div class="section-left">
-      <div class="sec-tag">Resultados Reais</div>
-      <h2 class="sec-title"><strong>Quem usou o método transformou seu jogo</strong></h2>
-    </div>
-
-    <!-- VIDEO DEPOIMENTOS -->
-    <div class="test-grid">
-      <div class="test-card fade">
-        <a class="test-video" href="https://www.youtube.com/watch?v=iHg55-k9KeQ" target="_blank" rel="noopener" aria-label="Assistir depoimento de aluno 1 no YouTube">
-          <img src="https://i.ytimg.com/vi/iHg55-k9KeQ/hqdefault.jpg" alt="Depoimento de aluno 1" loading="lazy">
-          <span class="play" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)"/><polygon points="32,24 60,40 32,56" fill="#FFCB00"/></svg></span><span class="test-video-label">ASSISTIR DEPOIMENTO</span>
-        </a>
-      </div>
-      <div class="test-card fade">
-        <a class="test-video" href="https://www.youtube.com/watch?v=QpcNvGapBqc" target="_blank" rel="noopener" aria-label="Assistir depoimento de aluno 2 no YouTube">
-          <img src="https://i.ytimg.com/vi/QpcNvGapBqc/hqdefault.jpg" alt="Depoimento de aluno 2" loading="lazy">
-          <span class="play" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)"/><polygon points="32,24 60,40 32,56" fill="#FFCB00"/></svg></span><span class="test-video-label">ASSISTIR DEPOIMENTO</span>
-        </a>
-      </div>
-      <div class="test-card fade">
-        <a class="test-video" href="https://www.youtube.com/watch?v=9mcQlkPoWKE" target="_blank" rel="noopener" aria-label="Assistir depoimento de aluno 3 no YouTube">
-          <img src="https://i.ytimg.com/vi/9mcQlkPoWKE/hqdefault.jpg" alt="Depoimento de aluno 3" loading="lazy">
-          <span class="play" aria-hidden="true"><svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)"/><polygon points="32,24 60,40 32,56" fill="#FFCB00"/></svg></span><span class="test-video-label">ASSISTIR DEPOIMENTO</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- FEEDBACKS EM ÁUDIO -->
-    <div class="audio-feedback-title">Ouça o feedback dos jogadores</div>
-    <div class="audio-feedback-grid">
-      <div class="audio-feedback-card fade">
-        <div class="audio-person"><img class="audio-avatar" src="../images/029-37kpo-taduiyg.webp" alt="Foto do Rodrigo" loading="lazy" decoding="async" width="902" height="903"><div class="audio-person-copy"><strong>Rodrigo</strong><small>Aluno Fórmula dos Prós</small></div><span class="audio-verified" aria-label="Depoimento verificado">✓</span></div>
-        <div class="audio-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <div class="audio-player-shell"><audio controls playsinline preload="metadata" aria-label="Depoimento em áudio do Rodrigo"><source src="../audio/rodrigo.mp3" type="audio/mpeg"><source src="../audio/rodrigo.ogg" type="audio/ogg">Seu navegador não suporta áudio.</audio></div>
-      </div>
-      <div class="audio-feedback-card fade">
-        <div class="audio-person"><img class="audio-avatar" src="../images/030-04g9b-ksrnwym.webp" alt="Foto do Rafael" loading="lazy" decoding="async" width="900" height="904"><div class="audio-person-copy"><strong>Rafael</strong><small>Aluno Fórmula dos Prós</small></div><span class="audio-verified" aria-label="Depoimento verificado">✓</span></div>
-        <div class="audio-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <div class="audio-player-shell"><audio controls playsinline preload="metadata" aria-label="Depoimento em áudio do Rafael"><source src="../audio/rafael.mp3" type="audio/mpeg"><source src="../audio/rafael.ogg" type="audio/ogg">Seu navegador não suporta áudio.</audio></div>
-      </div>
-      <div class="audio-feedback-card fade">
-        <div class="audio-person"><img class="audio-avatar" src="../images/031-iovmg-zfptnqe.webp" alt="Foto do João" loading="lazy" decoding="async" width="913" height="889"><div class="audio-person-copy"><strong>João</strong><small>Aluno Fórmula dos Prós</small></div><span class="audio-verified" aria-label="Depoimento verificado">✓</span></div>
-        <div class="audio-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        <div class="audio-player-shell"><audio controls playsinline preload="metadata" aria-label="Depoimento em áudio do João"><source src="../audio/joao.mp3" type="audio/mpeg"><source src="../audio/joao.ogg" type="audio/ogg">Seu navegador não suporta áudio.</audio></div>
-      </div>
-    </div>
-
-    <!-- FEEDBACKS EM IMAGEM -->
-    <div class="feedback-grid">
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/032-YNKqllR.webp" alt="Feedback 1" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/033-jXyzyaP.webp" alt="Feedback 2" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/034-LYWwxcy.webp" alt="Feedback 3" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/035-FIBCfBo.webp" alt="Feedback 4" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/036-4HMMcWa.webp" alt="Feedback 5" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/037-haHlXHF.webp" alt="Feedback 6" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/038-QkyCgog.webp" alt="Feedback 7" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-      <div class="feedback-img-card fade" onclick="abrirLightbox(this)">
-        <img src="../images/039-kSN6Mvg.webp" alt="Feedback 8" loading="lazy" decoding="async" width="1080" height="1350">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="wrap">
-    <div>
-      <div style="text-align:center;margin-bottom:8px;">
-        <span style="font-family:'Sora',sans-serif;font-size:.8em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);">Seu futuro começa aqui</span>
-        <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.2em,5vw,3.4em);font-weight:800;color:#fff;line-height:1.1;margin:10px 0 12px;">
-          Escolha o plano<br><span style="color:#C9A84C;">certo para você</span>
-        </h1>
-        <p style="font-family:'Sora',sans-serif;font-size:1em;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto;line-height:1.6;">Acesso imediato. Sem mensalidade. Garantia de 7 dias.</p>
-      </div>
-    </div>
-
-    <!-- TWO PLANS GRID -->
-    <div class="pricing-box plan-full" style="max-width:580px;margin:40px auto 0;">
-      <div class="pricing-ribbon">⭐ Melhor Escolha</div>
-      <div class="pricing-top">
-        <img class="offer-main-image" src="../images/040-47Oa8Cz.webp" alt="Oferta Fórmula dos Prós" loading="lazy" decoding="async" width="1400" height="583">
-        <div class="pricing-plan pricing-lifetime"><span aria-hidden="true">♾️</span> ACESSO VITALÍCIO COMPLETO</div>
-        <div class="pricing-old" id="offer-old-price">R$ 397</div>
-        <div class="pricing-arrow" id="offer-price-note">↓ Hoje apenas</div>
-        <div class="pricing-val" id="offer-price">R$ 59,90</div>
-        <div style="margin-top:12px;">
-          <span class="pricing-install" id="offer-installments">ou em até 12x de R$ 5,99 · Sem mensalidades</span>
-        </div>
-      </div>
-      <div class="pricing-mid">
-        <ul class="check-list">
-          <li><span class="ck-icon">✦</span> Suporte via WhatsApp com o time</li>
-          <li><span class="ck-icon">✦</span> As 9 fórmulas completas de treino</li>
-          <li><span class="ck-icon">✦</span> Acesso à comunidade VIP (WhatsApp + Skool)</li>
-          <li><span class="ck-icon">✦</span> 3 Pilares do Método Americano (Flow, Fáscia, Instinto)</li>
-          <li><span class="ck-icon">✦</span> Planilha de treinos organizada e atualizada</li>
-          <li><span class="ck-icon">✦</span> Conteúdo atualizado mensalmente</li>
-          <li><span class="ck-icon">✦</span> 3 Brindes exclusivos incluídos</li>
-          <li><span class="ck-icon">✦</span> Rotina 100% personalizada pelo Rios</li>
-        </ul>
-      </div>
-      <div class="pricing-cta">
-        <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn checkout-cta" id="offer-checkout">COMEÇAR AGORA!</a>
-        <div class="pricing-safe" id="offer-safe">🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BONUSES -->
-<section class="bonus-section">
-  <div class="wrap">
-    <div class="section-left">
-      <div class="sec-tag">Brindes Exclusivos</div>
-      <h2 class="sec-title"><strong>Ao entrar, você também leva de graça</strong></h2>
-    </div>
-    <div class="bonus-grid">
-      <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
-        <img src="../images/041-puqjV-3.webp" alt="Rotina Personalizada" loading="lazy" decoding="async" width="800" height="800">
-        <h4>Rotina 100% Personalizada para Você</h4>
-        <p>O Rios vai montar pessoalmente uma rotina de treinos feita exclusivamente para o seu perfil, posição e objetivos. Sem copiar e colar — é só sua.</p>
-      </div>
-      <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
-        <img src="../images/042-eOoIY-1.webp" alt="Treinos em Casa" loading="lazy" decoding="async" width="800" height="800">
-        <h4>Treinos em Casa</h4>
-        <p>Treine em qualquer lugar, inclusive dentro de casa, com exercícios práticos e adaptados para você.</p>
-      </div>
-      <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
-        <img src="../images/043-Hzh1y-2.webp" alt="Playlist de Dribles" loading="lazy" decoding="async" width="800" height="800">
-        <h4>Playlist de Dribles</h4>
-        <p>Coleção completa dos dribles mais eficazes para você aplicar imediatamente em campo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <button onclick="fecharLightbox()" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:1.5em;width:44px;height:44px;border-radius:50%;cursor:pointer;z-index:10001;display:flex;align-items:center;justify-content:center;">✕</button>
-  <img id="lb-img" src="" alt="Feedback">
-</div>
-<style>
-#lightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
-#lightbox.active{display:flex;}
-#lightbox img{max-width:90vw;max-height:88vh;object-fit:contain;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,0.8);cursor:default;animation:lbIn .2s ease;}
-@keyframes lbIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
-</style>
-
-<!-- UPSELL POPUP -->
-<div id="upsell-modal">
-  <div class="upsell-box">
-    <button class="upsell-close" onclick="fecharUpsell()">✕</button>
-    <div class="upsell-tag">🔥 Oferta Especial — Só Agora</div>
-    <h2 class="upsell-title">Espera! Antes de continuar com o básico…</h2>
-    <p class="upsell-sub">Você está prestes a deixar pra trás os brindes, a rotina personalizada e o suporte. <strong>Por apenas R$20 a mais, leve tudo incluso.</strong></p>
-
-    <div class="upsell-compare">
-      <div class="upsell-col upsell-basic">
-        <div class="upsell-col-label">Plano Básico</div>
-        <div class="upsell-col-price">R$ 27</div>
-        <ul>
-          <li>✦ 9 fórmulas de treino</li>
-          <li>✦ Planilha de treinos</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Brindes</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Rotina personalizada</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Suporte WhatsApp</li>
-        </ul>
-      </div>
-      <div class="upsell-col upsell-full">
-        <div class="upsell-badge">⭐ Recomendado</div>
-        <div class="upsell-col-label">Pacote Completo</div>
-        <div class="upsell-col-price-old">R$ 397</div>
-        <div class="upsell-col-price gn">R$ 59,90</div>
-        <ul>
-          <li>✦ 9 fórmulas de treino</li>
-          <li>✦ Planilha de treinos</li>
-          <li>✦ 3 Brindes exclusivos</li>
-          <li>✦ Rotina personalizada</li>
-          <li>✦ Suporte WhatsApp</li>
-        </ul>
-      </div>
-    </div>
-
-    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37</a>
-    <button onclick="irBasico()" class="upsell-btn-basic">Não, quero apenas o básico por R$27 →</button>
-  </div>
-</div>
-
-
-<!-- GUARANTEE -->
-<section class="guarantee-section">
-  <div class="wrap">
-    <div class="guarantee-inner">
-      <img src="../images/047-PM66zDW.webp" alt="Garantia 7 dias" loading="lazy" decoding="async" width="640" height="640">
-      <h3>Garanta a sua compra com ZERO RISCO!</h3>
-      <p>Sabemos que você ainda pode estar inseguro, por isso oferecemos <strong>7 dias com 100% de garantia incondicional!</strong><br><br>
-      Você pode entrar, assistir a todas as aulas, baixar as planilhas e pedir o seu dinheiro de volta com apenas 1 clique.
-      Se você entrar e não sentir que está evoluindo — <strong>você pode ter o seu dinheiro de volta!</strong><br><br>
-      O risco é zero. A oportunidade é real.</p>
-      <br>
-      <a href="#pricing" class="btn btn-sm" style="animation:none;">Começar com Risco Zero →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="wrap">
-    <div class="section-left" style="margin-bottom:0;">
-      <div class="sec-tag">Dúvidas Frequentes</div>
-      <h2 class="sec-title"><strong>Ficou com alguma dúvida?</strong></h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-left">
-        <div class="faq-item">
-          <button class="faq-q">Quando recebo o acesso? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Imediatamente após o pagamento! Você recebe todos os acessos no seu e-mail e já pode começar.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Preciso pagar mensalidade? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Não! É um investimento único. Você paga uma vez e tem acesso para sempre, incluindo todas as atualizações futuras.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">E se eu não gostar? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">7 dias de garantia total. Se não se adaptar, basta avisar e devolvemos 100% do seu investimento. Sem burocracia.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Para qual nível de jogador é? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Para todos os níveis, desde iniciantes até aspirantes a profissionais que querem se destacar no futebol.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Funciona no celular? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Perfeitamente! Acesse os treinos de qualquer dispositivo — celular, tablet ou computador.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Realmente vou melhorar em 30 dias? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Sim, desde que você siga o método. Milhares de jogadores já sentiram diferença nos primeiros 30 dias. Por isso temos a garantia de 7 dias — você não tem nada a perder.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Como faço o pagamento? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Aceitamos Cartão de Crédito e Pix! Sistema 100% automatizado e seguro com acesso imediato.</div>
-        </div>
-      </div>
-        <div class="faq-item">
-          <button class="faq-q">Para qual idade é indicado? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Para jogadores a partir de 12 anos. O método foi testado com jovens de base e atletas amadores de todas as idades.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Preciso estar em algum time? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Não! O método funciona independente de você estar num time, escolinha ou treinar por conta própria. Você evolui em qualquer contexto.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Qual a diferença do plano básico para o completo? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">O plano básico dá acesso às 9 fórmulas e à planilha de treinos. O plano completo inclui ainda os 3 brindes exclusivos, a rotina 100% personalizada pelo Rios e suporte direto via WhatsApp.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Tenho acesso para sempre? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Sim, o acesso é vitalício! Uma vez dentro, o conteúdo é seu para sempre — incluindo todas as atualizações que fizermos.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Como funciona a rotina personalizada? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Após a compra do plano completo, o Rios cria uma rotina exclusiva baseada no seu perfil, posição e objetivos. Você recebe ela diretamente pelo WhatsApp.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Fórmula dos Prós</div>
-  <p style="margin-bottom:10px;">© 2026 Fórmula dos Prós. Todos os direitos reservados. · CNPJ: 57.403.588/0001-41</p>
-  <p><a href="#">Política de Privacidade</a> &nbsp;·&nbsp; <a href="#">Termos de Uso</a> &nbsp;·&nbsp; <a href="/blog">📝 Blog</a></p>
-</footer>
-
-<style>
-/* PORTUGAL BAR */
-.portugal-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  font-family: 'Sora', sans-serif;
-  font-size: .875em;
-  color: #64748b;
-}
-.portugal-btn {
-  background: #C9A84C;
-  color: #fff;
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: .8em;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 10px 22px;
-  border-radius: 40px;
-  text-decoration: none;
-  transition: filter .2s, transform .2s;
-}
-.portugal-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
-
-/* PORTUGAL SECTION */
-.portugal-section {
-  background: linear-gradient(135deg, #1a1200 0%, #2a1f00 100%);
-  padding: 40px 60px;
-  border-top: 1px solid rgba(180,0,0,0.4);
-  border-bottom: 1px solid rgba(180,0,0,0.4);
-}
-.portugal-inner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.portugal-flag { font-size: 2.5em; line-height: 1; }
-.portugal-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2em;
-  font-weight: 500;
-  color: #1a1200;
-  flex: 1;
-}
-.portugal-text strong { color: var(--yellow); font-weight: 800; }
-.portugal-cta {
-  background: #C9A84C;
-  color: #fff;
-  font-family: 'Sora', sans-serif;
-  font-weight: 900;
-  font-size: .9em;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: 40px;
-  text-decoration: none;
-  white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(255,203,0,0.3);
-  transition: filter .2s, transform .2s;
-  animation: pulse 2s infinite;
-}
-.portugal-cta:hover { filter: brightness(1.1); transform: translateY(-2px); animation: none; }
-@media(max-width: 767px) {
-  .portugal-section { padding: 32px 20px !important; }
-  .portugal-inner { justify-content: center; text-align: center; }
-  .portugal-text { flex: unset; width: 100%; }
-}
-
-
-</style>
 
 <script>
+// QUIZ DE ENTRADA — telas reais em HTML/CSS
 (() => {
-  const offerSection = document.querySelector('.pricing-section');
-  const evaluationSection = document.querySelector('.test-section');
-  if (offerSection && evaluationSection) {
-    offerSection.insertAdjacentElement('afterend', evaluationSection);
-  }
-
-  const quizContext = window.FunnelAnalytics?.getQuizContext?.() || null;
-  const answers = quizContext?.answers || {};
-
-  const CHECKOUT_BY_POSITION = {
-    default: 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Atacante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Meio-campo': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Volante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Lateral': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Zagueiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Goleiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ainda não sei': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ponta': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Várias posições': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa'
-  };
-  function getCheckoutUrlByPosition() {
-    return CHECKOUT_BY_POSITION[answers.position] || CHECKOUT_BY_POSITION.default;
-  }
+  const gate = document.getElementById('prelp-quiz');
+  if (!gate) return;
 
   const monthName = new Intl.DateTimeFormat('pt-BR', { month: 'long' })
     .format(new Date())
     .toLocaleUpperCase('pt-BR');
-  document.querySelectorAll('[data-promo-month]').forEach((item) => { item.textContent = monthName; });
+  document.querySelectorAll('[data-promo-month]').forEach((item) => {
+    item.textContent = monthName;
+  });
 
-  function applyCountryOffer() {
-    const price = document.getElementById('offer-price');
-    const oldPrice = document.getElementById('offer-old-price');
-    const priceNote = document.getElementById('offer-price-note');
-    const installments = document.getElementById('offer-installments');
-    const checkout = document.getElementById('offer-checkout');
-    const upsellCheckout = document.getElementById('upsell-checkout-full');
-    const safe = document.getElementById('offer-safe');
-    if (!price || !checkout) return;
+  const intro = document.getElementById('prelp-intro');
+  const stageView = document.getElementById('prelp-stage');
+  const stageContent = document.getElementById('prelp-stage-content');
+  const card = gate.querySelector('.prelp-card');
+  const answers = {};
+  const totalStages = 21;
+  let currentStage = 1;
+  let changing = false;
+  let loadingTimer = null;
+  let loadingInterval = null;
+  let giftCountdownInterval = null;
+  let giftDeadline = 0;
 
-    if (answers.country === 'Portugal') {
-      price.textContent = '€ 17,90';
-      if (oldPrice) oldPrice.hidden = true;
-      if (priceNote) priceNote.textContent = 'Condição especial para Portugal';
-      if (installments) installments.textContent = 'Pagamento seguro pela Hotmart · Acesso imediato';
-      checkout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
-      if (upsellCheckout) upsellCheckout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
-      if (safe) safe.textContent = '🔒 Pagamento 100% seguro pela Hotmart · Acesso imediato';
-      return;
+  const generatedStageImages = {
+    physical: 'images/embedded-01.webp',
+    physicalLose: 'images/embedded-02.webp',
+    physicalGain: 'images/embedded-03.webp',
+    physicalMaintain: 'images/embedded-04.webp',
+    physicalUnknown: 'images/embedded-05.webp',
+    postGame: 'images/embedded-06.webp',
+    mentalMore: 'images/embedded-07.webp',
+    mentalTraining: 'images/embedded-08.webp',
+    mentalForget: 'images/embedded-09.webp',
+    clarity: 'images/embedded-10.webp',
+    plateau: 'images/embedded-11.webp',
+    fascia: 'images/embedded-12.webp',
+    instinct: 'images/embedded-13.webp',
+    flow: 'images/embedded-14.webp',
+    gifts: 'images/embedded-15.webp',
+    analysis: 'images/embedded-16.webp'
+  };
+
+  const physicalFeedback = {
+    lose: {
+      title: 'Perder peso',
+      imageKey: 'physicalLose',
+      imageAlt: 'Jogador fazendo circuito intenso para perder gordura e ganhar condicionamento',
+      body: 'Boa! Seu treino será ajustado para acelerar o gasto calórico, melhorar seu condicionamento e queimar gordura enquanto você desenvolve os fundamentos do futebol.',
+      callout: 'Vamos focar em intensidade e constância!'
+    },
+    gain: {
+      title: 'Ganhar massa muscular',
+      imageKey: 'physicalGain',
+      imageAlt: 'Jogador desenvolvendo força funcional e massa muscular para o futebol',
+      body: 'Top demais! Seu treino vai priorizar força, explosão e exercícios que aumentam a massa magra sem perder agilidade em campo.',
+      callout: 'A ideia é deixar você mais forte, resistente e dominante no jogo.'
+    },
+    maintain: {
+      title: 'Manter meu peso',
+      imageKey: 'physicalMaintain',
+      imageAlt: 'Jogador equilibrando força, alimentação e habilidade para manter o peso',
+      body: 'Sem problema! Vamos montar um treino versátil, misturando perda de gordura, ganho de força e evolução técnica. Depois, você poderá ajustar o foco conforme os resultados.',
+      callout: 'O importante é começar!'
+    },
+    unknown: {
+      title: 'Ainda não sei',
+      imageKey: 'physicalUnknown',
+      imageAlt: 'Jogador descobrindo qual caminho físico combina com seus objetivos',
+      body: 'Perfeito! Seu treino será equilibrado, focado em performance e qualidade de movimento para você evoluir na parte técnica e jogar no seu melhor nível.',
+      callout: 'Vamos descobrir seu melhor caminho durante a evolução.'
     }
+  };
 
-    const checkoutUrl = getCheckoutUrlByPosition();
-    price.textContent = 'R$ 59,90';
-    if (oldPrice) { oldPrice.hidden = false; oldPrice.textContent = 'R$ 397'; }
-    if (priceNote) priceNote.textContent = '↓ Hoje apenas';
-    if (installments) installments.textContent = 'ou em até 12x de R$ 5,99 · Sem mensalidades';
-    checkout.href = checkoutUrl;
-    if (upsellCheckout) upsellCheckout.href = checkoutUrl;
-    if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
+  const mentalFeedback = {
+    more: {
+      title: 'Esse pensamento mostra que você tem fome de evolução.',
+      imageKey: 'mentalMore',
+      imageAlt: 'Jogador analisando a própria partida e transformando erros em evolução',
+      body: 'Só tome cuidado para não transformar cobrança em culpa. Depois do jogo, analise uma ou duas ações que poderiam ter sido melhores, aprenda com elas e siga. Jogador forte não fica se destruindo: ele ajusta.',
+      callout: 'Vou te ajudar a transformar cobrança em evolução.'
+    },
+    training: {
+      title: 'Isso acontece com muito jogador.',
+      imageKey: 'mentalTraining',
+      imageAlt: 'Contraste entre jogar solto no treino e travar sob pressão no jogo',
+      body: 'No treino você está solto, mas no jogo começa a pensar demais, fica com medo de errar e trava. Muitas vezes, o problema não é técnico: é confiança, tomada de decisão e controle da pressão.',
+      callout: 'Vou te ajudar a levar o seu melhor treino para o jogo.'
+    },
+    forget: {
+      title: 'Você não desaprende.',
+      imageKey: 'mentalForget',
+      imageAlt: 'Jogador recuperando clareza e direção durante uma partida sob pressão',
+      body: 'No jogo, seu cérebro entra em alerta. Você fica ansioso, perde espontaneidade e joga abaixo do que realmente sabe. Por isso, treino mental e treino de instinto são tão importantes.',
+      callout: 'Vou te ajudar a jogar solto novamente.'
+    }
+  };
+
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function clearLoading() {
+    if (loadingTimer) window.clearTimeout(loadingTimer);
+    if (loadingInterval) window.clearInterval(loadingInterval);
+    if (giftCountdownInterval) window.clearInterval(giftCountdownInterval);
+    loadingTimer = null;
+    loadingInterval = null;
+    giftCountdownInterval = null;
   }
 
   function showUnlockedPopup() {
+    const oldPopup = document.querySelector('.training-unlocked-toast');
+    if (oldPopup) oldPopup.remove();
+
     const positionLabels = {
-      'Várias posições': 'várias posições', 'Ainda não sei': 'descobrir sua posição ideal',
-      'Atacante': 'atacante', 'Ponta': 'ponta', 'Meio-campo': 'meio-campo',
-      'Lateral': 'lateral', 'Zagueiro': 'zagueiro', 'Volante': 'volante', 'Goleiro': 'goleiro'
+      'Várias posições': 'várias posições',
+      'Ainda não sei': 'descobrir sua posição ideal',
+      'Atacante': 'atacante',
+      'Ponta': 'ponta',
+      'Meio-campo': 'meio-campo',
+      'Lateral': 'lateral',
+      'Zagueiro': 'zagueiro',
+      'Volante': 'volante',
+      'Goleiro': 'goleiro'
     };
     const selectedPosition = positionLabels[answers.position];
+    const message = selectedPosition
+      ? 'Seu treinamento para ' + selectedPosition + ' foi desbloqueado!'
+      : 'Seu treinamento personalizado foi desbloqueado!';
+
     const popup = document.createElement('aside');
     popup.className = 'training-unlocked-toast';
     popup.setAttribute('role', 'status');
     popup.setAttribute('aria-live', 'polite');
-    popup.innerHTML = '<span class="training-unlocked-icon">✓</span>' +
-      '<div class="training-unlocked-copy"><strong>PLANO LIBERADO</strong><p></p></div>' +
-      '<button class="training-unlocked-close" type="button" aria-label="Fechar aviso">×</button>' +
-      '<span class="training-unlocked-timer"></span>';
-    popup.querySelector('p').textContent = selectedPosition
-      ? 'Seu treinamento para ' + selectedPosition + ' foi desbloqueado!'
-      : 'Seu treinamento personalizado foi desbloqueado!';
+
+    const icon = document.createElement('span');
+    icon.className = 'training-unlocked-icon';
+    icon.textContent = '✓';
+
+    const copy = document.createElement('div');
+    copy.className = 'training-unlocked-copy';
+    const label = document.createElement('strong');
+    label.textContent = 'PLANO LIBERADO';
+    const text = document.createElement('p');
+    text.textContent = message;
+    copy.append(label, text);
+
+    const close = document.createElement('button');
+    close.className = 'training-unlocked-close';
+    close.type = 'button';
+    close.setAttribute('aria-label', 'Fechar aviso');
+    close.textContent = '×';
+
+    const timer = document.createElement('span');
+    timer.className = 'training-unlocked-timer';
+    popup.append(icon, copy, close, timer);
     document.body.appendChild(popup);
+
     let removed = false;
     const dismiss = () => {
       if (removed) return;
@@ -3523,105 +3296,573 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       popup.classList.add('is-hiding');
       window.setTimeout(() => popup.remove(), 300);
     };
-    popup.querySelector('button').addEventListener('click', dismiss);
+    close.addEventListener('click', dismiss);
     window.requestAnimationFrame(() => popup.classList.add('is-visible'));
     window.setTimeout(dismiss, 8000);
   }
 
-  applyCountryOffer();
-  document.querySelectorAll('iframe[data-src]').forEach((frame) => {
-    frame.src = frame.dataset.src;
-    frame.removeAttribute('data-src');
-  });
+  function applyCountryOffer() {
+    const price = document.getElementById('offer-price');
+    const oldPrice = document.getElementById('offer-old-price');
+    const priceNote = document.getElementById('offer-price-note');
+    const installments = document.getElementById('offer-installments');
+    const checkout = document.getElementById('offer-checkout');
+    const safe = document.getElementById('offer-safe');
 
-  let shouldShowPopup = false;
-  try {
-    shouldShowPopup = Boolean(quizContext?.completed_at && window.sessionStorage.getItem('fdp_show_unlock_popup') === '1');
-    window.sessionStorage.removeItem('fdp_show_unlock_popup');
-  } catch (error) {}
-  if (shouldShowPopup) window.setTimeout(showUnlockedPopup, 420);
-})();
-</script>
+    if (!price || !checkout) return;
 
-<script>
-document.querySelectorAll('.audio-feedback-card audio').forEach((player) => {
-  player.addEventListener('play', () => {
-    document.querySelectorAll('.audio-feedback-card audio').forEach((otherPlayer) => {
-      if (otherPlayer !== player) otherPlayer.pause();
+    if (answers.country === 'Portugal') {
+      price.textContent = '€ 17,90';
+      if (oldPrice) oldPrice.hidden = true;
+      if (priceNote) priceNote.textContent = 'Condição especial para Portugal';
+      if (installments) installments.textContent = 'Pagamento seguro pela Hotmart · Acesso imediato';
+      checkout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
+      if (safe) safe.textContent = '🔒 Pagamento 100% seguro pela Hotmart · Acesso imediato';
+      return;
+    }
+
+    price.textContent = 'R$ 37';
+    if (oldPrice) {
+      oldPrice.hidden = false;
+      oldPrice.textContent = 'R$ 97';
+    }
+    if (priceNote) priceNote.textContent = '↓ Hoje apenas';
+    if (installments) installments.textContent = 'ou em até 12x de R$ 3,69 · Sem mensalidades';
+    checkout.href = 'https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg';
+    if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
+  }
+
+  function revealLandingPage() {
+    clearLoading();
+    window.FunnelAnalytics?.complete(answers);
+    window.FunnelAnalytics?.landingUnlocked(answers);
+    try { window.sessionStorage.setItem('fdp_show_unlock_popup', '1'); } catch (error) {}
+    const destination = new URL('LP/', window.location.href);
+    destination.search = window.location.search;
+    window.location.assign(destination.href);
+  }
+
+  function goBack() {
+    if (changing || currentStage <= 1) return;
+    window.FunnelAnalytics?.action('back_clicked', { from_step: currentStage }, currentStage);
+    clearLoading();
+    if (currentStage === 2) {
+      currentStage = 1;
+      stageView.hidden = true;
+      intro.hidden = false;
+      gate.classList.remove('is-semantic');
+      card.classList.remove('is-stage-mode');
+      return;
+    }
+    goToStage(currentStage - 1);
+  }
+
+  function header(stage, allowBack) {
+    const progress = Math.max(4, Math.round((stage / totalStages) * 100));
+    return '<header class="q-header">' +
+      (allowBack ? '<button class="q-back" type="button" aria-label="Voltar">‹</button>' : '<span></span>') +
+      '<div class="q-logo"><img src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós"></div>' +
+      '<span></span><div class="q-progress" aria-label="Progresso do quiz"><span style="width:' + progress + '%"></span></div>' +
+      '</header>';
+  }
+
+  function renderScreen(stage, content, allowBack) {
+    stageContent.innerHTML = '<section class="q-screen" data-stage="' + stage + '">' +
+      header(stage, allowBack !== false) + '<main class="q-content">' + content + '</main></section>';
+    const back = stageContent.querySelector('.q-back');
+    if (back) back.addEventListener('click', goBack);
+    const stageTitle = stageContent.querySelector('.q-title');
+    window.FunnelAnalytics?.stage(stage, stageTitle ? stageTitle.textContent.trim() : 'Etapa ' + stage);
+    window.scrollTo(0, 0);
+  }
+
+  function media(icon, label, variant) {
+    return '<div class="q-media ' + (variant || '') + '"><div class="q-media-icon" aria-hidden="true">' + icon +
+      '</div>' + (label ? '<div class="q-media-label">' + label + '</div>' : '') + '</div>';
+  }
+
+  function stageImage(src, alt) {
+    return '<div class="q-stage-image"><img src="' + src + '" alt="' + escapeHtml(alt) + '" loading="eager"></div>';
+  }
+
+  function symbolicImage(key, alt, compact) {
+    return '<div class="q-symbolic-image' + (compact ? ' is-compact' : '') + '"><img src="' + generatedStageImages[key] + '" alt="' + escapeHtml(alt) + '"></div>';
+  }
+
+  function quizVideo(videoId, title) {
+    return '<div class="q-quiz-video" aria-label="Vídeo: ' + escapeHtml(title) + '">' +
+      '<lt-v2 v="' + escapeHtml(videoId) + '" ar="9:16" sc="0" st="0" ap="1" pc="c9a84c" pe="4x" ph="8"></lt-v2></div>';
+  }
+
+  function optionImage(src, alt) {
+    return '<img class="q-option-image" src="' + src + '" alt="' + escapeHtml(alt) + '" loading="lazy">';
+  }
+
+  function option(value, text, icon, extraClass, letter) {
+    return '<button class="q-option ' + (extraClass || '') + '" type="button" data-value="' + escapeHtml(value) + '">' +
+      (letter ? '<span class="q-option-letter">' + letter + '</span>' : (icon ? '<span class="q-option-icon">' + icon + '</span>' : '')) +
+      '<span class="q-option-text">' + text + '</span><span class="q-option-arrow">›</span></button>';
+  }
+
+  function bindAutoChoices(key, nextStage) {
+    stageContent.querySelectorAll('.q-option[data-value]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (changing) return;
+        answers[key] = button.dataset.value;
+        window.FunnelAnalytics?.answer(key, button.dataset.value, currentStage);
+        stageContent.querySelectorAll('.q-option').forEach((item) => item.classList.remove('is-selected'));
+        button.classList.add('is-selected');
+        changing = true;
+        window.setTimeout(() => {
+          changing = false;
+          goToStage(nextStage);
+        }, 170);
+      });
     });
+  }
+
+  function bindContinue(nextStage) {
+    const button = stageContent.querySelector('[data-continue]');
+    if (button) button.addEventListener('click', () => {
+      window.FunnelAnalytics?.action('continue_clicked', { next_step: nextStage }, currentStage);
+      goToStage(nextStage);
+    });
+  }
+
+  function showToast(text) {
+    const old = gate.querySelector('.q-toast');
+    if (old) old.remove();
+    const toast = document.createElement('div');
+    toast.className = 'q-toast';
+    toast.textContent = text;
+    gate.appendChild(toast);
+    window.setTimeout(() => toast.remove(), 1700);
+  }
+
+  function renderStage2() {
+    renderScreen(2,
+      stageImage('images/049-aeca37f755eec25ba3b49568bb6ddca8.gif', 'Jogador concentrado') +
+      '<div class="q-note alert"><strong>⚠️ Atenção: esse protocolo não é para jogadores comuns.</strong><br><br>Aqui, você vai acessar métodos que quase ninguém conhece no futebol moderno.<br><br><strong>Você está pronto?</strong></div>' +
+      '<div class="q-options">' +
+        option('prepared', 'Sim, estou preparado!', '✅') +
+        option('comfortable', 'Não, quero ficar no confortável!', '🤡') +
+      '</div>');
+    stageContent.querySelector('.q-option[data-value="prepared"]').addEventListener('click', (event) => {
+      answers.ready = 'prepared';
+      window.FunnelAnalytics?.answer('ready', 'prepared', 2);
+      event.currentTarget.classList.add('is-selected');
+      window.setTimeout(() => goToStage(3), 170);
+    });
+    stageContent.querySelector('.q-option[data-value="comfortable"]').addEventListener('click', () => {
+      answers.ready = 'comfortable';
+      window.FunnelAnalytics?.answer('ready', 'comfortable', 2);
+      window.FunnelAnalytics?.action('comfort_exit', {}, 2);
+      renderComfortExit();
+    });
+  }
+
+  function renderComfortExit() {
+    currentStage = 2;
+    renderScreen(2,
+      '<div class="q-stage-icon">🤡</div>' +
+      '<h1 class="q-title">Ok, então meu guia <span class="q-highlight">não é para você.</span></h1>' +
+      '<p class="q-subtitle">Este método foi criado para jogadores que estão dispostos a sair do confortável e fazer o que a maioria não faz.</p>' +
+      '<div class="q-note"><strong>Se você mudar de ideia e decidir evoluir de verdade, pode voltar e continuar.</strong></div>' +
+      '<button class="q-primary" type="button" data-retry>QUERO SAIR DO CONFORTÁVEL</button>');
+    stageContent.querySelector('[data-retry]').addEventListener('click', () => goToStage(2));
+  }
+
+  function renderStage3() {
+    renderScreen(3,
+      stageImage('images/050-lKYpG-giphy4-1.gif', 'Treinamento diferente') +
+      '<h1 class="q-title">Bem-vindo ao <span class="q-highlight">1%</span> dos que treinam diferente!</h1>' +
+      '<p class="q-subtitle">O que vem agora é um método que quase ninguém revela, mas que pode mudar seu jogo por completo.</p>' +
+      '<div class="q-note">Vamos fazer algumas perguntas para entender seu jogo e personalizar seu treinamento.<br><br>Clique no botão abaixo 👇🏻</div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button>');
+    bindContinue(4);
+  }
+
+  function renderStage4() {
+    renderScreen(4,
+      stageImage('images/051-yKEtK-5568.webp', 'Fórmula dos Prós no mundo') +
+      '<h1 class="q-title">A Fórmula dos Prós virou movimento mundial.</h1>' +
+      '<p class="q-subtitle">De qual país você é?</p>' +
+      '<div class="q-options q-country">' +
+        option('Brasil', 'Sou do Brasil!', optionImage('images/052-znz8O-flag-of-brazilsvg-1.webp', 'Bandeira do Brasil')) +
+        option('Portugal', 'Sou de Portugal!', optionImage('images/053-kT9fs-112121.webp', 'Bandeira de Portugal')) +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('country', 5);
+  }
+
+  function renderStage5() {
+    const positions = [
+      ['Várias posições', 'Jogo em várias posições', 'images/054-ReXan-assets-task-01jyz1czv2e23vms5skkatnaxd-1751240929-img-1.webp'],
+      ['Ainda não sei', 'Ainda não sei', 'images/055-l5e2d-aindanaosei-1.webp'],
+      ['Atacante', 'Atacante', 'images/056-es2bx-atacante-1.webp'],
+      ['Ponta', 'Ponta', 'images/057-8Ewd5-subcabecalho-3.webp'],
+      ['Meio-campo', 'Meio-campo', 'images/058-ixtys-meio-campo-1.webp'],
+      ['Lateral', 'Lateral', 'images/059-4w8x2-lateral-1.webp'],
+      ['Zagueiro', 'Zagueiro', 'images/060-x840y-zagueiro-1.webp'],
+      ['Volante', 'Volante', 'images/061-yj1qo-volante-1.webp'],
+      ['Goleiro', 'Goleiro', 'images/062-5mwc4-goleiro-1.webp']
+    ];
+    renderScreen(5,
+      '<h1 class="q-title q-title-sm">Qual sua posição <span class="q-highlight">dentro de campo?</span></h1>' +
+      '<p class="q-subtitle">Vamos definir um plano específico para sua posição em campo ou quadra.</p>' +
+      '<div class="q-options q-position-list">' + positions.map((item) => option(item[0], item[1], optionImage(item[2], item[1]))).join('') + '</div>');
+    bindAutoChoices('position', 6);
+  }
+
+  function renderStage6() {
+    const ages = [
+      ['Até 13 anos', 'Até 13 anos', 'images/063-cyGjW-assets-task-01k2k9dc1hfw5sjn2wdszzgrjf-1755141656-img-1.webp'],
+      ['14 a 17 anos', '14 a 17 anos', 'images/064-QhGgS-assets-task-01k2k9h7n4epsv4xh988kee125-1755141781-img-0.webp'],
+      ['18 a 25 anos', '18 a 25 anos', 'images/065-c3pxj-assets-task-01k2k9ks5kfyttdzjk2hs86sfp-1755141846-img-0.webp'],
+      ['Acima de 25 anos', 'Acima de 25 anos', 'images/066-3sK0n-assets-task-01k2k9nnvte0n8xbk13sjck5c9-1755141931-img-1.webp']
+    ];
+    const cards = ages.map((item) => '<button class="q-option q-age-card" type="button" data-value="' + item[0] + '">' +
+      '<span class="q-age-visual"><img src="' + item[2] + '" alt="' + escapeHtml(item[1]) + '" loading="lazy"></span><span class="q-age-label">' + item[1] + '</span></button>').join('');
+    renderScreen(6,
+      '<h1 class="q-title">Qual é sua idade?</h1>' +
+      '<p class="q-subtitle">Perguntamos isso para personalizar seu treinamento conforme sua idade.</p>' +
+      '<div class="q-options grid-2">' + cards + '</div>');
+    stageContent.querySelectorAll('.q-age-visual img').forEach((image) => {
+      image.addEventListener('error', () => {
+        image.parentElement.classList.add('is-missing');
+        image.remove();
+      });
+    });
+    bindAutoChoices('age', 7);
+  }
+
+  function renderStage7() {
+    const position = answers.position || 'posição';
+    const choices = [
+      ['professional', 'Me tornar jogador profissional'],
+      ['friends', 'Jogar melhor com amigos'],
+      ['fun', 'Jogar por diversão'],
+      ['respect', 'Parar de ser zoado no grupo']
+    ];
+    const selectedGoals = Array.isArray(answers.mainGoals)
+      ? [...answers.mainGoals]
+      : (answers.mainGoal ? [answers.mainGoal] : []);
+    answers.mainGoals = selectedGoals;
+    renderScreen(7,
+      '<h1 class="q-title q-title-sm">Qual é o seu principal objetivo como <span class="q-highlight">' + escapeHtml(position) + '?</span></h1>' +
+      '<p class="q-subtitle">Escolha uma ou mais opções para continuar.</p>' +
+      '<div class="q-options q-select-goal">' + choices.map((item) =>
+        '<button class="q-option' + (selectedGoals.includes(item[0]) ? ' is-selected' : '') + '" type="button" data-value="' + item[0] + '" aria-pressed="' + selectedGoals.includes(item[0]) + '"><span class="q-check">✓</span><span class="q-option-text">' + item[1] + '</span></button>'
+      ).join('') + '</div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    stageContent.querySelectorAll('.q-option').forEach((button) => {
+      button.addEventListener('click', () => {
+        const value = button.dataset.value;
+        const selectedIndex = selectedGoals.indexOf(value);
+        if (selectedIndex >= 0) selectedGoals.splice(selectedIndex, 1);
+        else selectedGoals.push(value);
+        answers.mainGoals = [...selectedGoals];
+        answers.mainGoal = selectedGoals[0] || '';
+        window.FunnelAnalytics?.answer('mainGoals', [...selectedGoals], 7);
+        const isSelected = selectedGoals.includes(value);
+        button.classList.toggle('is-selected', isSelected);
+        button.setAttribute('aria-pressed', String(isSelected));
+      });
+    });
+    stageContent.querySelector('[data-continue]').addEventListener('click', () => {
+      if (!selectedGoals.length) return showToast('Escolha pelo menos uma opção para continuar.');
+      goToStage(8);
+    });
+  }
+
+  function renderStage8() {
+    renderScreen(8,
+      symbolicImage('physical', 'Jogador desenvolvendo força, velocidade e condicionamento') +
+      '<h1 class="q-title">Qual seu objetivo <span class="q-highlight">físico?</span></h1>' +
+      '<p class="q-subtitle">Perguntamos isso para personalizar seu treinamento.</p>' +
+      '<div class="q-options">' +
+        option('lose', 'Perder peso') +
+        option('gain', 'Ganhar massa muscular') +
+        option('maintain', 'Manter meu peso') +
+        option('unknown', 'Ainda não sei') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('physicalGoal', 9);
+  }
+
+  function renderFeedback(stage, data, imageKey, imageAlt) {
+    const resolvedImageKey = data.imageKey || imageKey;
+    const resolvedImageAlt = data.imageAlt || imageAlt;
+    renderScreen(stage,
+      symbolicImage(resolvedImageKey, resolvedImageAlt) + '<div class="q-feedback">' +
+      '<h1 class="q-title"><span class="q-highlight">' + data.title + '</span></h1>' +
+      '<p class="q-feedback-copy">' + data.body + '</p><strong class="q-feedback-callout">' + data.callout + '</strong>' +
+      '<button class="q-primary" type="button" data-continue>Bora!</button></div>');
+    bindContinue(stage + 1);
+  }
+
+  function renderStage10() {
+    renderScreen(10,
+      symbolicImage('postGame', 'Jogador refletindo após uma partida') +
+      '<h1 class="q-title">Depois do jogo, qual <span class="q-highlight">pensamento</span> mais passa na sua cabeça?</h1>' +
+      '<div class="q-options">' +
+        option('more', 'Eu poderia ter feito muito mais', '', '', 'A') +
+        option('training', 'No treino eu jogo melhor que isso', '', '', 'B') +
+        option('forget', 'Parece que eu desaprendo na hora do jogo', '', '', 'C') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('postGame', 11);
+  }
+
+  function renderStage12() {
+    renderScreen(12,
+      symbolicImage('clarity', 'Jogador escolhendo um caminho claro de evolução') +
+      '<h1 class="q-title">Você sabe exatamente o que <span class="q-highlight">precisa melhorar</span> hoje?</h1>' +
+      '<div class="q-options">' +
+        option('none', 'Não faço ideia', '', '', 'A') +
+        option('exact', 'Sei exatamente', '', '', 'B') +
+        option('some', 'Mais ou menos', '', '', 'C') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('awareness', 13);
+  }
+
+  function renderStage13() {
+    renderScreen(13,
+      symbolicImage('plateau', 'Jogador rompendo um ciclo de treinos sem evolução no jogo') +
+      '<h1 class="q-title">Você sente que treina muito... mas no jogo parece que não <span class="q-highlight">evoluiu?</span></h1>' +
+      '<div class="q-options">' +
+        option('yes', 'Exatamente isso', '', '', 'A') +
+        option('sometimes', 'Às vezes sinto isso', '', '', 'B') +
+        option('rarely', 'Raramente', '', '', 'C') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('plateau', 14);
+  }
+
+  function renderStage14() {
+    renderScreen(14,
+      symbolicImage('fascia', 'Representação das cadeias fasciais durante o movimento no futebol') +
+      '<h1 class="q-title">Você já ouviu falar em <span class="q-highlight">fáscia</span> no futebol?</h1>' +
+      '<div class="q-options">' +
+        option('heard', 'Sim, só não sei exatamente o que significa.') +
+        option('never', 'Nunca ouvi falar') +
+        option('trained', 'Já ouvi e até tentei treinar') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('fascia', 15);
+  }
+
+  function renderStage15() {
+    renderScreen(15,
+      '<h1 class="q-title q-title-sm">Fáscia não treinada deixa seu jogo <span class="q-highlight">travado.</span></h1>' +
+      '<p class="q-subtitle">Treiná-la gera mais leveza, velocidade e eficiência, gastando menos energia.</p>' +
+      quizVideo('d81e8906-b404-48e3-a5f0-14ea66fdac77', 'O que é a fáscia no futebol') +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    bindContinue(16);
+  }
+
+  function renderStage16() {
+    renderScreen(16,
+      symbolicImage('instinct', 'Jogador reagindo por instinto durante um duelo') +
+      '<h1 class="q-title">Você já ouviu falar em <span class="q-highlight">Instinto</span> no futebol?</h1>' +
+      '<div class="q-options">' +
+        option('heard', 'Sim, só não sei exatamente o que significa.') +
+        option('never', 'Nunca ouvi falar') +
+        option('trained', 'Já ouvi e até tentei treinar') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('instinct', 17);
+  }
+
+  function renderInfoStage(stage, title, imageKey, imageAlt, body, callout, nextStage) {
+    renderScreen(stage,
+      symbolicImage(imageKey, imageAlt) + '<h1 class="q-title">' + title + '</h1>' +
+      '<div class="q-note">' + body + '<br><br><strong>' + callout + '</strong></div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    bindContinue(nextStage);
+  }
+
+  function renderVideoInfoStage(stage, title, videoId, videoTitle, body, callout, nextStage) {
+    renderScreen(stage,
+      '<h1 class="q-title">' + title + '</h1>' +
+      quizVideo(videoId, videoTitle) +
+      '<div class="q-note">' + body + '<br><br><strong>' + callout + '</strong></div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    bindContinue(nextStage);
+  }
+
+  function renderStage18() {
+    renderScreen(18,
+      symbolicImage('flow', 'Jogador totalmente concentrado no estado de flow') +
+      '<h1 class="q-title">Você já ouviu falar em <span class="q-highlight">Flow</span> no futebol?</h1>' +
+      '<div class="q-options">' +
+        option('heard', 'Sim, só não sei exatamente o que significa.') +
+        option('never', 'Nunca ouvi falar') +
+        option('trained', 'Já ouvi e até tentei entrar no estado') +
+      '</div><p class="q-helper">Clique para continuar.</p>');
+    bindAutoChoices('flow', 19);
+  }
+
+  function startGiftCountdown() {
+    const display = stageContent.querySelector('[data-gift-countdown]');
+    const note = stageContent.querySelector('[data-gift-countdown-note]');
+    if (!display) return;
+    if (!giftDeadline || giftDeadline <= Date.now()) giftDeadline = Date.now() + (5 * 60 * 1000);
+
+    const updateCountdown = () => {
+      const remaining = Math.max(0, giftDeadline - Date.now());
+      const totalSeconds = Math.ceil(remaining / 1000);
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      display.textContent = String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+      display.setAttribute('aria-label', minutes + ' minutos e ' + seconds + ' segundos restantes');
+      if (remaining <= 0) {
+        window.clearInterval(giftCountdownInterval);
+        giftCountdownInterval = null;
+        if (note) note.textContent = 'Última chance: resgate seus brindes agora.';
+      }
+    };
+
+    updateCountdown();
+    giftCountdownInterval = window.setInterval(updateCountdown, 1000);
+  }
+
+  function renderStage20() {
+    renderScreen(20,
+      symbolicImage('gifts', 'Conjunto de brindes de treinamento de futebol') +
+      '<div class="q-gift-hero"><span class="q-gift-kicker">🎁 Brindes liberados</span><h1 class="q-title q-title-sm">Você desbloqueou <span class="q-highlight">3 brindes especiais</span></h1><span class="q-free-badge">✓ 100% GRATUITOS</span><p class="q-subtitle">Resgate agora seus materiais extras para acelerar sua evolução.</p></div>' +
+      '<div class="q-gift-grid">' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/043-Hzh1y-2.webp" alt="Brinde Playlist de dribles" loading="eager"><span>Playlist de dribles</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/042-eOoIY-1.webp" alt="Brinde Treinos em casa" loading="eager"><span>Treinos em casa</span></div>' +
+        '<div class="q-gift-card"><b class="q-gift-card-free">GRÁTIS</b><img src="images/041-puqjV-3.webp" alt="Brinde Rotina personalizada" loading="eager"><span>Rotina personalizada</span></div>' +
+      '</div>' +
+      '<div class="q-benefits"><div class="q-benefit">Mais de 10 dribles para evoluir seu 1x1.</div>' +
+      '<div class="q-benefit">Treinos completos para fazer em casa.</div>' +
+      '<div class="q-benefit">Rotina personalizada para seus objetivos.</div></div>' +
+      '<div class="q-gift-countdown" role="timer" aria-live="off"><span>Tempo para resgatar gratuitamente</span><strong data-gift-countdown>05:00</strong><small data-gift-countdown-note>Garanta os 3 brindes antes que o tempo termine.</small></div>' +
+      '<button class="q-primary q-gift-claim" type="button" data-continue>RESGATAR 3 BRINDES GRÁTIS</button><p class="q-gift-note">✓ Resgate gratuito e liberação imediata</p>');
+    startGiftCountdown();
+    stageContent.querySelector('[data-continue]').addEventListener('click', () => {
+      answers.gift = 'claimed';
+      window.FunnelAnalytics?.answer('gift', 'claimed', 20);
+      window.FunnelAnalytics?.action('gift_claimed', {}, 20);
+      goToStage(21);
+    });
+  }
+
+  function renderStage21() {
+    const position = answers.position || 'perfil versátil';
+    renderScreen(21,
+      '<div class="q-loading"><div class="q-analysis-header"><span class="q-analysis-live">Análise em andamento</span><h1 class="q-title q-title-sm">Montando seu <span class="q-highlight">plano personalizado</span></h1><p class="q-subtitle">Estamos verificando suas respostas para criar a melhor recomendação.</p></div>' +
+      '<div class="q-analysis-list" aria-label="Etapas da análise">' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Validando respostas do quiz</strong><small>Conferindo se todas as informações foram recebidas.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Identificando seu perfil de jogador</strong><small>Posição selecionada: ' + escapeHtml(position) + '.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Analisando objetivos físicos e mentais</strong><small>Cruzando seus objetivos com suas principais dificuldades.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Avaliando instinto e estado de flow</strong><small>Personalizando foco, confiança e tomada de decisão.</small></div><em class="q-analysis-state">Aguardando</em></div>' +
+      '<div class="q-analysis-item" data-analysis-step><span class="q-analysis-status" aria-hidden="true"></span><div class="q-analysis-copy"><strong>Finalizando plano e benefícios</strong><small>Organizando seu treinamento e os brindes liberados.</small></div><em class="q-analysis-state">Aguardando</em></div></div>' +
+      '<div class="q-analysis-progress"><div class="q-loading-row"><span>Processando recomendações...</span><strong data-loading-percent>4%</strong></div><div class="q-loading-track"><div class="q-loading-bar" data-loading-bar></div></div><p class="q-loading-copy">Não feche esta página. Seu resultado será exibido automaticamente.</p></div></div>', false);
+    const bar = stageContent.querySelector('[data-loading-bar]');
+    const percent = stageContent.querySelector('[data-loading-percent]');
+    const steps = [...stageContent.querySelectorAll('[data-analysis-step]')];
+    const thresholds = [4, 22, 43, 64, 82];
+    const startedAt = Date.now();
+    const analysisDuration = 6200;
+
+    const updateProgress = (value) => {
+      bar.style.width = value + '%';
+      percent.textContent = value + '%';
+      steps.forEach((item, index) => {
+        const nextThreshold = thresholds[index + 1] || 100;
+        const isDone = value >= nextThreshold;
+        const isActive = value >= thresholds[index] && !isDone;
+        const state = item.querySelector('.q-analysis-state');
+        item.classList.toggle('is-done', isDone);
+        item.classList.toggle('is-active', isActive);
+        if (isActive) item.setAttribute('aria-current', 'step');
+        else item.removeAttribute('aria-current');
+        state.textContent = isDone ? 'Concluído' : (isActive ? 'Verificando...' : 'Aguardando');
+      });
+    };
+
+    updateProgress(4);
+    loadingInterval = window.setInterval(() => {
+      const elapsed = Date.now() - startedAt;
+      const value = Math.min(100, 4 + Math.floor((elapsed / analysisDuration) * 96));
+      updateProgress(value);
+      if (value >= 100) {
+        window.clearInterval(loadingInterval);
+        loadingInterval = null;
+        window.FunnelAnalytics?.action('analysis_completed', { duration_ms: analysisDuration }, 21);
+        loadingTimer = window.setTimeout(revealLandingPage, 650);
+      }
+    }, 100);
+  }
+
+  let quizImagesPreloaded = false;
+  function preloadQuizImages() {
+    if (quizImagesPreloaded) return;
+    quizImagesPreloaded = true;
+    Object.values(generatedStageImages).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
+  function renderStageContent(stage) {
+    currentStage = stage;
+    intro.hidden = true;
+    stageView.hidden = false;
+    gate.classList.add('is-semantic');
+    card.classList.add('is-stage-mode');
+
+    switch (stage) {
+      case 2: renderStage2(); break;
+      case 3: renderStage3(); break;
+      case 4: renderStage4(); break;
+      case 5: renderStage5(); break;
+      case 6: renderStage6(); break;
+      case 7: renderStage7(); break;
+      case 8: renderStage8(); break;
+      case 9: renderFeedback(9, physicalFeedback[answers.physicalGoal || 'unknown'], 'physical', 'Evolução física personalizada para o jogador'); break;
+      case 10: renderStage10(); break;
+      case 11: renderFeedback(11, mentalFeedback[answers.postGame || 'more'], 'postGame', 'Jogador refletindo sobre pressão e desempenho após o jogo'); break;
+      case 12: renderStage12(); break;
+      case 13: renderStage13(); break;
+      case 14: renderStage14(); break;
+      case 15: renderStage15(); break;
+      case 16: renderStage16(); break;
+      case 17: renderVideoInfoStage(17, 'O que é o <span class="q-highlight">Instinto?</span>', 'd364f25a-24ca-4fbe-b914-602978b1b0cb', 'O que é o instinto no futebol', 'É a capacidade de perceber, decidir e executar sem travar pensando demais. Você reconhece o cenário e reage com naturalidade.', 'Treinar o instinto deixa seu jogo mais rápido, espontâneo e imprevisível.', 18); break;
+      case 18: renderStage18(); break;
+      case 19: renderVideoInfoStage(19, 'O que é o <span class="q-highlight">Flow?</span>', '01f750aa-3f9a-4594-88e4-4e56a896d861', 'O que é o flow no futebol', 'É o estado em que você fica totalmente conectado ao jogo. As decisões saem naturais, o medo diminui e parece que tudo acontece mais devagar.', 'O método ajuda você a entrar nesse estado com mais frequência.', 20); break;
+      case 20: renderStage20(); break;
+      case 21: renderStage21(); break;
+      default: revealLandingPage();
+    }
+
+    stageContent.classList.remove('q-fade-out');
+    stageContent.classList.remove('q-fade-in');
+    void stageContent.offsetWidth;
+    stageContent.classList.add('q-fade-in');
+  }
+
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function goToStage(stage) {
+    clearLoading();
+    preloadQuizImages();
+
+    const hasContent = stageContent.innerHTML.trim().length > 0;
+    if (hasContent && !reduceMotion) {
+      stageContent.classList.remove('q-fade-in');
+      stageContent.classList.add('q-fade-out');
+      window.setTimeout(() => renderStageContent(stage), 260);
+    } else {
+      renderStageContent(stage);
+    }
+  }
+
+  const startButton = document.getElementById('prelp-start');
+  window.FunnelAnalytics?.stage(1, 'Introdução do quiz');
+  preloadQuizImages();
+  if (startButton) startButton.addEventListener('click', () => {
+    window.FunnelAnalytics?.action('intro_cta_clicked', {}, 1);
+    goToStage(2);
   });
-});
-
-// LIGHTBOX
-function abrirLightbox(card) {
-  const src = card.querySelector('img').src;
-  const lb = document.getElementById('lightbox');
-  document.getElementById('lb-img').src = src;
-  lb.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function fecharLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-  document.body.style.overflow = '';
-}
-document.getElementById('lightbox').addEventListener('click', function(e) {
-  if (e.target === this) fecharLightbox();
-});
-document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharLightbox(); });
-
-// UPSELL MODAL
-const upsellModal = document.getElementById('upsell-modal');
-function abrirUpsell() {
-  upsellModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function fecharUpsell() {
-  upsellModal.classList.remove('active');
-  document.body.style.overflow = '';
-}
-function irBasico() {
-  fecharUpsell();
-  window.FunnelAnalytics?.action('checkout_clicked', {
-    checkout_url: 'https://seguro.riosfutebolclube.com.br/r/60ZX22U0WC',
-    plan: 'basico',
-    price: 'R$ 27',
-    button_text: 'Não, quero apenas o básico por R$27'
-  });
-  window.open('https://seguro.riosfutebolclube.com.br/r/60ZX22U0WC', '_blank');
-}
-upsellModal.addEventListener('click', function(e) {
-  if (e.target === upsellModal) fecharUpsell();
-});
-
-// FAQ
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!open) item.classList.add('open');
-  });
-});
-
-// FADE IN
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
-document.querySelectorAll('.fade').forEach(el => obs.observe(el));
-
-// YOUTUBE click-to-load
-document.querySelectorAll('.test-video[data-vid]').forEach(w => {
-  w.addEventListener('click', function() {
-    const vid = this.dataset.vid;
-    const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${vid}?autoplay=1&rel=0`;
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;';
-    this.innerHTML = '';
-    this.appendChild(iframe);
-  });
-});
+})();
 </script>
 </body>
 </html>
