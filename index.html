@@ -4273,13 +4273,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       return;
     }
 
-    price.textContent = 'R$ 67';
+    price.textContent = 'R$ 59,90';
     if (oldPrice) {
       oldPrice.hidden = false;
       oldPrice.textContent = 'R$ 394';
     }
     if (priceNote) priceNote.textContent = '↓ Hoje apenas';
-    if (installments) installments.textContent = 'ou em até 12x de R$ 6,98 · Sem mensalidades';
+    if (installments) installments.textContent = 'ou em até 12x de R$ 4,99 · Sem mensalidades';
     checkout.href = 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa';
     if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
   }
@@ -4636,7 +4636,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         '<button class="q-primary" type="button" data-redeem-voucher>RESGATAR AGORA</button>' +
       '</div>');
     stageContent.querySelector('[data-redeem-voucher]').addEventListener('click', () => {
-      window.FunnelAnalytics?.action('voucher_redeemed', { discount: 83 }, 6);
+      window.FunnelAnalytics?.action('voucher_redeemed', { discount: 85 }, 6);
       renderVoucherRedeemed();
       launchVoucherConfetti();
     });
@@ -4649,7 +4649,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         '<p class="q-voucher-copy">Desconto liberado. Bora avançar.</p>' +
         '<div class="q-voucher-ticket"><div class="q-voucher-paper">' +
           '<div class="q-voucher-mark">✓</div>' +
-          '<strong class="q-voucher-discount">83% OFF</strong>' +
+          '<strong class="q-voucher-discount">85% OFF</strong>' +
           '<h2>DE DESCONTO</h2>' +
           '<p>Voucher aplicado no seu Pacote.</p>' +
           '<div class="q-voucher-barcode" aria-hidden="true"></div><div class="q-voucher-code">237849560123</div>' +
@@ -4664,13 +4664,13 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   function renderStage9Purchase() {
     renderScreen(9,
       '<div class="q-purchase-stage">' +
-        '<div class="q-purchase-alert">🔥 Seu voucher de 83% está aplicado nesta sessão</div>' +
+        '<div class="q-purchase-alert">🔥 Seu voucher de 85% está aplicado nesta sessão</div>' +
         '<h1 class="q-title">Seu acesso está quase liberado</h1>' +
         '<img class="q-purchase-hero" src="images/formula-v2-acesso-completo.png" alt="Fórmula dos Prós V2 com seus módulos de treinamento">' +
         '<p class="q-purchase-intro">Veja o valor normal da Fórmula dos Prós V2 e quanto você paga com o voucher aplicado nesta sessão.</p>' +
-        '<div class="q-price-block"><div class="q-price-old">Valor normal: <s>R$ 394</s></div><div class="q-price-tag">🔥 83% DE DESCONTO</div><span class="q-price-label">por apenas</span><div class="q-price-main"><span class="q-price-currency">R$</span><span class="q-price-value">67</span></div><div class="q-price-sub">ou 12x de R$ 6,98</div><div class="q-price-perday">menos de R$ 2,30 por dia · acesso vitalício</div></div>' +
+        '<div class="q-price-block"><div class="q-price-old">Valor normal: <s>R$ 394</s></div><div class="q-price-tag">🔥 85% DE DESCONTO</div><span class="q-price-label">por apenas</span><div class="q-price-main"><span class="q-price-currency">R$</span><span class="q-price-value">59,90</span></div><div class="q-price-sub">ou 12x de R$ 4,99</div><div class="q-price-perday">menos de R$ 2,00 por dia · acesso vitalício</div></div>' +
         '<div class="q-plan-grid">' +
-          '<article class="q-plan-card is-featured"><h2 class="q-plan-name">Fórmula dos Prós V2 com voucher</h2><p class="q-plan-note">Acesso vitalício e imediato · sem mensalidade.</p><ul class="q-plan-list"><li>Os 8 módulos completos da Fórmula V2</li><li>Domínio da bola e Ball Mastery guiado</li><li>Instinto, 1x1 e leitura do defensor</li><li>Inteligência de jogo e tática</li><li>Finalização, ataque e físico de jogador</li><li>Mentalidade, Flow e treinamento da Fáscia</li><li>Rotina de atleta, nutrição, peneiras e carreira</li><li>Avaliações, materiais e futuras atualizações</li><li>Suporte direto via WhatsApp</li></ul><div class="q-community-highlight"><strong>👥 Comunidade VIP incluída</strong>Entre em um ambiente com outros jogadores, troque experiências e mantenha sua evolução ativa.</div><a class="q-card-buy" href="https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa" target="_blank" rel="noopener">GARANTIR MEU ACESSO POR R$ 67</a></article>' +
+          '<article class="q-plan-card is-featured"><h2 class="q-plan-name">Fórmula dos Prós V2 com voucher</h2><p class="q-plan-note">Acesso vitalício e imediato · sem mensalidade.</p><ul class="q-plan-list"><li>Os 8 módulos completos da Fórmula V2</li><li>Domínio da bola e Ball Mastery guiado</li><li>Instinto, 1x1 e leitura do defensor</li><li>Inteligência de jogo e tática</li><li>Finalização, ataque e físico de jogador</li><li>Mentalidade, Flow e treinamento da Fáscia</li><li>Rotina de atleta, nutrição, peneiras e carreira</li><li>Avaliações, materiais e futuras atualizações</li><li>Suporte direto via WhatsApp</li></ul><div class="q-community-highlight"><strong>👥 Comunidade VIP incluída</strong>Entre em um ambiente com outros jogadores, troque experiências e mantenha sua evolução ativa.</div><a class="q-card-buy" href="https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa" target="_blank" rel="noopener">GARANTIR MEU ACESSO POR R$ 59,90</a></article>' +
         '</div>' +
         '<div class="q-purchase-trust"><div><span>⚡</span>ACESSO<br>IMEDIATO</div><div><span>🔒</span>COMPRA<br>SEGURA</div><div><span>💬</span>SUPORTE<br>WHATSAPP</div></div>' +
         '<section class="q-proof-section" aria-labelledby="q-proof-heading"><div class="q-proof-kicker">Resultados reais</div><h2 class="q-proof-title" id="q-proof-heading">Ouça quem já está evoluindo com a Fórmula</h2><div class="q-proof-audios">' +
