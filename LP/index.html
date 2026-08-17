@@ -1001,7 +1001,8 @@ img { display: block; max-width: 100%; height: auto; }
   50% { transform: scale(1.02); box-shadow: 0 8px 22px rgba(201,168,76,.42), 0 0 0 7px rgba(201,168,76,0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pricing-plan.pricing-lifetime { animation: none; }
+  .pricing-plan.pricing-lifetime,
+  .pricing-val { animation: none; }
 }
 .pricing-old {
   font-family: 'Sora', sans-serif;
@@ -1023,12 +1024,25 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 6px 0;
 }
 .pricing-val {
+  display: inline-block;
   font-family: 'Sora', sans-serif;
-  font-size: 4.5em;
+  font-size: clamp(2.8em, 6vw, 3.6em);
   font-weight: 900;
   line-height: 1.1;
   color: #2ecc71;
-  text-shadow: 0 0 40px rgba(46,204,113,0.4);
+  text-shadow: 0 0 28px rgba(46,204,113,0.32);
+  will-change: transform, text-shadow;
+  animation: pricingValuePulse 2.8s ease-in-out infinite;
+}
+@keyframes pricingValuePulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 28px rgba(46,204,113,0.32);
+  }
+  50% {
+    transform: scale(1.025);
+    text-shadow: 0 0 36px rgba(46,204,113,0.46);
+  }
 }
 .pricing-install {
   font-size: 13px;
