@@ -5,6 +5,7 @@
   const PUBLIC_KEY = 'sb_publishable_0VM_0MDbFJe4-G_cwKbSrg_bezz59D6';
   const PAGE_SIZE = 1000;
   const MAX_ROWS = 50000;
+  const DEFAULT_RANGE_DAYS = 1;
 
   const STAGES = {
     1: 'Introdução do quiz', 2: 'Está preparado?', 3: 'Bem-vindo ao 1%',
@@ -62,7 +63,7 @@
   function defaultDates() {
     const today = new Date();
     const earlier = new Date();
-    earlier.setDate(today.getDate() - 29);
+    earlier.setDate(today.getDate() - (DEFAULT_RANGE_DAYS - 1));
     const local = (date) => [date.getFullYear(), String(date.getMonth() + 1).padStart(2, '0'), String(date.getDate()).padStart(2, '0')].join('-');
     elements.dateFrom.value = local(earlier);
     elements.dateTo.value = local(today);
