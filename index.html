@@ -2099,6 +2099,35 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-primary:disabled { opacity: .5; cursor: not-allowed; }
 .q-select-goal + .q-primary { margin-top: 30px; }
 .q-helper { margin-top: 18px; color: #7b7159; font-size: .66rem; }
+.q-field { margin: 18px 0 6px; text-align: left; }
+.q-field label { display: block; margin-bottom: 8px; font: 700 .78rem/1.2 'Sora', sans-serif; color: #7b7159; }
+.q-input {
+  width: 100%;
+  min-height: 58px;
+  padding: 14px 16px;
+  font: 700 1.05rem/1.2 'Sora', sans-serif;
+  color: #2a220d;
+  background: #fff;
+  border: 2px solid #e3d9b8;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.q-input:focus { outline: none; border-color: #b58f00; }
+.q-skip {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 8px;
+  background: none;
+  border: 0;
+  color: #7b7159;
+  font: 700 .78rem/1.2 'Sora', sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#prelp-quiz .q-skip { color: #7b7159 !important; }
+.q-skip:hover { color: #b58f00; }
+#prelp-quiz .q-skip:hover { color: #b58f00 !important; }
 .q-feedback {
   padding: 8px 2px 12px;
   text-align: center;
@@ -3614,7 +3643,84 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         option('maintain', 'Manter meu peso') +
         option('unknown', 'Ainda não sei') +
       '</div><p class="q-helper">Clique para continuar.</p>');
-    bindAutoChoices('physicalGoal', 9);
+    bindAutoChoices('physicalGoal', 8.3);
+  }
+
+  function imcCategory(imc) {
+    if (imc < 18.5) return { label: 'Abaixo do peso', tip: 'Um foco em ganho de massa magra vai destravar sua explosão e resistência em campo.' };
+    if (imc < 25) return { label: 'Peso ideal', tip: 'Sua base física está ótima — agora o foco é potência, velocidade e técnica.' };
+    if (imc < 30) return { label: 'Levemente acima do ideal', tip: 'Ajustes no condicionamento vão destravar sua agilidade e seu fôlego em campo.' };
+    return { label: 'Acima do ideal', tip: 'Um plano de condicionamento físico vai acelerar seus ganhos de velocidade e resistência.' };
+  }
+
+  function goAfterWeightStage() {
+    const hasHeight = typeof answers.heightCm === 'number';
+    const hasWeight = typeof answers.weightKg === 'number';
+    goToStage(hasHeight && hasWeight ? 8.8 : 9);
+  }
+
+  function renderStageHeight() {
+    renderScreen(8.3,
+      '<h1 class="q-title">Qual sua <span class="q-highlight">altura?</span></h1>' +
+      '<p class="q-subtitle">Vamos usar isso para calcular seu IMC e deixar seu plano ainda mais personalizado.</p>' +
+      '<div class="q-field"><label for="q-height-input">Altura (cm)</label><input id="q-height-input" class="q-input" type="number" inputmode="numeric" min="100" max="230" placeholder="Ex: 175"></div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button>' +
+      '<button class="q-skip" type="button" data-skip>Não sei minha altura</button>');
+    const input = stageContent.querySelector('#q-height-input');
+    if (typeof answers.heightCm === 'number') input.value = answers.heightCm;
+    stageContent.querySelector('[data-continue]').addEventListener('click', () => {
+      const value = Number(input.value);
+      if (!value || value < 100 || value > 230) return showToast('Informe uma altura válida em cm.');
+      answers.heightCm = value;
+      window.FunnelAnalytics?.answer('heightCm', String(value), 8.3);
+      goToStage(8.6);
+    });
+    stageContent.querySelector('[data-skip]').addEventListener('click', () => {
+      answers.heightCm = null;
+      window.FunnelAnalytics?.answer('heightCm', 'não sei', 8.3);
+      goToStage(8.6);
+    });
+  }
+
+  function renderStageWeight() {
+    renderScreen(8.6,
+      '<h1 class="q-title">Qual seu <span class="q-highlight">peso atual?</span></h1>' +
+      '<p class="q-subtitle">Última pergunta física — com isso já conseguimos calcular seu IMC.</p>' +
+      '<div class="q-field"><label for="q-weight-input">Peso (kg)</label><input id="q-weight-input" class="q-input" type="number" inputmode="numeric" min="30" max="200" placeholder="Ex: 68"></div>' +
+      '<button class="q-primary" type="button" data-continue>Calcular meu IMC</button>' +
+      '<button class="q-skip" type="button" data-skip>Não sei meu peso</button>');
+    const input = stageContent.querySelector('#q-weight-input');
+    if (typeof answers.weightKg === 'number') input.value = answers.weightKg;
+    stageContent.querySelector('[data-continue]').addEventListener('click', () => {
+      const value = Number(input.value);
+      if (!value || value < 30 || value > 200) return showToast('Informe um peso válido em kg.');
+      answers.weightKg = value;
+      window.FunnelAnalytics?.answer('weightKg', String(value), 8.6);
+      goAfterWeightStage();
+    });
+    stageContent.querySelector('[data-skip]').addEventListener('click', () => {
+      answers.weightKg = null;
+      window.FunnelAnalytics?.answer('weightKg', 'não sei', 8.6);
+      goAfterWeightStage();
+    });
+  }
+
+  function renderStageImc() {
+    if (typeof answers.heightCm !== 'number' || typeof answers.weightKg !== 'number') return goToStage(9);
+    const heightM = answers.heightCm / 100;
+    const imc = Math.round((answers.weightKg / (heightM * heightM)) * 10) / 10;
+    answers.imc = imc;
+    const category = imcCategory(imc);
+    answers.imcCategory = category.label;
+    window.FunnelAnalytics?.answer('imc', String(imc), 8.8);
+    window.FunnelAnalytics?.answer('imcCategory', category.label, 8.8);
+    renderScreen(8.8,
+      '<div class="q-stage-icon">📊</div>' +
+      '<h1 class="q-title">Seu IMC é <span class="q-highlight">' + imc + '</span></h1>' +
+      '<p class="q-subtitle">Classificação: <strong>' + escapeHtml(category.label) + '</strong></p>' +
+      '<div class="q-note">' + category.tip + '</div>' +
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+    bindContinue(9);
   }
 
   function renderFeedback(stage, data, imageKey, imageAlt) {
@@ -3846,6 +3952,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       case 6: renderStage6(); break;
       case 7: renderStage7(); break;
       case 8: renderStage8(); break;
+      case 8.3: renderStageHeight(); break;
+      case 8.6: renderStageWeight(); break;
+      case 8.8: renderStageImc(); break;
       case 9: renderFeedback(9, physicalFeedback[answers.physicalGoal || 'unknown'], 'physical', 'Evolução física personalizada para o jogador'); break;
       case 10: renderStage10(); break;
       case 11: renderFeedback(11, mentalFeedback[answers.postGame || 'more'], 'postGame', 'Jogador refletindo sobre pressão e desempenho após o jogo'); break;

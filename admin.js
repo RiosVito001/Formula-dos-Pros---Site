@@ -22,7 +22,8 @@
     mainGoal: 'Principal objetivo', physicalGoal: 'Objetivo físico', postGame: 'Pensamento após o jogo',
     awareness: 'Sabe o que precisa melhorar?', plateau: 'Treina, mas não evolui?',
     fascia: 'Conhecimento sobre fáscia', instinct: 'Conhecimento sobre instinto',
-    flow: 'Conhecimento sobre flow', gift: 'Resgatou os brindes?'
+    flow: 'Conhecimento sobre flow', gift: 'Resgatou os brindes?',
+    heightCm: 'Altura (cm)', weightKg: 'Peso (kg)', imc: 'IMC calculado', imcCategory: 'Classificação do IMC'
   };
 
   const VALUE_LABELS = {
