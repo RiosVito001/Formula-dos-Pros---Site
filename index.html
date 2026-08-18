@@ -1608,6 +1608,36 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   margin: 0 auto 18px;
   object-fit: contain;
 }
+.prelp-top-proof {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  max-width: 100%;
+  margin: 0 auto 18px;
+  padding: 8px 14px;
+  color: #725817;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(.72rem, 2.7vw, .84rem);
+  font-weight: 600;
+  line-height: 1.35;
+  background: #fff9e8;
+  border: 1px solid rgba(201,168,76,.42);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(126,92,10,.08);
+}
+.prelp-top-proof strong {
+  color: #8a6713;
+  font-weight: 900;
+}
+.prelp-proof-dot {
+  color: #d2a928;
+  font-size: .92em;
+  flex: 0 0 auto;
+}
+#prelp-intro .prelp-title {
+  text-transform: none;
+}
 .prelp-title {
   max-width: 520px;
   margin: 0 auto 14px;
@@ -3062,7 +3092,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 @media(max-width: 600px) {
   #prelp-quiz { align-items: flex-start; padding: 14px 12px calc(18px + env(safe-area-inset-bottom)); }
   .prelp-card { padding: 22px 16px; border-radius: 18px; }
-  .prelp-logo { width: min(100%, 210px); margin-bottom: 14px; }
+  .prelp-top-proof { margin-bottom: 14px; padding: 7px 11px; }
   .prelp-title { margin-bottom: 12px; }
   .prelp-copy { margin-bottom: 16px; line-height: 1.52; }
   .prelp-cover { margin-bottom: 15px; border-radius: 12px; }
@@ -3106,13 +3136,12 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   <div class="prelp-shell">
     <div class="prelp-card">
       <div id="prelp-intro" class="prelp-view">
-        <img class="prelp-logo" src="images/048-wrIkC-banner-do-modulo-1.webp" alt="Fórmula dos Prós" fetchpriority="high">
-        <h1 id="prelp-title" class="prelp-title">Descubra o plano ideal para evoluir seu futebol</h1>
-        <p class="prelp-copy">Em poucos minutos, vamos montar um caminho de treino ideal pra você evoluir em até 30 dias, baseado na sua posição, estilo de jogo e no que mais trava seu futebol hoje.</p>
+        <div class="prelp-top-proof" aria-label="Prova social"><span class="prelp-proof-dot">★</span><span><strong>Milhares de jogadores</strong> já utilizam a Fórmula dos Prós</span></div>
+        <h1 id="prelp-title" class="prelp-title">Em 30 dias, evolua seu domínio, 1x1, visão de jogo e confiança com um plano feito para você.</h1>
+        <p class="prelp-copy">Responda algumas perguntas rápidas e receba um plano claro, passo a passo, mostrando exatamente o que treinar para evoluir mais rápido dentro de campo.</p>
         <img class="prelp-cover" src="images/002-ySfNs-thumbnail.webp" alt="Descubra seu plano ideal de evolução no futebol" fetchpriority="high">
-        <p class="prelp-prompt">Responda o quiz e descubra o caminho ideal pra evoluir mais rápido.</p>
         <button id="prelp-start" class="prelp-main-btn" type="button">ENCONTRAR MEU PLANO ⚽🔥</button>
-        <p class="prelp-proof">Milhares de jogadores já usam o método.</p>
+        <p class="prelp-proof">Clique no botão acima.</p>
       </div>
 
       <div id="prelp-stage" class="prelp-view prelp-stage-view" hidden>
