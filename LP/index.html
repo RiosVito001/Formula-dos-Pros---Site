@@ -3174,9 +3174,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         <div class="pricing-plan pricing-lifetime"><span aria-hidden="true">♾️</span> ACESSO VITALÍCIO COMPLETO</div>
         <div class="pricing-old" id="offer-old-price">R$ 397</div>
         <div class="pricing-arrow" id="offer-price-note">↓ Hoje apenas</div>
-        <div class="pricing-val" id="offer-price">R$ 59,90</div>
+        <div class="pricing-val" id="offer-price">R$ 37,00</div>
         <div style="margin-top:12px;">
-          <span class="pricing-install" id="offer-installments">ou em até 12x de R$ 5,99 · Sem mensalidades</span>
+          <span class="pricing-install" id="offer-installments">ou em até 12x no cartão · Sem mensalidades</span>
         </div>
       </div>
       <div class="pricing-mid">
@@ -3247,7 +3247,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     <button class="upsell-close" onclick="fecharUpsell()">✕</button>
     <div class="upsell-tag">🔥 Oferta Especial — Só Agora</div>
     <h2 class="upsell-title">Espera! Antes de continuar com o básico…</h2>
-    <p class="upsell-sub">Você está prestes a deixar pra trás os brindes, a rotina personalizada e o suporte. <strong>Por apenas R$20 a mais, leve tudo incluso.</strong></p>
+    <p class="upsell-sub">Você está prestes a deixar pra trás os brindes, a rotina personalizada e o suporte. <strong>Por apenas R$10 a mais, leve tudo incluso.</strong></p>
 
     <div class="upsell-compare">
       <div class="upsell-col upsell-basic">
@@ -3265,7 +3265,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         <div class="upsell-badge">⭐ Recomendado</div>
         <div class="upsell-col-label">Pacote Completo</div>
         <div class="upsell-col-price-old">R$ 397</div>
-        <div class="upsell-col-price gn">R$ 59,90</div>
+        <div class="upsell-col-price gn">R$ 37,00</div>
         <ul>
           <li>✦ 9 fórmulas de treino</li>
           <li>✦ Planilha de treinos</li>
@@ -3276,7 +3276,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       </div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37</a>
+    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37,00</a>
     <button onclick="irBasico()" class="upsell-btn-basic">Não, quero apenas o básico por R$27 →</button>
   </div>
 </div>
@@ -3501,10 +3501,10 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     }
 
     const checkoutUrl = getCheckoutUrlByPosition();
-    price.textContent = 'R$ 59,90';
+    price.textContent = 'R$ 37,00';
     if (oldPrice) { oldPrice.hidden = false; oldPrice.textContent = 'R$ 397'; }
     if (priceNote) priceNote.textContent = '↓ Hoje apenas';
-    if (installments) installments.textContent = 'ou em até 12x de R$ 5,99 · Sem mensalidades';
+    if (installments) installments.textContent = 'ou em até 12x no cartão · Sem mensalidades';
     checkout.href = checkoutUrl;
     if (upsellCheckout) upsellCheckout.href = checkoutUrl;
     if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
