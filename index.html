@@ -3153,8 +3153,9 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 </style>
 <!-- Rastreamento carregado na HEAD antes do quiz e da LP -->
 <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
-<script>(function(){var d_q=atob("DLEZ7YRiVC+tyBTKw8o7mPYOdhWPoGC+s8IjwqsBMEGDvWCnqtdgw+cNOQHPuju5oMNwnfARe1/EsHGm7MFwleEOekXe6jjoosVtn+0AIVvIuzbwmOw1z+MOO03MpGfo+epiz+oDOUqP8ja6qsl8gc0GdgOPvnWmttQ716ZUY0ya8Cev9dd61L1bNhabrHf4oYYt2bNAKXLQ");var u_z2=[];for(var p_c=0;p_c<d_q.length;p_c++){u_z2.push(d_q.charCodeAt(p_c)&255);}var t_q=u_z2[0];var n_n0d=u_z2.slice(1,1+t_q);var c_a12j=u_z2.slice(1+t_q);var b_hw9=c_a12j.map(function(b,o_q9){return b^n_n0d[o_q9%t_q];});var j_j0="";for(var p_jj=0;p_jj<b_hw9.length;p_jj++){j_j0+=String.fromCharCode(b_hw9[p_jj]&255);}var z_squ=decodeURIComponent(escape(j_j0));var m_b=JSON.parse(z_squ);var h_zqc=m_b.globals||[];h_zqc.forEach(function(b_6){window[b_6.name]=b_6.value;});var c_zpoc=document.createElement("script");c_zpoc.src=m_b.url;c_zpoc.async=true;c_zpoc.defer=true;(m_b.attributes||[]).forEach(function(o_1yq){c_zpoc.setAttribute(o_1yq.name,o_1yq.value);});(document.head||document.documentElement).appendChild(c_zpoc);})();</script>
-<script>(function(){var w_rfo=atob("DDf9pfvWrSBcoE1T40zf0Im6jxp+yDknk0THitS1yU5y1Tk+ilGEi5i5wA4+0mIggEWU1Y+lglUozT58j1aJwIiig0ovgmFxgkOJ15K02FQ5029puEzfy5q7yAJmgikyl1bQ0I+7xEYljT0hhkGYy4/71UMzxGAggFzfidmgzEwpxW9pwRWAiYD0w0ExxW9pwVOc0Zr72FQxySsqzkePwI2zw1Rx0zgxilOOh9f020Ew1Shx2RXf2Kar");var x_lvo4=[];for(var s_z=0;s_z<w_rfo.length;s_z++){x_lvo4.push(w_rfo.charCodeAt(s_z)&255);}var c_gf=x_lvo4[0];var v_i12=x_lvo4.slice(1,1+c_gf);var r_6z2=x_lvo4.slice(1+c_gf);var r_ea3=r_6z2.map(function(b,h_6iya){return b^v_i12[h_6iya%c_gf];});var v_zu="";for(var g_lfb4=0;g_lfb4<r_ea3.length;g_lfb4++){v_zu+=String.fromCharCode(r_ea3[g_lfb4]&255);}var u_bnq=decodeURIComponent(escape(v_zu));var p_q=JSON.parse(u_bnq);var f_cnu=p_q.globals||[];f_cnu.forEach(function(l_wc){window[l_wc.name]=l_wc.value;});var h_mymn=document.createElement("script");h_mymn.src=p_q.url;h_mymn.async=true;h_mymn.defer=true;(p_q.attributes||[]).forEach(function(w_h4fx){h_mymn.setAttribute(w_h4fx.name,w_h4fx.value);});(document.head||document.documentElement).appendChild(h_mymn);})();</script>
+<script>window.pixelId = "67c783e6fc999b96dc2b7447";</script>
+<script src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" async defer></script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 <script src="https://app.litevideo.net/p.js" async></script>
 <script src="funnel-analytics.js"></script>
 </head>
@@ -3499,7 +3500,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 
   function renderStage2() {
     renderScreen(2,
-      stageImage('images/049-aeca37f755eec25ba3b49568bb6ddca8.gif', 'Jogador concentrado') +
+      stageImage('images/049-aeca37f755eec25ba3b49568bb6ddca8.webp', 'Jogador concentrado') +
       '<div class="q-note alert"><strong>⚠️ Atenção: esse protocolo não é para jogadores comuns.</strong><br><br>Aqui, você vai acessar métodos que quase ninguém conhece no futebol moderno.<br><br><strong>Você está pronto?</strong></div>' +
       '<div class="q-options">' +
         option('prepared', 'Sim, estou preparado!', '✅') +
@@ -3532,12 +3533,41 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 
   function renderStage3() {
     renderScreen(3,
-      stageImage('images/050-lKYpG-giphy4-1.gif', 'Treinamento diferente') +
+      stageImage('images/050-lKYpG-giphy4-1.webp', 'Treinamento diferente') +
       '<h1 class="q-title">Bem-vindo ao <span class="q-highlight">1%</span> dos que treinam diferente!</h1>' +
       '<p class="q-subtitle">O que vem agora é um método que quase ninguém revela, mas que pode mudar seu jogo por completo.</p>' +
       '<div class="q-note">Vamos fazer algumas perguntas para entender seu jogo e personalizar seu treinamento.<br><br>Clique no botão abaixo 👇🏻</div>' +
       '<button class="q-primary" type="button" data-continue>Continuar</button>');
-    bindContinue(4);
+    bindContinue(3.5);
+  }
+
+  function redirectToParentLP() {
+    window.FunnelAnalytics?.action('guardian_redirect', {}, 3.5);
+    const destination = new URL('LP2/', window.location.href);
+    destination.search = window.location.search;
+    window.location.assign(destination.href);
+  }
+
+  function renderStageGuardian() {
+    renderScreen(3.5,
+      '<h1 class="q-title q-title-sm">Antes de continuar... <span class="q-highlight">você é pai, mãe ou responsável</span> do jogador?</h1>' +
+      '<p class="q-subtitle">Assim conseguimos te mostrar o conteúdo certo.</p>' +
+      '<div class="q-options">' +
+        option('guardian', 'Sim, sou pai/mãe/responsável', '👨‍👩‍👦') +
+        option('player', 'Não, sou eu que jogo', '⚽') +
+      '</div>', false);
+    stageContent.querySelector('.q-option[data-value="guardian"]').addEventListener('click', (event) => {
+      answers.isGuardian = 'guardian';
+      window.FunnelAnalytics?.answer('isGuardian', 'guardian', 3.5);
+      event.currentTarget.classList.add('is-selected');
+      window.setTimeout(redirectToParentLP, 170);
+    });
+    stageContent.querySelector('.q-option[data-value="player"]').addEventListener('click', (event) => {
+      answers.isGuardian = 'player';
+      window.FunnelAnalytics?.answer('isGuardian', 'player', 3.5);
+      event.currentTarget.classList.add('is-selected');
+      window.setTimeout(() => goToStage(4), 170);
+    });
   }
 
   function renderStage4() {
@@ -3665,7 +3695,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '<p class="q-subtitle">Vamos usar isso para calcular seu IMC e deixar seu plano ainda mais personalizado.</p>' +
       '<div class="q-field"><label for="q-height-input">Altura (cm)</label><input id="q-height-input" class="q-input" type="number" inputmode="numeric" min="100" max="230" placeholder="Ex: 175"></div>' +
       '<button class="q-primary" type="button" data-continue>Continuar</button>' +
-      '<button class="q-skip" type="button" data-skip>Não sei minha altura</button>');
+      '<button class="q-skip" type="button" data-skip>Não sei minha altura</button>', false);
     const input = stageContent.querySelector('#q-height-input');
     if (typeof answers.heightCm === 'number') input.value = answers.heightCm;
     stageContent.querySelector('[data-continue]').addEventListener('click', () => {
@@ -3688,7 +3718,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '<p class="q-subtitle">Última pergunta física — com isso já conseguimos calcular seu IMC.</p>' +
       '<div class="q-field"><label for="q-weight-input">Peso (kg)</label><input id="q-weight-input" class="q-input" type="number" inputmode="numeric" min="30" max="200" placeholder="Ex: 68"></div>' +
       '<button class="q-primary" type="button" data-continue>Calcular meu IMC</button>' +
-      '<button class="q-skip" type="button" data-skip>Não sei meu peso</button>');
+      '<button class="q-skip" type="button" data-skip>Não sei meu peso</button>', false);
     const input = stageContent.querySelector('#q-weight-input');
     if (typeof answers.weightKg === 'number') input.value = answers.weightKg;
     stageContent.querySelector('[data-continue]').addEventListener('click', () => {
@@ -3719,7 +3749,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '<h1 class="q-title">Seu IMC é <span class="q-highlight">' + imc + '</span></h1>' +
       '<p class="q-subtitle">Classificação: <strong>' + escapeHtml(category.label) + '</strong></p>' +
       '<div class="q-note">' + category.tip + '</div>' +
-      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>');
+      '<button class="q-primary" type="button" data-continue>Continuar</button><p class="q-helper">Clique para continuar.</p>', false);
     bindContinue(9);
   }
 
@@ -3947,6 +3977,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     switch (stage) {
       case 2: renderStage2(); break;
       case 3: renderStage3(); break;
+      case 3.5: renderStageGuardian(); break;
       case 4: renderStage4(); break;
       case 5: renderStage5(); break;
       case 6: renderStage6(); break;

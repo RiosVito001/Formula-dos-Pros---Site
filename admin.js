@@ -23,7 +23,8 @@
     awareness: 'Sabe o que precisa melhorar?', plateau: 'Treina, mas não evolui?',
     fascia: 'Conhecimento sobre fáscia', instinct: 'Conhecimento sobre instinto',
     flow: 'Conhecimento sobre flow', gift: 'Resgatou os brindes?',
-    heightCm: 'Altura (cm)', weightKg: 'Peso (kg)', imc: 'IMC calculado', imcCategory: 'Classificação do IMC'
+    heightCm: 'Altura (cm)', weightKg: 'Peso (kg)', imc: 'IMC calculado', imcCategory: 'Classificação do IMC',
+    isGuardian: 'É pai/mãe/responsável?'
   };
 
   const VALUE_LABELS = {
@@ -33,7 +34,8 @@
     more: 'Poderia ter feito mais', training: 'Joga melhor no treino', forget: 'Desaprende no jogo',
     none: 'Não faz ideia', exact: 'Sabe exatamente', some: 'Mais ou menos',
     yes: 'Exatamente isso', sometimes: 'Às vezes', rarely: 'Raramente',
-    heard: 'Já ouviu, mas não domina', never: 'Nunca ouviu falar', trained: 'Já tentou treinar', claimed: 'Sim'
+    heard: 'Já ouviu, mas não domina', never: 'Nunca ouviu falar', trained: 'Já tentou treinar', claimed: 'Sim',
+    guardian: 'Sim, é pai/mãe/responsável', player: 'Não, é o jogador'
   };
 
   const elements = {};
