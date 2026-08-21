@@ -2841,6 +2841,17 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 @media(prefers-reduced-motion: reduce) {
   #prelp-quiz, .prelp-progress-bar, .prelp-main-btn, .prelp-answer { transition: none; }
 }
+
+/* ── MEMBERS AREA ── */
+.members-section { background: var(--dark); }
+.members-sub { color: var(--muted); font-size: 1.02rem; max-width: 640px; margin-top: 10px; }
+.members-hero-img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 22px 0 4px;
+}
 </style>
 <!-- Rastreamento carregado na HEAD antes do quiz e da LP -->
 <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
@@ -3153,6 +3164,17 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   </div>
 </section>
 
+<!-- MEMBERS AREA -->
+<section class="members-section section">
+  <div class="wrap">
+    <div class="section-left">
+      <div class="sec-tag">Por Dentro da Plataforma</div>
+      <h2 class="sec-title"><strong>Dentro da área de membros</strong></h2>
+      <img class="members-hero-img" src="https://i.imgur.com/kPhdyOk.jpeg" alt="Área de membros" loading="lazy" decoding="async">
+      <p class="members-sub">Veja exatamente o ambiente onde você vai treinar: organizado, direto ao ponto e feito pra você evoluir sem enrolação.</p>
+    </div>
+  </div>
+</section>
 
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
