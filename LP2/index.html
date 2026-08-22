@@ -146,13 +146,18 @@ img { display: block; max-width: 100%; height: auto; }
 /* HERO H1 */
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2.6em, 7vw, 5em);
+  font-size: clamp(2.4rem, 7.5vw, 4rem);
   font-weight: 800;
   line-height: 1.05;
   color: #fff;
   margin-bottom: 28px;
   text-transform: none;
-  letter-spacing: -.5px;
+  letter-spacing: -.04em;
+  width: 100%;
+}
+.hero h1 .hero-title-line {
+  display: block;
+  white-space: nowrap;
 }
 .hero h1 .hl {
   display: inline-block;
@@ -181,6 +186,18 @@ img { display: block; max-width: 100%; height: auto; }
   border-radius: 14px;
   margin: 0 0 32px;
   box-shadow: 0 12px 32px rgba(0,0,0,.35);
+}
+.hero-parent-video {
+  width: min(100%, 380px);
+  margin: 0 auto 32px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.35);
+}
+.hero-parent-video iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 .hero-video-prompt {
   margin: -18px 0 18px;
@@ -284,10 +301,10 @@ img { display: block; max-width: 100%; height: auto; }
 /* MOBILE HERO */
 @media(max-width: 767px) {
   .hero-grid {
-    padding: 80px 24px 60px;
+    padding: 64px 8px 48px;
   }
-  .hero h1 { font-size: clamp(2em, 10vw, 3em); }
-  .hero h1 .hl { font-size: .9em; }
+  .hero h1 { font-size: clamp(1.45rem, 7.5vw, 3.65rem); }
+  .hero h1 .hl { font-size: 1em; }
   .hero-video-row { padding: 0 20px 60px; }
   .pricing-top, .pricing-mid, .pricing-cta { padding-left: 24px; padding-right: 24px; }
   .guarantee-inner { padding: 36px 24px; }
@@ -2935,10 +2952,11 @@ body { overflow-wrap: anywhere; }
   overflow-wrap: anywhere !important;
   word-break: normal !important;
 }
-.hero h1 .hl,
 .hero-social-proof span,
 .pricing-ribbon,
 .upsell-badge { white-space: normal; }
+.hero h1 .hero-title-line,
+.hero h1 .hl { white-space: nowrap; }
 .hero h1,
 .hero-sub,
 .sec-title,
@@ -2956,12 +2974,12 @@ body { overflow-wrap: anywhere; }
   .wrap { width: 100%; padding-right: 0; padding-left: 0; }
   .promo-bar { padding: 9px 14px; font-size: 11px; line-height: 1.45; letter-spacing: .035em; }
   .hero { min-height: auto; }
-  .hero-grid { padding: 64px 18px 48px; }
-  .hero h1 { font-size: clamp(1.82rem, 9.5vw, 2.75rem); line-height: 1.08; letter-spacing: -.035em; }
-  .hero h1 br { display: none; }
-  .hero h1 .hl { display: inline; padding: 0 .12em; }
+  .hero-grid { padding: 64px 8px 48px; }
+  .hero h1 { font-size: clamp(1.45rem, 7.5vw, 3.65rem); line-height: 1.08; letter-spacing: -.04em; }
+  .hero h1 .hl { display: inline-block; padding: 0 .12em; }
   .hero-sub { font-size: .96rem; line-height: 1.62; margin-bottom: 28px; }
-  .hero-parent-img { margin-bottom: 26px; }
+  .hero-parent-img,
+  .hero-parent-video { margin-bottom: 26px; }
   .hero .btn { width: 100%; padding: 18px 16px !important; font-size: clamp(.78rem, 3.8vw, .95rem) !important; line-height: 1.3; }
   .hero-social-proof { width: 100%; justify-content: center; flex-wrap: wrap; padding: 8px 10px; border-radius: 18px; }
   .hero-social-proof span { flex: 1 1 210px; min-width: 0; font-size: .68rem; line-height: 1.35; text-align: left; }
@@ -2994,7 +3012,7 @@ body { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 380px) {
-  .hero-grid { padding-right: 14px; padding-left: 14px; }
+  .hero-grid { padding-right: 8px; padding-left: 8px; }
   .section,
   .pillars-section,
   .quote-section,
@@ -3037,15 +3055,17 @@ body { overflow-wrap: anywhere; }
     <div class="hero-left">
       <div class="hero-tag">⚡ Atenção Pais e Responsáveis</div>
       <h1>
-        Ajude seu filho(a) a<br>
-        <span class="hl">evoluir de verdade</span><br>
-        no futebol em 30 dias
+        <span class="hero-title-line">Ajude seu filho(a)</span>
+        <span class="hero-title-line"><span class="hl">a evoluir de verdade</span></span>
+        <span class="hero-title-line">no futebol em 30 dias</span>
       </h1>
       <p class="hero-sub">
         Um sistema de treino completo e acompanhado que desenvolve a
         <strong>técnica, o físico e a mentalidade</strong> do seu filho(a), passo a passo.
       </p>
-      <img class="hero-parent-img" src="https://i.imgur.com/4agvzpJ.png" alt="Fórmula dos Prós para pais e responsáveis" loading="lazy" decoding="async">
+      <div class="hero-parent-video">
+        <iframe src="https://app.litevideo.net/embed/cd297643-38cb-4546-9e10-c02dc4c545e6?ar=9%3A16&amp;sc=0&amp;st=0&amp;ap=1&amp;io=10&amp;pc=00db50&amp;pe=4x&amp;ph=8&amp;ct=%5B%5B%5D%5D" style="width:100%;aspect-ratio:9/16;border:0;border-radius:12px" allowfullscreen loading="lazy" title="Vídeo de apresentação da Fórmula dos Prós"></iframe>
+      </div>
       <a href="#pricing" class="btn" style="font-size:1.1em; padding:22px 80px;">⚡ GARANTIR A VAGA DO MEU FILHO(A)!</a>
       <div class="hero-social-proof">
         <div class="hero-avatars">
@@ -3377,7 +3397,7 @@ body { overflow-wrap: anywhere; }
         </ul>
       </div>
       <div class="pricing-cta">
-        <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn checkout-cta" id="offer-checkout">GARANTIR PARA MEU FILHO(A)!</a>
+        <a href="https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq" target="_blank" class="btn checkout-cta" id="offer-checkout">GARANTIR PARA MEU FILHO(A)!</a>
         <div class="pricing-safe" id="offer-safe">🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato</div>
       </div>
     </div>
@@ -3461,7 +3481,7 @@ body { overflow-wrap: anywhere; }
       </div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37,00</a>
+    <a href="https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37,00</a>
     <button onclick="irBasico()" class="upsell-btn-basic">Não, quero apenas o básico por R$27 →</button>
   </div>
 </div>
@@ -3657,16 +3677,16 @@ body { overflow-wrap: anywhere; }
   const answers = quizContext?.answers || {};
 
   const CHECKOUT_BY_POSITION = {
-    default: 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Atacante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Meio-campo': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Volante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Lateral': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Zagueiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Goleiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ainda não sei': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ponta': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Várias posições': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa'
+    default: 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Atacante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Meio-campo': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Volante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Lateral': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Zagueiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Goleiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Ainda não sei': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Ponta': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
+    'Várias posições': 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq'
   };
   function getCheckoutUrlByPosition() {
     return CHECKOUT_BY_POSITION[answers.position] || CHECKOUT_BY_POSITION.default;
@@ -3692,8 +3712,8 @@ body { overflow-wrap: anywhere; }
       if (oldPrice) oldPrice.hidden = true;
       if (priceNote) priceNote.textContent = 'Condição especial para Portugal';
       if (installments) installments.textContent = 'Pagamento seguro pela Hotmart · Acesso imediato';
-      checkout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
-      if (upsellCheckout) upsellCheckout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
+      checkout.href = 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq';
+      if (upsellCheckout) upsellCheckout.href = 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq';
       if (safe) safe.textContent = '🔒 Pagamento 100% seguro pela Hotmart · Acesso imediato';
       return;
     }
@@ -3794,12 +3814,12 @@ function fecharUpsell() {
 function irBasico() {
   fecharUpsell();
   window.FunnelAnalytics?.action('checkout_clicked', {
-    checkout_url: 'https://seguro.riosfutebolclube.com.br/r/60ZX22U0WC',
+    checkout_url: 'https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq',
     plan: 'basico',
     price: 'R$ 27',
     button_text: 'Não, quero apenas o básico por R$27'
   });
-  window.open('https://seguro.riosfutebolclube.com.br/r/60ZX22U0WC', '_blank');
+  window.open('https://pagar.formula-dos-pros.com.br/checkout/v5/etXEMiFtPphKOdr4knoq', '_blank');
 }
 upsellModal.addEventListener('click', function(e) {
   if (e.target === upsellModal) fecharUpsell();
