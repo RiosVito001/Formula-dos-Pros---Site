@@ -3538,36 +3538,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '<p class="q-subtitle">O que vem agora é um método que quase ninguém revela, mas que pode mudar seu jogo por completo.</p>' +
       '<div class="q-note">Vamos fazer algumas perguntas para entender seu jogo e personalizar seu treinamento.<br><br>Clique no botão abaixo 👇🏻</div>' +
       '<button class="q-primary" type="button" data-continue>Continuar</button>');
-    bindContinue(3.5);
-  }
-
-  function redirectToParentLP() {
-    window.FunnelAnalytics?.action('guardian_redirect', {}, 3.5);
-    const destination = new URL('LP2/', window.location.href);
-    destination.search = window.location.search;
-    window.location.assign(destination.href);
-  }
-
-  function renderStageGuardian() {
-    renderScreen(3.5,
-      '<h1 class="q-title q-title-sm">Antes de continuar... <span class="q-highlight">você é pai, mãe ou responsável</span> do jogador?</h1>' +
-      '<p class="q-subtitle">Assim conseguimos te mostrar o conteúdo certo.</p>' +
-      '<div class="q-options">' +
-        option('guardian', 'Sim, sou pai/mãe/responsável', '👨‍👩‍👦') +
-        option('player', 'Não, sou eu que jogo', '⚽') +
-      '</div>', false);
-    stageContent.querySelector('.q-option[data-value="guardian"]').addEventListener('click', (event) => {
-      answers.isGuardian = 'guardian';
-      window.FunnelAnalytics?.answer('isGuardian', 'guardian', 3.5);
-      event.currentTarget.classList.add('is-selected');
-      window.setTimeout(redirectToParentLP, 170);
-    });
-    stageContent.querySelector('.q-option[data-value="player"]').addEventListener('click', (event) => {
-      answers.isGuardian = 'player';
-      window.FunnelAnalytics?.answer('isGuardian', 'player', 3.5);
-      event.currentTarget.classList.add('is-selected');
-      window.setTimeout(() => goToStage(4), 170);
-    });
+    bindContinue(4);
   }
 
   function renderStage4() {
@@ -3977,7 +3948,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     switch (stage) {
       case 2: renderStage2(); break;
       case 3: renderStage3(); break;
-      case 3.5: renderStageGuardian(); break;
       case 4: renderStage4(); break;
       case 5: renderStage5(); break;
       case 6: renderStage6(); break;
