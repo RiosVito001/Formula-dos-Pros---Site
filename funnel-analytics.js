@@ -10,6 +10,7 @@
   const QUEUE_KEY = 'fdp_analytics_queue_v1';
   const QUIZ_CONTEXT_KEY = 'fdp_quiz_context_v1';
   const SITE_ID = 'formula-dos-pros';
+  const ANALYTICS_VERSION = 2;
   const MAX_QUEUE = 80;
 
   const memoryStore = {};
@@ -190,6 +191,7 @@
       context: context(),
       metadata: options.metadata && typeof options.metadata === 'object' ? options.metadata : {}
     };
+    payload.metadata.analytics_version = ANALYTICS_VERSION;
     void send(payload);
     return payload.event_id;
   }
@@ -261,7 +263,7 @@
     const anchor = eventObject.target.closest('a');
     if (!anchor) return;
     const href = anchor.getAttribute('href') || '';
-    if (anchor.id === 'offer-checkout' || anchor.classList.contains('upsell-btn-full') || /ggcheckout\.app|pay\.hotmart\.com/i.test(href)) {
+    if (anchor.id === 'offer-checkout' || anchor.classList.contains('upsell-btn-full') || anchor.classList.contains('q-card-buy') || /ggcheckout\.app|pay\.hotmart\.com|pagar\.formula-dos-pros\.com\.br/i.test(href)) {
       trackCheckout(anchor);
     }
   }, true);
