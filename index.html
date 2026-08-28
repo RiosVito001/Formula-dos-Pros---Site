@@ -3183,7 +3183,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   box-shadow: 0 7px 18px rgba(55,42,12,.07);
 }
 .q-benefit-info.is-orange { background: #fff9ee; border-color: #f0c98e; }
-.q-benefit-info.is-green { background: #f0fff9; border-color: #a9dfc8; }
+.q-benefit-info.is-green { background: linear-gradient(135deg, #fff7d2, #ffe490); border: 2px solid #e8af25; box-shadow: 0 12px 28px rgba(203,137,0,.2); }
 .q-benefit-info span {
   display: inline-flex;
   margin-bottom: 6px;
@@ -3195,9 +3195,11 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   background: #ef7a12;
   border-radius: 99px;
 }
-.q-benefit-info.is-green span { background: #159566; }
+.q-benefit-info.is-green span { padding: 5px 9px; font-size: .64rem; background: #b87300; box-shadow: 0 3px 8px rgba(130,78,0,.22); }
 .q-benefit-info strong { display: block; margin-bottom: 4px; color: #211b0e; font-size: .78rem; line-height: 1.3; }
+.q-benefit-info.is-green strong { font-size: .95rem; line-height: 1.25; }
 .q-benefit-info p { margin: 0; color: #6f6650; font-size: .68rem; line-height: 1.45; }
+.q-benefit-info.is-green p { color: #5d4614; font-size: .76rem; font-weight: 700; }
 #prelp-quiz .q-benefits-stage .q-primary {
   color: #fff !important;
   background: linear-gradient(180deg, #ff941f, #ed6800);
@@ -3332,7 +3334,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   .q-voucher-redeemed .q-voucher-ticket { animation: none; }
   .q-confetti-piece { animation-duration: .01ms; }
 }
-.q-final-stage { padding-bottom: 104px; text-align: left; }
+.q-final-stage { padding-bottom: 18px; text-align: left; }
 .q-final-stage .q-title { margin-bottom: 7px; text-align: center; }
 .q-final-intro { max-width: 520px; margin: 0 auto 18px; color: #675b53; font-size: .86rem; line-height: 1.55; text-align: center; }
 .q-final-cover {
@@ -3389,8 +3391,8 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 .q-method-video { padding: 8px 8px 10px; background: #17100c; border: 1px solid #58341c; border-radius: 13px; }
 .q-method-video strong { display: block; margin-bottom: 7px; color: #fff; font-size: .73rem; }
 .q-method-video lt-v2 { display: block; width: 100%; aspect-ratio: 9/16; border-radius: 9px; }
-#prelp-quiz > .q-final-continue-bar { position: fixed; z-index: 2147483646; right: 0; bottom: 0; left: 0; display: flex; width: 100%; padding: 18px 16px max(16px,env(safe-area-inset-bottom)); justify-content: center; visibility: visible !important; background: linear-gradient(180deg,rgba(13,9,5,0),rgba(13,9,5,.97) 38%); pointer-events: none; }
-#prelp-quiz > .q-final-continue-bar .q-primary { width: min(calc(100% - 8px),540px); min-height: 62px; margin: 0; color: #fff !important; font-size: 1rem; background: linear-gradient(180deg,#22c55e,#15803d); border-color: #4ade80; box-shadow: 0 7px 0 #0b6f31,0 14px 28px rgba(22,163,74,.38); pointer-events: auto; }
+.q-final-continue-bar { display: flex; width: 100%; margin-top: 18px; justify-content: center; }
+.q-final-continue-bar .q-primary { width: min(100%, 420px); min-height: 52px; margin: 0; padding: 12px 16px; color: #fff !important; font-size: .82rem; background: linear-gradient(180deg,#22c55e,#15803d); border-color: #4ade80; box-shadow: 0 6px 0 #0b6f31,0 12px 24px rgba(22,163,74,.3); }
 .q-purchase-stage { padding-bottom: 12px; }
 #prelp-quiz.is-semantic.is-purchase-stage { color: #fff; background: radial-gradient(circle at 50% 0,#3a1b0b 0,#17100c 34%,#090807 100%); }
 #prelp-quiz.is-purchase-stage .q-progress { background: rgba(255,255,255,.13); }
@@ -4302,9 +4304,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     window.FunnelAnalytics?.action('back_clicked', { from_step: currentStage }, currentStage);
     clearLoading();
     const previousStage = new Map([
-      [2, 1.1],
-      [4, 2],
-      [5, 4],
+      [5, 1.1],
       [6, 5],
       [8, 6],
       [9, 8]
@@ -4418,74 +4418,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
     window.setTimeout(() => toast.remove(), 1700);
   }
 
-  function renderStage2() {
-    renderScreen(2,
-      '<div class="q-belief-stage">' +
-        '<h1 class="q-belief-title">Você não precisa de dom nem de treinar horas por dia.</h1>' +
-        '<p class="q-belief-thought"><strong>“Já treino muito… por que continuo travando nos jogos?”</strong></p>' +
-        '<div class="q-belief-metric">' +
-          '<small>JOGADORES JÁ USANDO A FÓRMULA</small>' +
-          '<strong class="q-belief-number">1.327+</strong>' +
-          '<p>um método organizado para jogar mais solto e confiante</p>' +
-        '</div>' +
-        '<div class="q-belief-pillars" aria-label="Pilares do método">' +
-          '<div class="q-belief-pillar"><span>🧠</span>INSTINTO</div>' +
-          '<div class="q-belief-pillar"><span>⚡</span>FLOW</div>' +
-          '<div class="q-belief-pillar"><span>⚽</span>CORPO</div>' +
-        '</div>' +
-        '<h2 class="q-belief-core">Evolução não é treinar mais. É treinar <mark>o que trava o seu jogo.</mark></h2>' +
-        '<p class="q-belief-explain">A Fórmula dos Prós mostra onde focar sua energia.</p>' +
-        '<div class="q-belief-list">' +
-          '<div class="q-belief-item"><span>✓</span>Sem precisar nascer com “dom”</div>' +
-          '<div class="q-belief-item"><span>✓</span>Sem treinar por horas todos os dias</div>' +
-          '<div class="q-belief-item"><span>✓</span>Sem depender de equipamentos caros</div>' +
-        '</div>' +
-        '<button class="q-primary" type="button" data-continue>CONHECER A FÓRMULA POR DENTRO →</button>' +
-      '</div>');
-    bindContinue(4);
-  }
-
-  function renderComfortExit() {
-    currentStage = 2;
-    renderScreen(2,
-      '<div class="q-stage-icon">🤡</div>' +
-      '<h1 class="q-title">Ok, então meu guia <span class="q-highlight">não é para você.</span></h1>' +
-      '<p class="q-subtitle">Este método foi criado para jogadores que estão dispostos a sair do confortável e fazer o que a maioria não faz.</p>' +
-      '<div class="q-note"><strong>Se você mudar de ideia e decidir evoluir de verdade, pode voltar e continuar.</strong></div>' +
-      '<button class="q-primary" type="button" data-retry>QUERO SAIR DO CONFORTÁVEL</button>');
-    stageContent.querySelector('[data-retry]').addEventListener('click', () => goToStage(2));
-  }
-
-  function renderStage4() {
-    renderScreen(4,
-      '<div class="q-growth-stage-content">' +
-        '<span class="q-growth-kicker">Informativo</span>' +
-        '<h1 class="q-growth-title">Veja o crescimento da <mark>Fórmula dos Prós</mark> em 2026 🔥</h1>' +
-        '<p class="q-growth-copy">Um método para destravar instinto, confiança e liberdade em campo.</p>' +
-        '<div class="q-growth-stats">' +
-          '<div class="q-growth-stat"><small>JOGADORES USANDO</small><strong>1.327+</strong><span>▲ comunidade crescendo</span></div>' +
-          '<div class="q-growth-stat"><small>PILARES PRINCIPAIS</small><strong>3</strong><span>Instinto · Flow · Corpo</span></div>' +
-        '</div>' +
-        '<div class="q-growth-chart">' +
-          '<small>CRESCIMENTO DA COMUNIDADE</small>' +
-          '<strong>1.327+ jogadores</strong>' +
-          '<svg viewBox="0 0 320 145" role="img" aria-label="Gráfico ilustrativo do crescimento da comunidade Fórmula dos Prós">' +
-            '<defs><linearGradient id="qOrangeArea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a00" stop-opacity=".42"/><stop offset="1" stop-color="#ff7a00" stop-opacity="0"/></linearGradient></defs>' +
-            '<path d="M8 126 C45 120 55 101 83 100 S122 78 145 82 S182 55 208 58 S246 35 275 37 S299 20 314 16 L314 139 L8 139 Z" fill="url(#qOrangeArea)"/>' +
-            '<path d="M8 126 C45 120 55 101 83 100 S122 78 145 82 S182 55 208 58 S246 35 275 37 S299 20 314 16" fill="none" stroke="#ff8415" stroke-width="3" stroke-linecap="round"/>' +
-            '<circle cx="275" cy="37" r="5" fill="#ff9b38" stroke="#fff" stroke-width="2"/>' +
-          '</svg>' +
-          '<div class="q-growth-axis"><span>Início</span><span>V1</span><span>V2</span><span>Agora</span></div>' +
-        '</div>' +
-        '<button class="q-primary" type="button" data-growth-continue>VER O QUE MUDA NO MEU JOGO →</button>' +
-      '</div>');
-    stageContent.querySelector('.q-screen').classList.add('q-growth-screen');
-    stageContent.querySelector('[data-growth-continue]').addEventListener('click', () => {
-      window.FunnelAnalytics?.action('continue_clicked', { next_step: 5 }, 4);
-      goToStage(5);
-    });
-  }
-
   function renderStage5() {
     renderScreen(5,
       '<div class="q-benefits-stage">' +
@@ -4510,8 +4442,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
           '</ul><img class="q-benefit-proof-image" src="images/fdp-v2-beneficios.webp" alt="Fórmula dos Prós V2 apresentada por jogador profissional" loading="lazy"></section>' +
         '</div>' +
         '<div class="q-benefit-cards">' +
-          '<article class="q-benefit-info is-orange"><span>ACESSO AO TREINAMENTO</span><strong>A Fórmula dos Prós V2 é um treinamento completo e pago para quem decidiu evoluir com método.</strong><p>Ao final, você poderá conhecer o acesso, tudo o que está incluído e a condição liberada para entrar.</p></article>' +
-          '<article class="q-benefit-info is-green"><span>VOUCHER PREMIADO LIBERADO</span><strong>Você ganhou um voucher especial para garantir o treinamento por uma condição exclusiva.</strong><p>O voucher será aplicado na finalização caso você decida entrar para a Fórmula dos Prós V2.</p></article>' +
+          '<article class="q-benefit-info is-green"><span>🎁 VOUCHER PREMIADO LIBERADO</span><strong>Você ganhou um voucher especial para entrar na Fórmula dos Prós V2 por uma condição exclusiva.</strong><p>Seu desconto será aplicado na finalização caso decida garantir seu acesso.</p></article>' +
         '</div>' +
         '<button class="q-primary" type="button" data-benefits-continue>LIBERAR MEU VOUCHER →</button>' +
       '</div>');
@@ -4619,7 +4550,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
       '</div>', false);
     const finalContinueBar = stageContent.querySelector('.q-final-continue-bar');
     const finalContinueButton = finalContinueBar.querySelector('[data-final-continue]');
-    gate.appendChild(finalContinueBar);
     finalContinueButton.addEventListener('click', () => goToStage(9));
   }
 
@@ -4986,8 +4916,6 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
 
     switch (stage) {
       case 1.1: renderStageVsl(); break;
-      case 2: renderStage2(); break;
-      case 4: renderStage4(); break;
       case 5: renderStage5(); break;
       case 6: renderStage6(); break;
       case 8: renderStage8Finalization(); break;
@@ -5114,7 +5042,7 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
         duration_seconds: Math.floor(video.duration),
         percent: video.duration ? Math.min(100, Math.round(video.currentTime / video.duration * 100)) : null
       }, 1);
-      goToStage(2);
+      goToStage(5);
     });
 
     video.muted = false;
