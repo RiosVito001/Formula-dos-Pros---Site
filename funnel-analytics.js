@@ -10,7 +10,7 @@
   const QUEUE_KEY = 'fdp_analytics_queue_v1';
   const QUIZ_CONTEXT_KEY = 'fdp_quiz_context_v1';
   const SITE_ID = 'formula-dos-pros';
-  const ANALYTICS_VERSION = 2;
+  const ANALYTICS_VERSION = 4;
   const MAX_QUEUE = 80;
 
   const memoryStore = {};
@@ -108,6 +108,7 @@
   let currentStep = pageType === 'landing' ? 22 : 1;
   let stepStartedAt = Date.now();
   let completed = Boolean(quizContext && quizContext.completed_at);
+  let offerViewedSent = false;
   let exitSent = false;
   let flushing = false;
   const knownAnswers = { ...((quizContext && quizContext.answers) || {}) };
@@ -230,7 +231,7 @@
     completed = true;
     if (allAnswers && typeof allAnswers === 'object') Object.assign(knownAnswers, allAnswers);
     persistQuizContext(new Date().toISOString());
-    event('quiz_completed', {
+    event('funnel_completed', {
       step: currentStep,
       metadata: {
         duration_ms: Date.now() - pageStartedAt,
@@ -242,7 +243,14 @@
   function landingUnlocked(allAnswers) {
     if (allAnswers && typeof allAnswers === 'object') Object.assign(knownAnswers, allAnswers);
     persistQuizContext();
-    event('landing_unlocked', { step: currentStep, metadata: { answers: allAnswers || knownAnswers } });
+    event('sales_page_viewed', { step: currentStep, metadata: { answers: allAnswers || knownAnswers } });
+  }
+
+  function offerViewed(metadata) {
+    if (offerViewedSent) return;
+    offerViewedSent = true;
+    stage(3, 'Oferta');
+    event('offer_viewed', { step: 3, metadata: metadata || {} });
   }
 
   function trackCheckout(anchor) {
@@ -263,6 +271,10 @@
     const anchor = eventObject.target.closest('a');
     if (!anchor) return;
     const href = anchor.getAttribute('href') || '';
+    if (href === '#pricing') {
+      action('offer_cta_clicked', { button_text: clean(anchor.textContent, 120) }, currentStep);
+      return;
+    }
     if (anchor.id === 'offer-checkout' || anchor.classList.contains('upsell-btn-full') || anchor.classList.contains('q-card-buy') || /ggcheckout\.app|pay\.hotmart\.com|pagar\.formula-dos-pros\.com\.br/i.test(href)) {
       trackCheckout(anchor);
     }
@@ -294,6 +306,7 @@
     complete,
     landingUnlocked,
     checkout: trackCheckout,
+    offerViewed,
     flush: flushQueue,
     getSessionId: () => session.id,
     getAnswers: () => ({ ...knownAnswers }),
@@ -304,13 +317,10 @@
   };
 
   if (pageType === 'landing') {
-    event('offer_viewed', {
-      step: 22,
-      metadata: {
-        entry_mode: quizContext && quizContext.completed_at ? 'quiz' : 'direct',
-        country: knownAnswers.country || null,
-        position: knownAnswers.position || null
-      }
+    offerViewed({
+      entry_mode: quizContext && quizContext.completed_at ? 'quiz' : 'direct',
+      country: knownAnswers.country || null,
+      position: knownAnswers.position || null
     });
   } else {
     event('funnel_started', { step: 1, metadata: { session_started_at: session.startedAt } });
