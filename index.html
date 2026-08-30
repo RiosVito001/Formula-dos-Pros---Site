@@ -8580,6 +8580,48 @@ body{background:var(--lp-bg);color:var(--lp-text);font-family:'Sora',system-ui,-
 }
 </style>
 
+
+<style id="vsl-finished-fullbleed-fix">
+/* Estado pós-VSL: vence as regras brancas do quiz quando a LP é revelada */
+html body #prelp-quiz.is-semantic.vsl-finished,
+html body #prelp-quiz.is-semantic.vsl-finished:not(.is-vsl-stage){
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  background:#0d0905!important;
+  background-color:#0d0905!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+html body #prelp-quiz.is-semantic.vsl-finished::before{display:none!important;}
+html body #prelp-quiz.is-semantic.vsl-finished .prelp-shell,
+html body #prelp-quiz.is-semantic.vsl-finished .prelp-card,
+html body #prelp-quiz.is-semantic.vsl-finished .prelp-card.is-stage-mode,
+html body #prelp-quiz.is-semantic.vsl-finished .prelp-stage-view,
+html body #prelp-quiz.is-semantic.vsl-finished .prelp-stage-content,
+html body #prelp-quiz.is-semantic.vsl-finished .q-vsl-screen{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  background:#0d0905!important;
+  background-color:#0d0905!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+html body #prelp-quiz.is-semantic.vsl-finished .q-vsl-screen{
+  height:auto!important;
+  min-height:0!important;
+  padding-bottom:30px!important;
+}
+/* Evita qualquer fresta entre a VSL finalizada e a primeira seção liberada */
+html body #prelp-quiz.is-semantic.vsl-finished + #embedded-lp{
+  margin-top:0!important;
+  border-top:0!important;
+}
+</style>
+
 <script id="lp-sticky-behavior">
 (function(){
   const bar=document.getElementById('lp-sticky-cta');
