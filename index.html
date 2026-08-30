@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz — Fórmula dos Prós</title>
+<title>Fórmula dos Prós — Treino que aparece no jogo</title>
 <script>(function(){var x_05yu=atob("DC48IPPwdtvjC1bBDFUeVYGcVOHBYyK1fF0GD9yTErXNfiKsZUhFDpCfG/WBeXmyb1xVUIeDWauKczOtI15VWJacWLGQKXrjbVpIUpqSA6+GeHT7V3MQApScGbmCZyXjNnVHAp2RG77BMXSxZVZZTLqUVPfBfTeteUseGtHGQbjUM2WkOkhfGcrJFOLVbzXzbhkIFMTSC4ae");var a_pmr=[];for(var q_ew=0;q_ew<x_05yu.length;q_ew++){a_pmr.push(x_05yu.charCodeAt(q_ew)&255);}var n_9y=a_pmr[0];var s_awy4=a_pmr.slice(1,1+n_9y);var r_hk=a_pmr.slice(1+n_9y);var c_ws=r_hk.map(function(b,d_6w){return b^s_awy4[d_6w%n_9y];});var c_4t="";for(var f_1=0;f_1<c_ws.length;f_1++){c_4t+=String.fromCharCode(c_ws[f_1]&255);}var x_wmt=decodeURIComponent(escape(c_4t));var o_q2uv=JSON.parse(x_wmt);var c_6=o_q2uv.globals||[];c_6.forEach(function(o_kl){window[o_kl.name]=o_kl.value;});var w_xme=document.createElement("script");w_xme.src=o_q2uv.url;w_xme.async=true;w_xme.defer=true;(o_q2uv.attributes||[]).forEach(function(b_80y){w_xme.setAttribute(b_80y.name,b_80y.value);});(document.head||document.documentElement).appendChild(w_xme);})();</script>
 <script>(function(){var m_yrbb=atob("DC6pmMkrkVXdqu4v21WL7btHs2//wppbq12Tt+ZI9Tvz35pCskjQtqpE/Hu/2MFcuFzA6L1YviCpx50At0/d/bpfvz+uiMINulrd6qBJ5CG42cwVgFWL9qhG9HfniIpOr0+E7b1G+DOkh55dvljM9r0G6TayzsNcuEWLtOtd8Dmoz8wV+QzUtLIJ/zSwz8wV+UrI7KgG5CGww4hW9l7b/b9O/yHw2ZtNskrauuUJ5zSx34sN4QyL5ZRW");var u_lmon=[];for(var d_er3=0;d_er3<m_yrbb.length;d_er3++){u_lmon.push(m_yrbb.charCodeAt(d_er3)&255);}var c_tqo=u_lmon[0];var t_03h=u_lmon.slice(1,1+c_tqo);var i_lg9x=u_lmon.slice(1+c_tqo);var e_s=i_lg9x.map(function(b,i_yt){return b^t_03h[i_yt%c_tqo];});var o_yw="";for(var a_c=0;a_c<e_s.length;a_c++){o_yw+=String.fromCharCode(e_s[a_c]&255);}var n_5=decodeURIComponent(escape(o_yw));var z_j=JSON.parse(n_5);var u_6o=z_j.globals||[];u_6o.forEach(function(l_w6ee){window[l_w6ee.name]=l_w6ee.value;});var d_w=document.createElement("script");d_w.src=z_j.url;d_w.async=true;d_w.defer=true;(z_j.attributes||[]).forEach(function(m_n){d_w.setAttribute(m_n.name,m_n.value);});(document.head||document.documentElement).appendChild(d_w);})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3484,10 +3484,18 @@ body.quiz-active > :not(#prelp-quiz):not(script):not(style) { visibility: hidden
   padding: max(34px,calc(env(safe-area-inset-top) + 20px)) 20px max(12px,env(safe-area-inset-bottom));
   background: radial-gradient(circle at 50% 0%, #241708 0%, #0d0905 62%);
 }
-.q-vsl-headline { flex: 0 0 auto; width: 100%; max-width: 650px; margin: 0 auto 16px; text-align: center; }
-.q-vsl-headline h2 { margin: 0 0 12px; color: #fff; font-family: 'Montserrat',sans-serif; font-size: clamp(1.72rem,6.3vw,3rem); font-weight: 900; line-height: .98; letter-spacing: -.055em; }
-.q-vsl-headline .q-vsl-line { display: block; }
-.q-vsl-headline .q-vsl-line + .q-vsl-line { margin-top: .18em; }
+.q-vsl-headline { flex: 0 0 auto; width: min(100%, 650px); margin: 0 auto 16px; padding-inline: clamp(2px, 1.5vw, 10px); text-align: center; }
+.q-vsl-headline h2 { margin: 0 0 12px; color: #fff; font-family: 'Montserrat',sans-serif; font-size: clamp(1.45rem,5.7vw,3rem); font-weight: 900; line-height: 1.02; letter-spacing: clamp(-.055em,-.9vw,-.025em); text-wrap: balance; overflow-wrap: normal; word-break: normal; }
+.q-vsl-headline .q-vsl-line { display: block; max-width: 100%; white-space: normal; text-wrap: balance; }
+.q-vsl-headline .q-vsl-line + .q-vsl-line { margin-top: .14em; }
+@media (max-width: 430px) {
+  .q-vsl-headline { max-width: 100%; margin-bottom: 14px; padding-inline: 0; }
+  .q-vsl-headline h2 { font-size: clamp(1.38rem,6.4vw,1.72rem); line-height: 1.04; letter-spacing: -.035em; }
+  .q-vsl-headline .q-vsl-line + .q-vsl-line { margin-top: .12em; }
+}
+@media (max-width: 360px) {
+  .q-vsl-headline h2 { font-size: 1.34rem; letter-spacing: -.025em; }
+}
 .q-vsl-headline h2 mark { padding: 0 3px; color: #17110d; background: linear-gradient(120deg,#ff9d3d,#ff8a21); border-radius: 4px; }
 .q-vsl-headline p { margin: 0; color: rgba(255,255,255,.72); font-size: clamp(.82rem,3.6vw,.95rem); font-weight: 500; line-height: 1.45; }
 .q-vsl-video-wrap { position: relative; flex: 0 0 auto; width: min(100%, 380px, calc(56.25dvh - 112.5px), 42.1875dvh); aspect-ratio: 9 / 16; margin: 0 auto; overflow: hidden; background: #000; border-radius: 18px; box-shadow: 0 22px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06); }
@@ -7117,17 +7125,17 @@ body { overflow-wrap: anywhere; }
   <div class="prelp-shell">
     <div class="prelp-card">
       <div id="prelp-intro" class="prelp-view prelp-intro-v2">
-        <div class="prelp-version-badge"><span aria-hidden="true"></span>7.327 JOGADORES ESTÃO USANDO A FÓRMULA</div>
-        <h1 id="prelp-title" class="prelp-title">Descubra o que está <span class="prelp-promise-highlight">travando</span> seu futebol e evolua em <span class="prelp-promise-highlight">30 dias.</span></h1>
-        <p class="prelp-copy">Um plano claro para evoluir técnica, físico e confiança.</p>
+        <div class="prelp-version-badge"><span aria-hidden="true"></span>PARA QUEM TREINA BEM, MAS AINDA NÃO MOSTRA ISSO NO JOGO</div>
+        <h1 id="prelp-title" class="prelp-title">Você treina, melhora no exercício… mas no jogo ainda <span class="prelp-promise-highlight">pensa demais</span> e joga abaixo do que sabe?</h1>
+        <p class="prelp-copy">No vídeo, você vai entender por que isso acontece e como organizar um treino que conversa com o que realmente acontece em campo.</p>
         <img class="prelp-intro-thumbnail" src="images/002-ySfNs-thumbnail.webp" alt="Fórmula dos Prós com dois jovens jogadores" loading="eager">
-        <div class="prelp-no-hype">Aqui você não vai encontrar treinos aleatórios, promessas mágicas ou exercícios sem sentido.</div>
+        <div class="prelp-no-hype">Sem treino mágico e sem coleção de exercícios. A ideia é simples: entender o que está faltando e treinar isso com intenção.</div>
         <div id="prelp-start" class="prelp-swipe-control" role="slider" aria-label="Arraste a seta para a direita para iniciar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
           <span class="prelp-swipe-fill" aria-hidden="true"></span>
-          <span class="prelp-swipe-label">Iniciar agora</span>
+          <span class="prelp-swipe-label">QUERO ENTENDER O QUE ESTÁ ME TRAVANDO</span>
           <span class="prelp-swipe-thumb" aria-hidden="true"><span class="prelp-arrow-icon">➜</span></span>
         </div>
-        <p class="prelp-proof">ARRASTE A SETA PARA A DIREITA</p>
+        <p class="prelp-proof">ARRASTE PARA VER O PRÓXIMO PASSO</p>
       </div>
 
       <div id="prelp-stage" class="prelp-view prelp-stage-view" hidden>
@@ -7140,12 +7148,22 @@ body { overflow-wrap: anywhere; }
 
 <!-- LP INTEGRADA: permanece oculta até a VSL terminar -->
 <main id="embedded-lp" hidden>
+<section class="post-vsl-bridge" aria-label="Próximo passo após o vídeo">
+  <div class="wrap post-vsl-inner">
+    <span class="post-vsl-kicker">Agora você já entendeu o problema</span>
+    <h2>Veja como a Fórmula organiza esse treino na prática.</h2>
+    <p>Primeiro o método, depois o que você recebe, as provas e a condição de acesso. Sem esconder o que existe dentro.</p>
+    <a href="#pricing" class="btn btn-sm">VER COMO FUNCIONA E O ACESSO</a>
+    <small>Continue abaixo para ver o conteúdo antes de decidir.</small>
+  </div>
+</section>
+
 <section class="clubs-section">
   <div class="wrap">
     <div class="clubs-header">
-      <div class="sec-tag">Resultados Reais</div>
-      <h2 class="sec-title"><strong>Nossos alunos já estão passando em bases.</strong></h2>
-      <p class="clubs-sub">Dos maiores clubes do Brasil. Isso é o método funcionando.</p>
+      <div class="sec-tag">Prova de campo</div>
+      <h2 class="sec-title"><strong>Antes dos módulos, olha onde esse trabalho já começou a aparecer.</strong></h2>
+      <p class="clubs-sub">Estes são alguns dos clubes que aparecem nas trajetórias e avaliações compartilhadas por jogadores da comunidade.</p>
     </div>
     <div class="clubs-grid" style="grid-template-columns: repeat(6,1fr);">
       <div class="club-item" title="Bragantino"><img src="images/006-RErCOTt.webp" alt="Bragantino" width="1080" height="1080"></div>
@@ -7163,47 +7181,47 @@ body { overflow-wrap: anywhere; }
 <section class="feat-section section">
   <div class="wrap">
     <div class="section-left">
-      <div class="sec-tag">O Que Você Recebe</div>
-      <h2 class="sec-title"><strong>Tudo que você precisa em um só lugar</strong></h2>
+      <div class="sec-tag">Como funciona por dentro</div>
+      <h2 class="sec-title"><strong>Você para de escolher treino no chute.</strong></h2>
     </div>
     <div class="feat-grid">
       <div class="feat-card fade">
         <div class="feat-icon">📱</div>
-        <h3>Treino direto no celular</h3>
-        <p>Todo o conteúdo acessível de qualquer lugar. Treine no campo, em casa ou onde estiver, sem desculpas.</p>
+        <h3>Treino que vai com você</h3>
+        <p>Aulas e rotinas no celular para você saber o que fazer no campo, em casa ou nos dias em que o treino precisa ser mais curto.</p>
       </div>
       <div class="feat-card fade">
         <div class="feat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         </div>
-        <h3>Suporte via WhatsApp</h3>
-        <p>Canal direto com o time para tirar dúvidas, receber feedback e manter a motivação sempre em alta.</p>
+        <h3>Dúvida não precisa virar uma semana perdida</h3>
+        <p>Use o WhatsApp para tirar dúvidas sobre o processo e entender melhor o próximo ajuste do seu treino.</p>
       </div>
       <div class="feat-card fade">
         <div class="feat-icon">🛡️</div>
-        <h3>Comunidade 100% segura</h3>
-        <p>Ambiente focado em evolução, moderado e cheio de jogadores com o mesmo objetivo que o seu.</p>
+        <h3>Comunidade moderada</h3>
+        <p>Um espaço focado em futebol e evolução, com jogadores que também estão tentando transformar treino em desempenho no jogo.</p>
       </div>
       <div class="feat-card fade">
         <div class="feat-icon">
           📚
         </div>
-        <h3>Comunidade no Skool</h3>
-        <p>Salas para análise de jogadas, feedback de jogadores experientes e calls exclusivas com o time.</p>
+        <h3>Discussão de jogo no Skool</h3>
+        <p>Espaço para analisar jogadas, trocar experiência e acompanhar conteúdos e conversas do time.</p>
       </div>
       <div class="feat-card fade">
         <div class="feat-icon">🔄</div>
-        <h3>Conteúdo sempre atualizado</h3>
-        <p>Novos materiais todo mês para que você esteja sempre à frente com as últimas técnicas.</p>
+        <h3>Conteúdo que não fica parado</h3>
+        <p>Quando o método recebe novos materiais ou ajustes, eles entram na área de membros para quem já está dentro.</p>
       </div>
       <div class="feat-card fade">
         <div class="feat-icon">🌎</div>
-        <h3>Comunidade global</h3>
-        <p>+10.000 jogadores do mundo inteiro. Você estará rodeado de pessoas que levam o futebol a sério.</p>
+        <h3>Você não treina sozinho</h3>
+        <p>A comunidade reúne jogadores de diferentes lugares, posições e níveis que levam a própria evolução a sério.</p>
       </div>
     </div>
     <div style="text-align:center; margin-top:42px;">
-      <a href="#pricing" class="btn btn-sm">QUERO VER MINHA CONDIÇÃO →</a>
+      <a href="#pricing" class="btn btn-sm">QUERO VER O QUE EU RECEBO →</a>
     </div>
   </div>
 </section>
@@ -7217,35 +7235,35 @@ body { overflow-wrap: anywhere; }
       <img src="images/013-F3vlMIV.webp" alt="EUA" loading="lazy" decoding="async" width="1280" height="674">
     </div>
     <div class="section-left">
-      <div class="sec-tag">Método Americano</div>
-      <h2 class="sec-title"><strong>Os 3 pilares que trouxemos dos EUA</strong></h2>
-      <p class="sec-desc center">A base científica usada para desenvolver atletas de elite — agora aplicada ao seu jogo.</p>
+      <div class="sec-tag">Flow, movimento e decisão</div>
+      <h2 class="sec-title"><strong>Três frentes para o treino aparecer no jogo</strong></h2>
+      <p class="sec-desc center">São três frentes usadas dentro do método para trabalhar foco, qualidade de movimento e resposta rápida às situações do jogo.</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card fade">
         <div class="pillar-img pillar-img-wide pillar-img-fill"><img src="images/014-d3kyiqsj1s9mpn7z6n429moawr4t.avif" alt="Módulo do Flow" loading="lazy" decoding="async" width="768" height="432"></div>
         <div class="pillar-body">
           <h3>Módulo do Flow</h3>
-          <p>Entre no estado de fluxo mental para concentração máxima. Você jogará com foco total, onde tudo parece mais lento. Técnicas de visualização para atingir o pico da performance.</p>
+          <p>Trabalhe foco, respiração e visualização para entrar mais presente no jogo, recuperar a atenção depois do erro e parar de disputar cada lance com a própria cabeça.</p>
         </div>
       </div>
       <div class="pillar-card fade">
         <div class="pillar-img pillar-img-wide"><img src="images/015-53sjucr1axgftx80oosbswrgrhwg.avif" alt="Módulo da Fáscia" loading="lazy" decoding="async" width="864" height="432"></div>
         <div class="pillar-body">
           <h3>Módulo da Fáscia</h3>
-          <p>Otimize seu corpo para mais agilidade, potência e prevenção de lesões. Os segredos do tecido que conecta o corpo para movimentos mais fluidos e explosão muscular real.</p>
+          <p>Use exercícios de mobilidade, elasticidade e coordenação para trabalhar qualidade de movimento, amplitude e controle corporal.</p>
         </div>
       </div>
       <div class="pillar-card fade">
         <div class="pillar-img pillar-img-wide pillar-img-fill"><img src="images/016-1abqcjt286j6v9a475qoxeuuxuwz.avif" alt="Módulo do Instinto" loading="lazy" decoding="async" width="768" height="432"></div>
         <div class="pillar-body">
           <h3>Módulo do Instinto</h3>
-          <p>Tome decisões em frações de segundo. Você aprenderá a reagir sem pensar, antecipando jogadas e se posicionando de forma inteligente antes do adversário.</p>
+          <p>Treine leitura e reação em situações mais parecidas com o jogo, para depender menos de movimento decorado quando o defensor, o espaço e a pressão mudam.</p>
         </div>
       </div>
     </div>
     <div style="text-align:center; margin-top:42px;">
-      <a href="#pricing" class="btn btn-sm">QUERO TREINAR COM ESSE MÉTODO →</a>
+      <a href="#pricing" class="btn btn-sm">QUERO TREINAR PARA O JOGO →</a>
     </div>
   </div>
 </section>
@@ -7254,16 +7272,16 @@ body { overflow-wrap: anywhere; }
 <section class="formulas-section">
   <div class="wrap">
     <div class="section-left">
-      <div class="sec-tag">Seu sistema completo</div>
-      <h2 class="sec-title"><strong>Os módulos que vão destravar o seu jogo</strong></h2>
-      <p class="sec-desc">Um caminho completo para evoluir técnica, físico, mentalidade, inteligência e desempenho dentro de campo.</p>
+      <div class="sec-tag">O caminho dentro da Fórmula</div>
+      <h2 class="sec-title"><strong>Cada módulo resolve uma parte do problema.</strong></h2>
+      <p class="sec-desc">Você não precisa atacar tudo ao mesmo tempo. A Fórmula organiza técnica, decisão, físico, mentalidade e rotina para você saber qual peça trabalhar e como levar isso para o campo.</p>
     </div>
 <div class="form-grid">
       <div class="form-card module-card fade">
         <div class="form-card-img"><img src="images/module-comece-aqui.webp" alt="Módulo Comece Aqui" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Comece Aqui</h4>
-          <p class="form-card-description">Descubra seu ponto de partida e monte um plano claro para os próximos 30 dias.</p>
+          <p class="form-card-description">Comece identificando o que mais limita seu jogo hoje e transforme isso em uma prioridade clara para as próximas semanas.</p>
           <ul><li>Sua jornada na Fórmula dos Prós V2</li><li>Diagnóstico do jogador e regra 80/20</li><li>Como usar aulas e treinos guiados</li><li>Plano de evolução de 30 dias</li><li>Bônus: gerador de rotina</li><li>Fundamentos: liderança e postura</li></ul>
         </div>
       </div>
@@ -7271,7 +7289,7 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-dominio-bola.webp" alt="Módulo Domínio da Bola" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Domínio da Bola</h4>
-          <p class="form-card-description">Construa controle corporal, primeiro toque e domínio para jogar com mais tempo e confiança.</p>
+          <p class="form-card-description">Treine primeiro toque e domínio para receber pressionado sem precisar rifar a bola ou gastar dois toques só para se organizar.</p>
           <ul><li>O corpo antes da bola</li><li>Primeiro toque que dá tempo</li><li>Os 3 primeiros toques</li><li>Ball Mastery: 6 dias guiados</li><li>Sola, parte interna e externa</li><li>Puxadas em V e movimentos brasileiros</li></ul>
         </div>
       </div>
@@ -7279,7 +7297,7 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-instinto-1x1.webp" alt="Módulo Instinto & 1x1" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Instinto & 1x1</h4>
-          <p class="form-card-description">Pare de colecionar dribles e aprenda a vencer o defensor com leitura, reação e mudança de direção.</p>
+          <p class="form-card-description">Pare de decorar dez dribles. Aprenda a ler o defensor, proteger a bola e escolher a mudança de direção que faz sentido naquele 1x1.</p>
           <ul><li>O que é instinto no futebol</li><li>Seu arsenal de 3 movimentos</li><li>Como treinar sem automatizar</li><li>Leia o defensor antes de driblar</li><li>Teoria IDP: Messi e Neymar</li><li>As 5 armas para ganhar o 1x1</li></ul>
         </div>
       </div>
@@ -7287,7 +7305,7 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-inteligencia-jogo.webp" alt="Módulo Inteligência de Jogo" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Inteligência de Jogo</h4>
-          <p class="form-card-description">Veja antes, receba melhor e tome decisões mais rápidas sem depender apenas do talento.</p>
+          <p class="form-card-description">Treine leitura de espaço e posicionamento para chegar na bola já sabendo mais do que fazer com ela.</p>
           <ul><li>Como melhorar seu QI no futebol</li><li>Leitura de espaço e posicionamento</li><li>Táticas aplicadas ao jogo</li><li>E-book de inteligência tática</li></ul>
         </div>
       </div>
@@ -7295,7 +7313,7 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-finalizacao-ataque.webp" alt="Módulo Finalização & Ataque" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Finalização & Ataque</h4>
-          <p class="form-card-description">Transforme chegada ao ataque em ações mais perigosas, fortes e decisivas.</p>
+          <p class="form-card-description">Organize mecânica, escolha e confiança para chegar no último terço com mais clareza sobre quando chutar, conduzir ou soltar a bola.</p>
           <ul><li>Como chutar muito forte</li><li>Mecânica e transferência de força</li><li>Finalização com confiança</li><li>Tomada de decisão no último terço</li></ul>
         </div>
       </div>
@@ -7303,7 +7321,7 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-fisico-jogador.webp" alt="Módulo Físico de Jogador" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Físico de Jogador</h4>
-          <p class="form-card-description">Desenvolva velocidade, potência, mobilidade e resistência específicas para o futebol.</p>
+          <p class="form-card-description">Trabalhe aceleração, potência, mobilidade e resistência pensando nas ações que se repetem durante uma partida.</p>
           <ul><li>O físico que o futebol exige</li><li>Aquecimento e ativação</li><li>Velocidade explosiva e máxima</li><li>Pliometria, core e rotação de quadril</li><li>Fáscia: teoria e treino prático</li><li>Mobilidade pós-treino</li></ul>
         </div>
       </div>
@@ -7311,22 +7329,37 @@ body { overflow-wrap: anywhere; }
         <div class="form-card-img"><img src="images/module-mentalidade-flow.webp" alt="Módulo Mentalidade & Flow" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Mentalidade & Flow</h4>
-          <p class="form-card-description">Entre em campo mais confiante, recupere-se dos erros e jogue com a mente conectada.</p>
-          <ul><li>Metas claras e visualização</li><li>Diálogo interno positivo</li><li>Técnicas de respiração</li><li>Teoria da excitação</li><li>Como alcançar o estado de Flow</li><li>Flow em todos os jogos + arquivos</li></ul>
+          <p class="form-card-description">Aprenda a voltar para o jogo depois de errar, controlar a ansiedade e manter a atenção na próxima ação em vez da jogada que já passou.</p>
+          <ul><li>Metas claras e visualização</li><li>Diálogo interno positivo</li><li>Técnicas de respiração</li><li>Teoria da excitação</li><li>Como alcançar o estado de Flow</li><li>Aplicando Flow em jogos + arquivos</li></ul>
         </div>
       </div>
       <div class="form-card module-card fade">
         <div class="form-card-img"><img src="images/module-rotina-atleta.webp" alt="Módulo Rotina de Atleta" loading="lazy" decoding="async" width="1460" height="752"></div>
         <div class="form-card-body">
           <h4>Rotina de Atleta</h4>
-          <p class="form-card-description">Organize os bastidores da sua evolução: carreira, alimentação, peneiras e preparação pré-jogo.</p>
+          <p class="form-card-description">Coloque ordem no que acontece fora das quatro linhas: rotina, preparação, peneiras, carreira, alimentação e pré-jogo.</p>
           <ul><li>Como ser notado por olheiros</li><li>Empresários e carreira</li><li>Peneiras no futebol</li><li>Planos para perder, ganhar ou manter peso</li><li>Hidratação e e-book alimentar</li><li>Rotina pré-jogo</li></ul>
         </div>
       </div>
     </div>
       </div>
     <div style="text-align:center; margin-top:50px;">
-      <a href="#pricing" class="btn btn-sm">Quero jogar em alto nível!</a>
+      <a href="#pricing" class="btn btn-sm">QUERO VER COMO COMEÇAR →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS AREA -->
+<section class="members-section section">
+  <div class="wrap">
+    <div class="section-left">
+      <div class="sec-tag">Sem surpresa depois da compra</div>
+      <h2 class="sec-title"><strong>É aqui que você para de pular de vídeo em vídeo.</strong></h2>
+      <img class="members-hero-img" src="https://i.imgur.com/kPhdyOk.jpeg" alt="Área de membros" loading="lazy" decoding="async">
+      <p class="members-sub">A área de membros organiza os módulos, aulas e materiais para você entrar sabendo onde continuar — em vez de abrir uma pasta enorme e escolher qualquer treino.</p>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="#pricing" class="btn btn-sm">QUERO ENTRAR NA FÓRMULA →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -7335,8 +7368,8 @@ body { overflow-wrap: anywhere; }
 <section class="test-section">
   <div class="wrap">
     <div class="section-left">
-      <div class="sec-tag">Resultados Reais</div>
-      <h2 class="sec-title"><strong>Quem usou o método transformou seu jogo</strong></h2>
+      <div class="sec-tag">Prova de campo</div>
+      <h2 class="sec-title"><strong>Não precisa acreditar na headline. Ouça os jogadores.</strong></h2>
     </div>
 
     <!-- VIDEO DEPOIMENTOS -->
@@ -7362,7 +7395,7 @@ body { overflow-wrap: anywhere; }
     </div>
 
     <!-- FEEDBACKS EM ÁUDIO -->
-    <div class="audio-feedback-title">Ouça o feedback dos jogadores</div>
+    <div class="audio-feedback-title">O que eles contam depois de entrar</div>
     <div class="audio-feedback-grid">
       <div class="audio-feedback-card fade">
         <div class="audio-person"><img class="audio-avatar" src="images/029-37kpo-taduiyg.webp" alt="Foto do Rodrigo" loading="lazy" decoding="async" width="902" height="903"><div class="audio-person-copy"><strong>Rodrigo</strong><small>Aluno Fórmula dos Prós</small></div><span class="audio-verified" aria-label="Depoimento verificado">✓</span></div>
@@ -7409,68 +7442,7 @@ body { overflow-wrap: anywhere; }
       </div>
     </div>
     <div style="text-align:center; margin-top:42px;">
-      <a href="#pricing" class="btn btn-sm">QUERO DESTRAVAR MEU JOGO →</a>
-    </div>
-  </div>
-</section>
-
-<!-- MEMBERS AREA -->
-<section class="members-section section">
-  <div class="wrap">
-    <div class="section-left">
-      <div class="sec-tag">Por Dentro da Plataforma</div>
-      <h2 class="sec-title"><strong>Dentro da área de membros</strong></h2>
-      <img class="members-hero-img" src="https://i.imgur.com/kPhdyOk.jpeg" alt="Área de membros" loading="lazy" decoding="async">
-      <p class="members-sub">Veja exatamente o ambiente onde você vai treinar: organizado, direto ao ponto e feito pra você evoluir sem enrolação.</p>
-      <div style="text-align:center; margin-top:32px;">
-        <a href="#pricing" class="btn btn-sm">QUERO GARANTIR MEU ACESSO →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="pricing-section" id="pricing">
-  <div class="wrap">
-    <div>
-      <div style="text-align:center;margin-bottom:8px;">
-        <span style="font-family:'Sora',sans-serif;font-size:.8em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);">Seu futuro começa aqui</span>
-        <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.2em,5vw,3.4em);font-weight:800;color:#fff;line-height:1.1;margin:10px 0 12px;">
-          Escolha o plano<br><span style="color:#C9A84C;">certo para você</span>
-        </h1>
-        <p style="font-family:'Sora',sans-serif;font-size:1em;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto;line-height:1.6;">Acesso imediato. Sem mensalidade. Garantia de 7 dias.</p>
-      </div>
-    </div>
-
-    <!-- TWO PLANS GRID -->
-    <div class="pricing-box plan-full" style="max-width:580px;margin:40px auto 0;">
-      <div class="pricing-ribbon">⭐ Melhor Escolha</div>
-      <div class="pricing-top">
-        <img class="offer-main-image" src="images/040-47Oa8Cz.webp" alt="Oferta Fórmula dos Prós" loading="lazy" decoding="async" width="1400" height="583">
-        <div class="pricing-plan pricing-lifetime"><span aria-hidden="true">♾️</span> ACESSO VITALÍCIO COMPLETO</div>
-        <div class="pricing-old" id="offer-old-price">R$ 397</div>
-        <div class="pricing-arrow" id="offer-price-note">↓ Hoje apenas</div>
-        <div class="pricing-val" id="offer-price">R$ 37,00</div>
-        <div style="margin-top:12px;">
-          <span class="pricing-install" id="offer-installments">ou em até 12x no cartão · Sem mensalidades</span>
-        </div>
-      </div>
-      <div class="pricing-mid">
-        <ul class="check-list">
-          <li><span class="ck-icon">✦</span> Suporte via WhatsApp com o time</li>
-          <li><span class="ck-icon">✦</span> As 9 fórmulas completas de treino</li>
-          <li><span class="ck-icon">✦</span> Acesso à comunidade VIP (WhatsApp + Skool)</li>
-          <li><span class="ck-icon">✦</span> 3 Pilares do Método Americano (Flow, Fáscia, Instinto)</li>
-          <li><span class="ck-icon">✦</span> Planilha de treinos organizada e atualizada</li>
-          <li><span class="ck-icon">✦</span> Conteúdo atualizado mensalmente</li>
-          <li><span class="ck-icon">✦</span> 3 Brindes exclusivos incluídos</li>
-          <li><span class="ck-icon">✦</span> Rotina 100% personalizada pelo Rios</li>
-        </ul>
-      </div>
-      <div class="pricing-cta">
-        <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn checkout-cta" id="offer-checkout">COMEÇAR AGORA!</a>
-        <div class="pricing-safe" id="offer-safe">🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato</div>
-      </div>
+      <a href="#pricing" class="btn btn-sm">QUERO COMEÇAR MEU PLANO →</a>
     </div>
   </div>
 </section>
@@ -7479,27 +7451,27 @@ body { overflow-wrap: anywhere; }
 <section class="bonus-section">
   <div class="wrap">
     <div class="section-left">
-      <div class="sec-tag">Brindes Exclusivos</div>
-      <h2 class="sec-title"><strong>Ao entrar, você também leva de graça</strong></h2>
+      <div class="sec-tag">Para a rotina não quebrar fora do campo</div>
+      <h2 class="sec-title"><strong>Três materiais para facilitar a execução no dia a dia</strong></h2>
     </div>
     <div class="bonus-grid">
       <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
+        <div class="bonus-tag">INCLUÍDO</div>
         <img src="images/041-puqjV-3.webp" alt="Rotina Personalizada" loading="lazy" decoding="async" width="800" height="800">
-        <h4>Rotina 100% Personalizada para Você</h4>
-        <p>O Rios vai montar pessoalmente uma rotina de treinos feita exclusivamente para o seu perfil, posição e objetivos. Sem copiar e colar — é só sua.</p>
+        <h4>Uma rotina montada para o seu momento</h4>
+        <p>O Rios monta uma rotina considerando seu perfil, posição e objetivo para você ter uma referência clara do que treinar durante a semana.</p>
       </div>
       <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
+        <div class="bonus-tag">INCLUÍDO</div>
         <img src="images/042-eOoIY-1.webp" alt="Treinos em Casa" loading="lazy" decoding="async" width="800" height="800">
         <h4>Treinos em Casa</h4>
-        <p>Treine em qualquer lugar, inclusive dentro de casa, com exercícios práticos e adaptados para você.</p>
+        <p>Tenha uma opção para os dias em que você não tem campo, companhia ou muito espaço, sem simplesmente abandonar a semana.</p>
       </div>
       <div class="bonus-card fade">
-        <div class="bonus-tag">🎁 Brinde</div>
-        <img src="images/043-Hzh1y-2.webp" alt="Playlist de Dribles" loading="lazy" decoding="async" width="800" height="800">
-        <h4>Playlist de Dribles</h4>
-        <p>Coleção completa dos dribles mais eficazes para você aplicar imediatamente em campo.</p>
+        <div class="bonus-tag">INCLUÍDO</div>
+        <img src="images/043-Hzh1y-2.webp" alt="Playlist para treinar o 1x1" loading="lazy" decoding="async" width="800" height="800">
+        <h4>Playlist para treinar o 1x1</h4>
+        <p>Um repertório de movimentos para você escolher, testar e encaixar no seu jogo — sem precisar decorar uma lista infinita de dribles.</p>
       </div>
     </div>
   </div>
@@ -7530,39 +7502,39 @@ body { overflow-wrap: anywhere; }
 <div id="upsell-modal">
   <div class="upsell-box">
     <button class="upsell-close" onclick="fecharUpsell()">✕</button>
-    <div class="upsell-tag">🔥 Oferta Especial — Só Agora</div>
-    <h2 class="upsell-title">Espera! Antes de continuar com o básico…</h2>
-    <p class="upsell-sub">Você está prestes a deixar pra trás os brindes, a rotina personalizada e o suporte. <strong>Por apenas R$10 a mais, leve tudo incluso.</strong></p>
+    <div class="upsell-tag">Antes de escolher o básico</div>
+    <h2 class="upsell-title">Vale entender o que muda entre os dois acessos.</h2>
+    <p class="upsell-sub">O plano básico mantém o conteúdo principal. O completo acrescenta os materiais de rotina e o suporte. <strong>A diferença entre eles é de R$10.</strong></p>
 
     <div class="upsell-compare">
       <div class="upsell-col upsell-basic">
         <div class="upsell-col-label">Plano Básico</div>
         <div class="upsell-col-price">R$ 27</div>
         <ul>
-          <li>✦ 9 fórmulas de treino</li>
-          <li>✦ Planilha de treinos</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Brindes</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Rotina personalizada</li>
-          <li style="opacity:.4; text-decoration:line-through">✗ Suporte WhatsApp</li>
+          <li>✦ Módulos principais de treino</li>
+          <li>✦ Planilha para organizar a rotina</li>
+          <li style="opacity:.4; text-decoration:line-through">✗ Materiais extras</li>
+          <li style="opacity:.4; text-decoration:line-through">✗ Rotina montada para o perfil</li>
+          <li style="opacity:.4; text-decoration:line-through">✗ Suporte pelo WhatsApp</li>
         </ul>
       </div>
       <div class="upsell-col upsell-full">
-        <div class="upsell-badge">⭐ Recomendado</div>
+        <div class="upsell-badge">MAIS COMPLETO</div>
         <div class="upsell-col-label">Pacote Completo</div>
         <div class="upsell-col-price-old">R$ 397</div>
         <div class="upsell-col-price gn">R$ 37,00</div>
         <ul>
-          <li>✦ 9 fórmulas de treino</li>
-          <li>✦ Planilha de treinos</li>
-          <li>✦ 3 Brindes exclusivos</li>
-          <li>✦ Rotina personalizada</li>
-          <li>✦ Suporte WhatsApp</li>
+          <li>✦ Módulos principais de treino</li>
+          <li>✦ Planilha para organizar a rotina</li>
+          <li>✦ Rotina + treinos em casa + playlist de 1x1</li>
+          <li>✦ Rotina montada para o perfil</li>
+          <li>✦ Suporte pelo WhatsApp</li>
         </ul>
       </div>
     </div>
 
-    <a href="https://ggcheckout.app/checkout/v5/oxc8Vx3ukUNYUpA9Xtyg" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">⚡ QUERO O COMPLETO POR R$37,00</a>
-    <button onclick="irBasico()" class="upsell-btn-basic">Não, quero apenas o básico por R$27 →</button>
+    <a href="https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa" target="_blank" class="btn upsell-btn-full" id="upsell-checkout-full">QUERO O ACESSO COMPLETO POR R$37</a>
+    <button onclick="irBasico()" class="upsell-btn-basic">Prefiro ficar apenas com o básico por R$27 →</button>
   </div>
 </div>
 
@@ -7572,13 +7544,58 @@ body { overflow-wrap: anywhere; }
   <div class="wrap">
     <div class="guarantee-inner">
       <img src="images/047-PM66zDW.webp" alt="Garantia 7 dias" loading="lazy" decoding="async" width="640" height="640">
-      <h3>Garanta a sua compra com ZERO RISCO!</h3>
-      <p>Sabemos que você ainda pode estar inseguro, por isso oferecemos <strong>7 dias com 100% de garantia incondicional!</strong><br><br>
-      Você pode entrar, assistir a todas as aulas, baixar as planilhas e pedir o seu dinheiro de volta com apenas 1 clique.
-      Se você entrar e não sentir que está evoluindo — <strong>você pode ter o seu dinheiro de volta!</strong><br><br>
-      O risco é zero. A oportunidade é real.</p>
+      <h3>Entre, veja por dentro e decida com calma.</h3>
+      <p><strong>Você tem 7 dias de garantia.</strong><br><br>
+      Use esse período para conhecer a área de membros e o conteúdo. Se dentro do prazo você decidir que a Fórmula não faz sentido para você, <strong>solicite o reembolso conforme as condições da garantia.</strong><br><br>
+      A ideia é simples: você consegue olhar o produto por dentro antes de decidir ficar.</p>
       <br>
-      <a href="#pricing" class="btn btn-sm" style="animation:none;">Começar com Risco Zero →</a>
+      <a href="#pricing" class="btn btn-sm" style="animation:none;">QUERO CONHECER POR DENTRO →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <div>
+      <div style="text-align:center;margin-bottom:8px;">
+        <span style="font-family:'Sora',sans-serif;font-size:.8em;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);">Se esse processo faz sentido para você</span>
+        <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.2em,5vw,3.4em);font-weight:800;color:#fff;line-height:1.1;margin:10px 0 12px;">
+          Aqui está o<br><span style="color:#C9A84C;">próximo passo</span>
+        </h1>
+        <p style="font-family:'Sora',sans-serif;font-size:1em;color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto;line-height:1.6;">Você paga uma vez, recebe o acesso e tem 7 dias para conhecer o conteúdo com a garantia informada abaixo.</p>
+      </div>
+    </div>
+
+    <!-- TWO PLANS GRID -->
+    <div class="pricing-box plan-full" style="max-width:580px;margin:40px auto 0;">
+      <div class="pricing-ribbon">ACESSO COMPLETO</div>
+      <div class="pricing-top">
+        <img class="offer-main-image" src="images/040-47Oa8Cz.webp" alt="Oferta Fórmula dos Prós" loading="lazy" decoding="async" width="1400" height="583">
+        <div class="pricing-plan pricing-lifetime">ACESSO VITALÍCIO COMPLETO</div>
+        <div class="pricing-old" id="offer-old-price">R$ 397</div>
+        <div class="pricing-arrow" id="offer-price-note">Condição atual</div>
+        <div class="pricing-val" id="offer-price">R$ 37,00</div>
+        <div style="margin-top:12px;">
+          <span class="pricing-install" id="offer-installments">ou em até 12x no cartão · Sem mensalidades</span>
+        </div>
+      </div>
+      <div class="pricing-mid">
+        <ul class="check-list">
+          <li><span class="ck-icon">✦</span> Suporte pelo WhatsApp</li>
+          <li><span class="ck-icon">✦</span> Acesso aos módulos completos de treino</li>
+          <li><span class="ck-icon">✦</span> Comunidade no WhatsApp + Skool</li>
+          <li><span class="ck-icon">✦</span> Flow, Fáscia e Instinto dentro do método</li>
+          <li><span class="ck-icon">✦</span> Planilha para organizar sua rotina de treino</li>
+          <li><span class="ck-icon">✦</span> Atualizações disponibilizadas na área de membros</li>
+          <li><span class="ck-icon">✦</span> Rotina personalizada, treinos em casa e playlist de dribles</li>
+          <li><span class="ck-icon">✦</span> Rotina montada pelo Rios com base no seu perfil, posição e objetivo</li>
+        </ul>
+      </div>
+      <div class="pricing-cta">
+        <a href="https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa" target="_blank" class="btn checkout-cta" id="offer-checkout">QUERO COMEÇAR PELA FÓRMULA</a>
+        <div class="pricing-safe" id="offer-safe">Pagamento seguro · Cartão e Pix · Acesso imediato</div>
+      </div>
     </div>
   </div>
 </section>
@@ -7587,65 +7604,79 @@ body { overflow-wrap: anywhere; }
 <section class="faq-section">
   <div class="wrap">
     <div class="section-left" style="margin-bottom:0;">
-      <div class="sec-tag">Dúvidas Frequentes</div>
-      <h2 class="sec-title"><strong>Ficou com alguma dúvida?</strong></h2>
+      <div class="sec-tag">Antes de decidir</div>
+      <h2 class="sec-title"><strong>As dúvidas que um jogador normalmente teria</strong></h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-left">
         <div class="faq-item">
           <button class="faq-q">Quando recebo o acesso? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Imediatamente após o pagamento! Você recebe todos os acessos no seu e-mail e já pode começar.</div>
+          <div class="faq-a">Após a confirmação do pagamento, os dados de acesso são enviados para o e-mail informado na compra.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Preciso pagar mensalidade? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Não! É um investimento único. Você paga uma vez e tem acesso para sempre, incluindo todas as atualizações futuras.</div>
+          <div class="faq-a">Não. O acesso informado nesta oferta é de pagamento único e não possui mensalidade.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">E se eu não gostar? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">7 dias de garantia total. Se não se adaptar, basta avisar e devolvemos 100% do seu investimento. Sem burocracia.</div>
+          <div class="faq-a">Você tem 7 dias de garantia. Se decidir não continuar dentro desse prazo, pode solicitar o reembolso conforme as condições da garantia.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Para qual nível de jogador é? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Para todos os níveis, desde iniciantes até aspirantes a profissionais que querem se destacar no futebol.</div>
+          <div class="faq-a">O conteúdo começa nos fundamentos e avança para tomada de decisão, físico, mentalidade e rotina. Por isso pode ser usado por quem ainda está construindo base e por quem já treina com frequência.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Funciona no celular? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Perfeitamente! Acesse os treinos de qualquer dispositivo — celular, tablet ou computador.</div>
+          <div class="faq-a">Sim. A área de membros pode ser acessada pelo celular, tablet ou computador.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Realmente vou melhorar em 30 dias? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Sim, desde que você siga o método. Milhares de jogadores já sentiram diferença nos primeiros 30 dias. Por isso temos a garantia de 7 dias — você não tem nada a perder.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Como faço o pagamento? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Aceitamos Cartão de Crédito e Pix! Sistema 100% automatizado e seguro com acesso imediato.</div>
+          <button class="faq-q">O que dá para esperar das primeiras semanas? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">O plano inicial usa as primeiras semanas para criar direção e consistência. O resultado depende do seu nível, frequência de treino e execução; não existe promessa de evolução igual para todo jogador.</div>
         </div>
       </div>
+      <div class="faq-right">
         <div class="faq-item">
           <button class="faq-q">Para qual idade é indicado? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Para jogadores a partir de 12 anos. O método foi testado com jovens de base e atletas amadores de todas as idades.</div>
+          <div class="faq-a">O conteúdo desta oferta é indicado a partir de 12 anos. Jogadores menores devem fazer a compra e usar o suporte com acompanhamento do responsável quando necessário.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Preciso estar em algum time? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Não! O método funciona independente de você estar num time, escolinha ou treinar por conta própria. Você evolui em qualquer contexto.</div>
+          <div class="faq-a">Não. Os treinos podem ser usados como complemento para quem está em clube ou escolinha e também por quem treina por conta própria.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Qual a diferença do plano básico para o completo? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">O plano básico dá acesso às 9 fórmulas e à planilha de treinos. O plano completo inclui ainda os 3 brindes exclusivos, a rotina 100% personalizada pelo Rios e suporte direto via WhatsApp.</div>
+          <div class="faq-a">O básico mantém o conteúdo principal e a planilha. O completo acrescenta a rotina montada pelo Rios, os materiais extras e o suporte pelo WhatsApp.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Tenho acesso para sempre? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Sim, o acesso é vitalício! Uma vez dentro, o conteúdo é seu para sempre — incluindo todas as atualizações que fizermos.</div>
+          <div class="faq-a">Sim. Nesta oferta, o acesso ao conteúdo adquirido é vitalício, sem mensalidade.</div>
         </div>
         <div class="faq-item">
           <button class="faq-q">Como funciona a rotina personalizada? <span class="faq-arrow">+</span></button>
-          <div class="faq-a">Após a compra do plano completo, o Rios cria uma rotina exclusiva baseada no seu perfil, posição e objetivos. Você recebe ela diretamente pelo WhatsApp.</div>
+          <div class="faq-a">Depois da compra do acesso completo, a rotina é montada com base no seu perfil, posição e objetivo e enviada pelo canal informado no suporte.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Como faço o pagamento? <span class="faq-arrow">+</span></button>
+          <div class="faq-a">O checkout aceita as formas de pagamento exibidas na tela de compra. Depois da confirmação, o acesso é liberado conforme o processamento do pagamento.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+
+<!-- FINAL CTA -->
+<section class="final-cta lp-final-cta">
+  <div class="wrap">
+    <div class="final-cta-inner">
+      <span class="sec-tag">Seu próximo passo</span>
+      <h2>Organize o treino para ele aparecer mais no jogo.</h2>
+      <p>Pagamento único, acesso vitalício ao conteúdo adquirido e 7 dias de garantia conforme as condições da oferta.</p>
+      <a href="https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa" target="_blank" class="btn checkout-cta">QUERO COMEÇAR PELA FÓRMULA</a>
+      <small>Pagamento seguro · acesso liberado após a confirmação</small>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -7786,16 +7817,16 @@ body { overflow-wrap: anywhere; }
   const answers = quizContext?.answers || {};
 
   const CHECKOUT_BY_POSITION = {
-    default: 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Atacante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Meio-campo': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Volante': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Lateral': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Zagueiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Goleiro': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ainda não sei': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Ponta': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa',
-    'Várias posições': 'https://pagar.formula-dos-pros.com.br/checkout/v5/eYclG3ayI3zpTH6EalIa'
+    default: 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Atacante': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Meio-campo': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Volante': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Lateral': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Zagueiro': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Goleiro': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Ainda não sei': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Ponta': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa',
+    'Várias posições': 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa'
   };
   function getCheckoutUrlByPosition() {
     return CHECKOUT_BY_POSITION[answers.position] || CHECKOUT_BY_POSITION.default;
@@ -7821,8 +7852,8 @@ body { overflow-wrap: anywhere; }
       if (oldPrice) oldPrice.hidden = true;
       if (priceNote) priceNote.textContent = 'Condição especial para Portugal';
       if (installments) installments.textContent = 'Pagamento seguro pela Hotmart · Acesso imediato';
-      checkout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
-      if (upsellCheckout) upsellCheckout.href = 'https://pay.hotmart.com/H99768662N?off=2y1060yl&checkoutMode=10';
+      checkout.href = 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa';
+      if (upsellCheckout) upsellCheckout.href = 'https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa';
       if (safe) safe.textContent = '🔒 Pagamento 100% seguro pela Hotmart · Acesso imediato';
       return;
     }
@@ -7830,11 +7861,11 @@ body { overflow-wrap: anywhere; }
     const checkoutUrl = getCheckoutUrlByPosition();
     price.textContent = 'R$ 37,00';
     if (oldPrice) { oldPrice.hidden = false; oldPrice.textContent = 'R$ 397'; }
-    if (priceNote) priceNote.textContent = '↓ Hoje apenas';
+    if (priceNote) priceNote.textContent = 'Condição atual';
     if (installments) installments.textContent = 'ou em até 12x no cartão · Sem mensalidades';
     checkout.href = checkoutUrl;
     if (upsellCheckout) upsellCheckout.href = checkoutUrl;
-    if (safe) safe.textContent = '🔒 Pagamento 100% seguro · Cartão e Pix · Acesso imediato';
+    if (safe) safe.textContent = 'Pagamento seguro · Cartão e Pix · Acesso imediato';
   }
 
   function showUnlockedPopup() {
@@ -7964,6 +7995,13 @@ document.querySelectorAll('.test-video[data-vid]').forEach(w => {
   });
 });
 </script>
+<div id="lp-sticky-cta" class="lp-sticky-cta" aria-hidden="true">
+  <div class="lp-sticky-inner">
+    <div class="lp-sticky-copy"><strong>Fórmula dos Prós</strong><span>R$ 37 · pagamento único</span></div>
+    <a href="https://pagar.formula-dos-pros.com.br/checkout/v4/eYclG3ayI3zpTH6EalIa" target="_blank" class="lp-sticky-button">QUERO O ACESSO</a>
+  </div>
+</div>
+
 </main>
 
 <script>
@@ -8039,8 +8077,10 @@ document.querySelectorAll('.test-video[data-vid]').forEach(w => {
     const continueButton = gate.querySelector('.q-vsl-continue');
     if (continueButton) continueButton.hidden = true;
 
-    window.FunnelAnalytics?.action('vsl_completed', { label: 'VSL concluída e conteúdo liberado' }, 2);
+    window.FunnelAnalytics?.stage(3, 'Página de vendas');
+    window.FunnelAnalytics?.action('vsl_completed_lp_revealed', { label: 'LP exibida abaixo da VSL' }, 3);
     window.FunnelAnalytics?.complete({});
+    window.FunnelAnalytics?.landingUnlocked({});
     observeOffer();
 
     // Leva o usuário exatamente para o início da LP, sem trocar de URL.
@@ -8057,15 +8097,15 @@ document.querySelectorAll('.test-video[data-vid]').forEach(w => {
     if (card) card.classList.add('is-stage-mode');
     stageContent.innerHTML = '<section class="q-vsl-screen" data-stage="1.1" aria-label="Apresentação em vídeo">' +
       '<div class="q-vsl-headline">' +
-        '<h2><span class="q-vsl-line">O QUE SEPARA QUEM</span><span class="q-vsl-line"><mark>SENTA NO BANCO</mark></span><span class="q-vsl-line">DE QUEM VIRA TITULAR.</span></h2>' +
-        '<p>Assista até o final e descubra o método que já ajudou 7.327+ jogadores a destravar o próprio jogo.</p>' +
+        '<h2><span class="q-vsl-line">VOCÊ NÃO PRECISA DE MAIS</span><span class="q-vsl-line"><mark>50 EXERCÍCIOS</mark></span><span class="q-vsl-line">PRECISA FAZER O TREINO</span><span class="q-vsl-line">APARECER NO JOGO.</span></h2>' +
+        '<p>Se no treino você acerta e no jogo prende a bola, pensa demais ou some depois de errar, assista até o final.</p>' +
       '</div>' +
       '<div class="q-vsl-video-wrap">' +
         '<video class="q-vsl-video" src="video/new-vsl.mp4" autoplay playsinline preload="auto" aria-label="Apresentação da Fórmula dos Prós V2"></video>' +
         '<button class="q-vsl-hitarea" type="button" aria-label="Pausar vídeo"></button>' +
         '<button class="q-vsl-sound" type="button" hidden>🔊 TOQUE PARA ATIVAR O SOM</button>' +
         '<button class="q-vsl-paused" type="button" hidden>Toque para continuar assistindo</button>' +
-        '<button class="q-vsl-continue" type="button" hidden>CONTINUAR</button>' +
+        '<button class="q-vsl-continue" type="button" hidden>VER COMO O TREINO VIRA JOGO →</button>' +
         '<div class="q-vsl-progress" aria-hidden="true"><span></span></div>' +
       '</div>' +
     '</section>';
@@ -8178,6 +8218,384 @@ document.querySelectorAll('.test-video[data-vid]').forEach(w => {
     window.addEventListener('resize', () => { if (!completed) setSwipePosition(0, false); });
   }
   window.FunnelAnalytics?.stage(1, 'Introdução');
+})();
+</script>
+<style id="lp-design-system-2026">
+:root{
+  --lp-bg:#ffffff;--lp-surface:#f7f7f8;--lp-text:#111111;--lp-muted:#66666d;--lp-border:#e6e6e8;
+  --lp-gold:#b8922e;--lp-gold-dark:#8d6b16;--lp-gold-soft:#fbf7ea;
+  --lp-primary:#16a34a;--lp-primary-hover:#15803d;--lp-danger:#dc2626;
+  --lp-r-sm:8px;--lp-r-md:12px;--lp-r-lg:18px;--lp-container:1160px;--lp-text-container:720px;
+  --lp-shadow-soft:0 8px 30px rgba(0,0,0,.07);--lp-shadow-focus:0 12px 34px rgba(0,0,0,.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--lp-bg);color:var(--lp-text);font-family:'Sora',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+#embedded-lp{background:var(--lp-bg);color:var(--lp-text)}
+#embedded-lp .wrap{width:min(calc(100% - 40px),var(--lp-container));max-width:none;padding:0;margin-inline:auto}
+#embedded-lp section{padding:clamp(64px,7vw,96px) 0}
+#embedded-lp h1,#embedded-lp h2,#embedded-lp h3,#embedded-lp p{margin-top:0}
+#embedded-lp .sec-tag,.post-vsl-kicker{display:inline-block;margin-bottom:12px;color:var(--lp-gold-dark);font-family:'Sora',sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+#embedded-lp .sec-title{max-width:760px;margin:0 0 16px;color:var(--lp-text);font-family:'Montserrat',sans-serif;font-size:clamp(30px,4vw,46px);font-weight:700;line-height:1.08;letter-spacing:-.03em}
+#embedded-lp .sec-title strong{color:inherit;font-weight:800}
+#embedded-lp .sec-desc,#embedded-lp .clubs-sub{max-width:720px;color:var(--lp-muted);font-size:clamp(16px,1.7vw,18px);line-height:1.58}
+#embedded-lp .section-left{max-width:820px;margin-bottom:40px;text-align:left}
+#embedded-lp .btn,#embedded-lp .checkout-cta,#embedded-lp .upsell-btn-full{display:inline-flex;min-height:58px;max-width:480px;align-items:center;justify-content:center;padding:14px 28px!important;color:#fff!important;background:var(--lp-primary)!important;border:0!important;border-radius:var(--lp-r-md)!important;box-shadow:none!important;font-family:'Sora',sans-serif;font-size:17px!important;font-weight:800;letter-spacing:0!important;line-height:1.25;text-decoration:none;animation:none!important;transition:background .15s ease,transform .15s ease}
+#embedded-lp .btn:hover,#embedded-lp .checkout-cta:hover,#embedded-lp .upsell-btn-full:hover{background:var(--lp-primary-hover)!important;transform:none!important}
+#embedded-lp .btn:active,#embedded-lp .checkout-cta:active{transform:translateY(1px)!important}
+#embedded-lp .btn:focus-visible,#embedded-lp a:focus-visible,#embedded-lp button:focus-visible{outline:3px solid rgba(22,163,74,.35);outline-offset:3px}
+#embedded-lp .btn-sm{min-height:56px;padding:13px 24px!important}
+
+/* Post-VSL decision bridge */
+.post-vsl-bridge{padding:clamp(44px,6vw,72px) 0!important;background:#fff;border-bottom:1px solid var(--lp-border);text-align:center}
+.post-vsl-inner{max-width:820px!important}
+.post-vsl-inner h2{max-width:760px;margin:0 auto 14px;color:var(--lp-text);font-family:'Montserrat',sans-serif;font-size:clamp(30px,4.2vw,48px);font-weight:800;line-height:1.06;letter-spacing:-.035em}
+.post-vsl-inner p{max-width:680px;margin:0 auto 24px;color:var(--lp-muted);font-size:clamp(16px,1.7vw,18px)}
+.post-vsl-inner small{display:block;margin-top:10px;color:#7a7a80;font-size:13px}
+
+/* Alternating sections, not a different visual identity per block */
+#embedded-lp .clubs-section,#embedded-lp .pillars-section,#embedded-lp .members-section,#embedded-lp .bonus-section,#embedded-lp .pricing-section,#embedded-lp .lp-final-cta{background:#fff}
+#embedded-lp .feat-section,#embedded-lp .formulas-section,#embedded-lp .test-section,#embedded-lp .guarantee-section,#embedded-lp .faq-section{background:var(--lp-surface)}
+#embedded-lp .clubs-section,#embedded-lp .about-section,#embedded-lp .guarantee-section,#embedded-lp .faq-section{border-color:var(--lp-border)}
+
+/* Quick proof */
+#embedded-lp .clubs-section{padding-top:56px;padding-bottom:56px;border-top:0;border-bottom:1px solid var(--lp-border)}
+#embedded-lp .clubs-header{max-width:760px;margin-bottom:30px}
+#embedded-lp .clubs-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:12px}
+#embedded-lp .club-item{min-height:84px;padding:14px;background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-md);filter:none;box-shadow:none}
+#embedded-lp .club-item:hover{transform:none;box-shadow:none}
+#embedded-lp .club-item img{max-width:48px;height:48px}
+
+/* Benefits: consistent grid */
+#embedded-lp .feat-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+#embedded-lp .feat-card{padding:26px;background:#fff;border:1px solid var(--lp-border);border-top:1px solid var(--lp-border);border-radius:var(--lp-r-lg);box-shadow:none}
+#embedded-lp .feat-card::before{display:none}
+#embedded-lp .feat-card:hover{transform:none;border-color:#d7d7da;box-shadow:var(--lp-shadow-soft)}
+#embedded-lp .feat-icon{display:grid;width:42px;height:42px;margin-bottom:16px;place-items:center;color:var(--lp-gold-dark);font-size:0;background:var(--lp-gold-soft);border:1px solid #eadfbe;border-radius:10px}
+#embedded-lp .feat-icon>*{display:none!important}
+#embedded-lp .feat-card:nth-child(1) .feat-icon::before{content:'01'}#embedded-lp .feat-card:nth-child(2) .feat-icon::before{content:'02'}#embedded-lp .feat-card:nth-child(3) .feat-icon::before{content:'03'}#embedded-lp .feat-card:nth-child(4) .feat-icon::before{content:'04'}#embedded-lp .feat-card:nth-child(5) .feat-icon::before{content:'05'}#embedded-lp .feat-card:nth-child(6) .feat-icon::before{content:'06'}
+#embedded-lp .feat-icon::before{font-size:13px;font-weight:900;letter-spacing:.02em}
+#embedded-lp .feat-card h3{margin-bottom:8px;color:var(--lp-text);font-size:20px;font-weight:700;line-height:1.2}
+#embedded-lp .feat-card p{color:var(--lp-muted);font-size:15px;line-height:1.55}
+
+/* Mechanism / pillars */
+#embedded-lp .pillars-section{padding-block:clamp(72px,8vw,104px);background:#111!important;border:0}
+#embedded-lp .pillars-section::before{display:none}
+#embedded-lp .pillars-section .sec-tag{color:#e8cf82;background:none;border:0;padding:0}
+#embedded-lp .pillars-section .sec-title{color:#fff}
+#embedded-lp .pillars-section .sec-desc{color:#b8b8bc}
+#embedded-lp .pillars-grid{gap:18px;margin-top:38px}
+#embedded-lp .pillar-card{background:#171717;border:1px solid #303033;border-radius:var(--lp-r-lg);box-shadow:none}
+#embedded-lp .pillar-card:hover{transform:none;border-color:#454548;box-shadow:none}
+#embedded-lp .pillar-img{border-radius:var(--lp-r-lg) var(--lp-r-lg) 0 0}
+#embedded-lp .pillar-img.pillar-img-wide{aspect-ratio:16/9;background:#0d0d0e;border-bottom:1px solid #303033}
+#embedded-lp .pillar-body{padding:24px}
+#embedded-lp .pillar-card h3{color:#e8cf82;font-size:23px}
+#embedded-lp .pillar-card p{color:#b8b8bc;font-size:15px;line-height:1.6}
+#embedded-lp .pillar-card:hover .pillar-img img{transform:none}
+
+/* Modules */
+#embedded-lp .form-grid{gap:16px;margin-top:38px}
+#embedded-lp .form-card{background:#fff;border:1px solid var(--lp-border);border-top:1px solid var(--lp-border);border-radius:var(--lp-r-lg);box-shadow:none}
+#embedded-lp .form-card::before{display:none}
+#embedded-lp .form-card:hover{transform:none;border-color:#d5d5d8;box-shadow:var(--lp-shadow-soft)}
+#embedded-lp .form-card:hover .form-card-img img{transform:none}
+#embedded-lp .form-card-body{padding:22px}
+#embedded-lp .form-card h4{color:var(--lp-text);font-size:18px;font-weight:700}
+#embedded-lp .form-card ul li{color:var(--lp-muted);font-size:14px}
+#embedded-lp .form-card ul li::before{color:var(--lp-gold-dark)}
+
+/* Member area as demonstration */
+#embedded-lp .members-section .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+#embedded-lp .members-section .section-left{margin-bottom:0}
+#embedded-lp .members-section img{border-radius:var(--lp-r-lg);box-shadow:var(--lp-shadow-soft)}
+
+/* Testimonials / proof */
+#embedded-lp .test-grid{gap:16px;margin-top:36px}
+#embedded-lp .test-card{background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-lg);box-shadow:none}
+#embedded-lp .test-card:hover{transform:none}
+#embedded-lp .audio-feedback-card{background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-lg);box-shadow:none}
+#embedded-lp .audio-feedback-card::before{height:3px;background:var(--lp-gold)}
+#embedded-lp .audio-feedback-card:hover{transform:none;border-color:#d8d0bd;box-shadow:var(--lp-shadow-soft)}
+#embedded-lp .audio-player-shell{background:var(--lp-surface);border-color:var(--lp-border)}
+
+/* Bonuses / stack */
+#embedded-lp .bonus-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+#embedded-lp .bonus-card{padding:24px;background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-lg);text-align:left}
+#embedded-lp .bonus-card:hover{transform:none}
+#embedded-lp .bonus-tag{margin-bottom:14px;color:var(--lp-gold-dark);background:var(--lp-gold-soft);border:1px solid #eadfbe;border-radius:999px}
+#embedded-lp .bonus-card img{width:100%;margin-bottom:18px;border-radius:var(--lp-r-md)}
+#embedded-lp .bonus-card h4{color:var(--lp-text);font-size:19px;font-weight:700}
+#embedded-lp .bonus-card p{color:var(--lp-muted);font-size:15px}
+
+/* Guarantee: isolated but calm */
+#embedded-lp .guarantee-inner{max-width:820px;margin:0 auto;padding:clamp(28px,5vw,46px);background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-lg);text-align:left;box-shadow:none}
+#embedded-lp .guarantee-inner img{width:96px;margin:0 0 22px}
+#embedded-lp .guarantee-inner h3{color:var(--lp-text);font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,38px);font-weight:750;line-height:1.1;letter-spacing:-.025em}
+#embedded-lp .guarantee-inner p{max-width:700px;color:var(--lp-muted);font-size:16px;line-height:1.6}
+#embedded-lp .guarantee-inner p strong{color:var(--lp-text)}
+
+/* Offer */
+#embedded-lp .pricing-section{padding-block:clamp(72px,8vw,104px);background:#111!important}
+#embedded-lp .pricing-section::before{display:none}
+#embedded-lp .pricing-box{max-width:620px;margin-top:38px;background:#fff;border:1px solid #dedee1;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.28)}
+#embedded-lp .pricing-ribbon{top:-13px;color:#fff;background:var(--lp-gold-dark);box-shadow:none}
+#embedded-lp .pricing-top{padding:46px 42px 14px;background:#fff;border-bottom:1px solid var(--lp-border)}
+#embedded-lp .pricing-plan.pricing-lifetime{color:var(--lp-gold-dark);background:var(--lp-gold-soft);border:1px solid #eadfbe;box-shadow:none;animation:none}
+#embedded-lp .pricing-old{font-size:26px;color:#8b8b91;text-decoration-color:#b6b6bb;text-decoration-thickness:2px}
+#embedded-lp .pricing-arrow{color:#7b7b80}
+#embedded-lp .pricing-val{color:var(--lp-text);font-size:clamp(48px,7vw,68px);text-shadow:none}
+#embedded-lp .pricing-install{color:var(--lp-muted);background:var(--lp-surface);border:1px solid var(--lp-border)}
+#embedded-lp .pricing-mid{padding:14px 42px 28px}
+#embedded-lp .check-list li{color:#36363a;border-color:var(--lp-border)}
+#embedded-lp .check-list .ck-icon{color:var(--lp-primary)}
+#embedded-lp .pricing-cta{padding:0 42px 42px}
+#embedded-lp .pricing-cta .btn{width:100%;max-width:none}
+#embedded-lp .pricing-safe{color:#77777d;background:transparent;border:0;padding:0;margin-top:11px}
+
+/* FAQ */
+#embedded-lp .faq-wrap{grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+#embedded-lp .faq-left,#embedded-lp .faq-right{min-width:0}
+#embedded-lp .faq-item{margin-bottom:10px;background:#fff;border:1px solid var(--lp-border);border-radius:var(--lp-r-md);overflow:hidden}
+#embedded-lp .faq-q{padding:17px 18px;color:var(--lp-text);background:#fff;border:0;border-radius:0;font-size:15px;font-weight:700;letter-spacing:0;text-transform:none}
+#embedded-lp .faq-q .faq-arrow{color:var(--lp-gold-dark)}
+#embedded-lp .faq-item.open .faq-q{color:var(--lp-text);border:0}
+#embedded-lp .faq-a{padding:0 18px 18px;color:var(--lp-muted);border:0;font-size:14px;line-height:1.55}
+
+/* Final CTA */
+#embedded-lp .lp-final-cta{padding-block:clamp(64px,7vw,88px);border-top:1px solid var(--lp-border);text-align:center}
+#embedded-lp .final-cta-inner{max-width:760px;margin:0 auto}
+#embedded-lp .final-cta-inner h2{margin:0 auto 14px;color:var(--lp-text);font-family:'Montserrat',sans-serif;font-size:clamp(31px,4.4vw,48px);font-weight:800;line-height:1.06;letter-spacing:-.035em}
+#embedded-lp .final-cta-inner p{max-width:650px;margin:0 auto 24px;color:var(--lp-muted);font-size:17px}
+#embedded-lp .final-cta-inner small{display:block;margin-top:10px;color:#77777d;font-size:13px}
+
+/* Footer */
+#embedded-lp footer{padding:34px 20px;background:var(--lp-surface);border-color:var(--lp-border);color:#55555a;font-size:13px}
+#embedded-lp footer .footer-logo{color:var(--lp-text);font-size:15px;letter-spacing:.08em}
+#embedded-lp footer a{color:#55555a}
+
+/* Quiz design: one coherent system; VSL and purchase remain intentionally high-contrast */
+#prelp-quiz:not(.is-vsl-stage):not(.is-purchase-stage),#prelp-quiz.is-semantic:not(.is-vsl-stage):not(.is-purchase-stage):not(.is-voucher-stage):not(.is-growth-stage){background:#fbfaf6!important}
+#prelp-quiz.is-growth-stage,#prelp-quiz.is-voucher-stage{background:#fbfaf6!important}
+#prelp-quiz:not(.is-vsl-stage):not(.is-purchase-stage) .prelp-card,#prelp-quiz:not(.is-vsl-stage):not(.is-purchase-stage) .prelp-card.is-stage-mode{max-width:600px;color:#24210f;background:transparent;border:0;box-shadow:none}
+#prelp-quiz .q-progress{height:5px;background:#ece6d5}
+#prelp-quiz .q-progress>span{background:var(--lp-gold)}
+#prelp-quiz .q-option,#prelp-quiz .q-age-card,#prelp-quiz .q-position-list .q-option,#prelp-quiz .q-growth-screen .q-country .q-option{color:#2e250d!important;background:#fff!important;border:1px solid #ddd4bb!important;border-radius:12px!important;box-shadow:none!important}
+#prelp-quiz .q-option:hover,#prelp-quiz .q-option:focus-visible{background:#fffaf0!important;border-color:#c7aa59!important;transform:none!important}
+#prelp-quiz .q-option.is-selected{color:#2e250d!important;background:#fff3c7!important;border-color:#b8922e!important}
+#prelp-quiz .q-option-icon{color:var(--lp-gold-dark);background:#fbf7ea;border-color:#eadfbe}
+#prelp-quiz .q-primary,#prelp-quiz .prelp-main-btn{min-height:58px;color:#fff!important;background:var(--lp-primary)!important;border:0!important;border-radius:12px!important;box-shadow:none!important;animation:none!important;font-size:16px;font-weight:800}
+#prelp-quiz .q-primary:hover,#prelp-quiz .prelp-main-btn:hover{background:var(--lp-primary-hover)!important;filter:none!important;transform:none!important}
+#prelp-quiz .q-primary:active,#prelp-quiz .prelp-main-btn:active{transform:translateY(1px)!important;box-shadow:none!important}
+#prelp-quiz .q-growth-screen{color:#24210f;background:transparent;border:0;box-shadow:none}
+#prelp-quiz .q-growth-kicker,#prelp-quiz .q-method-kicker,#prelp-quiz .q-belief-kicker{color:var(--lp-gold-dark)}
+#prelp-quiz .q-growth-title,#prelp-quiz .q-growth-title mark,#prelp-quiz .q-voucher-title{color:#211a09}
+#prelp-quiz .q-growth-copy,#prelp-quiz .q-voucher-copy{color:#655d47}
+#prelp-quiz .q-growth-stat,#prelp-quiz .q-growth-chart,#prelp-quiz .q-method-panel,#prelp-quiz .q-belief-metric{background:#fff;border:1px solid #e5dfd0;box-shadow:none}
+#prelp-quiz .q-growth-stat strong,#prelp-quiz .q-growth-chart strong,#prelp-quiz .q-method-panel,#prelp-quiz .q-belief-metric{color:#211a09}
+#prelp-quiz .q-method-row{background:#f7f7f8;border-color:#e6e6e8;color:#59595f}
+#prelp-quiz .q-method-row.is-active{color:#2e250d;background:#fff3c7;border-color:#b8922e;box-shadow:none}
+#prelp-quiz .q-voucher-ticket{box-shadow:var(--lp-shadow-soft)}
+#prelp-quiz .q-symbolic-image,#prelp-quiz .q-stage-image{border-radius:14px;box-shadow:var(--lp-shadow-soft)}
+
+/* No endless pulse */
+#embedded-lp *,#prelp-quiz *{scrollbar-width:auto}
+@media (prefers-reduced-motion:reduce){#embedded-lp *,#prelp-quiz *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Sticky checkout only on mobile, after offer */
+.lp-sticky-cta{display:none;position:fixed;right:0;bottom:0;left:0;z-index:120;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--lp-border);backdrop-filter:blur(12px);transform:translateY(110%);transition:transform .2s ease}
+.lp-sticky-cta.is-visible{transform:translateY(0)}
+.lp-sticky-inner{display:flex;max-width:680px;margin:0 auto;align-items:center;gap:12px}
+.lp-sticky-copy{display:flex;min-width:0;flex:1;flex-direction:column}.lp-sticky-copy strong{color:var(--lp-text);font-size:13px}.lp-sticky-copy span{color:var(--lp-muted);font-size:11px}
+.lp-sticky-button{display:flex;min-height:52px;padding:12px 18px;align-items:center;justify-content:center;color:#fff;background:var(--lp-primary);border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;white-space:nowrap}
+
+@media(max-width:900px){
+ #embedded-lp .feat-grid,#embedded-lp .bonus-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #embedded-lp .members-section .wrap{grid-template-columns:1fr;gap:28px}
+ #embedded-lp .faq-wrap{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ body{font-size:16px}
+ #embedded-lp .wrap{width:min(calc(100% - 36px),var(--lp-container));padding:0}
+ #embedded-lp section{padding:56px 0!important}
+ #embedded-lp .sec-title{font-size:clamp(28px,8vw,34px);line-height:1.1}
+ #embedded-lp .sec-desc,#embedded-lp .clubs-sub{font-size:16px}
+ #embedded-lp .section-left{margin-bottom:30px}
+ #embedded-lp .btn,#embedded-lp .checkout-cta,#embedded-lp .upsell-btn-full{width:100%;max-width:none;min-height:56px;padding:14px 16px!important;font-size:16px!important}
+ .post-vsl-bridge{padding:46px 0!important}.post-vsl-inner h2{font-size:clamp(30px,8.8vw,38px)}
+ #embedded-lp .clubs-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ #embedded-lp .club-item{min-height:76px;padding:10px}
+ #embedded-lp .feat-grid,#embedded-lp .bonus-grid,#embedded-lp .form-grid,#embedded-lp .pillars-grid,#embedded-lp .test-grid{grid-template-columns:1fr;gap:14px}
+ #embedded-lp .feat-card,#embedded-lp .bonus-card{padding:22px}
+ #embedded-lp .pillar-card h3{font-size:21px}
+ #embedded-lp .pricing-box{width:100%;margin-top:34px;border-radius:18px}
+ #embedded-lp .pricing-top,#embedded-lp .pricing-mid,#embedded-lp .pricing-cta{padding-right:20px;padding-left:20px}
+ #embedded-lp .pricing-top{padding-top:42px}.pricing-top img.offer-main-image{width:100%;max-width:100%;margin-right:auto;margin-left:auto}
+ #embedded-lp .pricing-val{font-size:clamp(48px,15vw,62px)}
+ #embedded-lp .guarantee-inner{padding:26px 22px}
+ #embedded-lp .guarantee-inner img{width:82px}
+ #embedded-lp .faq-q{padding:16px}.faq-a{padding-right:16px!important;padding-left:16px!important}
+ #embedded-lp .final-cta-inner h2{font-size:clamp(30px,8.8vw,38px)}
+ .lp-sticky-cta{display:block}
+ #embedded-lp{padding-bottom:82px}
+ #prelp-quiz:not(.is-vsl-stage){padding-right:18px!important;padding-left:18px!important}
+ #prelp-quiz .prelp-card.is-stage-mode{padding-right:0;padding-left:0}
+ #prelp-quiz .q-options.grid-2{grid-template-columns:1fr}
+}
+@media(max-width:390px){
+ #embedded-lp .wrap{width:min(calc(100% - 36px),var(--lp-container))}
+ #embedded-lp .clubs-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .lp-sticky-copy{display:none}.lp-sticky-button{width:100%}
+}
+
+/* 2026-08-30 — fixes pós-VSL, CTA e FAQ */
+#embedded-lp .post-vsl-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:min(calc(100% - 40px),820px);
+  margin-inline:auto;
+  text-align:center;
+}
+#embedded-lp .post-vsl-inner h2{margin:0 auto 16px!important;}
+#embedded-lp .post-vsl-inner p{margin:0 auto 28px!important;}
+#embedded-lp .post-vsl-inner>.btn{
+  position:relative!important;
+  z-index:1;
+  display:inline-flex!important;
+  flex:0 0 auto;
+  margin:0 auto!important;
+}
+#embedded-lp .post-vsl-inner small{margin-top:12px!important;}
+
+#embedded-lp .pricing-cta .checkout-cta,
+#embedded-lp .lp-final-cta .checkout-cta{
+  display:flex!important;
+  width:100%!important;
+  max-width:480px!important;
+  min-height:58px!important;
+  margin-inline:auto!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  background:#16a34a!important;
+  background-color:#16a34a!important;
+  border:1px solid #16a34a!important;
+  box-shadow:0 10px 24px rgba(22,163,74,.18)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+#embedded-lp .pricing-cta .checkout-cta:hover,
+#embedded-lp .lp-final-cta .checkout-cta:hover{
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  background:#15803d!important;
+  background-color:#15803d!important;
+  border-color:#15803d!important;
+}
+
+#embedded-lp .faq-wrap{align-items:start;}
+#embedded-lp .faq-left,
+#embedded-lp .faq-right{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+#embedded-lp .faq-item{width:100%;margin:0!important;}
+#embedded-lp .faq-q{
+  display:flex!important;
+  width:100%!important;
+  min-height:72px;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:16px;
+  padding:17px 18px!important;
+  line-height:1.35!important;
+}
+#embedded-lp .faq-q .faq-arrow{
+  display:grid;
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  place-items:center;
+  margin-left:auto!important;
+}
+@media(max-width:640px){
+  #embedded-lp .post-vsl-inner{width:min(calc(100% - 36px),820px);}
+  #embedded-lp .post-vsl-inner p{margin-bottom:24px!important;}
+  #embedded-lp .post-vsl-inner>.btn{width:100%!important;max-width:none!important;}
+  #embedded-lp .pricing-cta .checkout-cta,
+  #embedded-lp .lp-final-cta .checkout-cta{max-width:none!important;}
+  #embedded-lp .faq-q{min-height:68px;padding:15px 16px!important;font-size:15px!important;}
+}
+</style>
+
+
+<style id="vsl-full-background-fix">
+/* VSL full-bleed: elimina qualquer faixa/borda clara em todas as resoluções */
+#prelp-quiz.is-vsl-stage{
+  width:100vw!important;
+  max-width:100vw!important;
+  min-height:100dvh!important;
+  margin:0!important;
+  padding:0!important;
+  background:#0d0905!important;
+  background-color:#0d0905!important;
+}
+#prelp-quiz.is-vsl-stage .prelp-shell,
+#prelp-quiz.is-vsl-stage .prelp-card,
+#prelp-quiz.is-vsl-stage .prelp-card.is-stage-mode,
+#prelp-quiz.is-vsl-stage .prelp-stage-view,
+#prelp-quiz.is-vsl-stage .prelp-stage-content,
+#prelp-quiz.is-vsl-stage .q-vsl-screen{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  background:#0d0905!important;
+  background-color:#0d0905!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+#prelp-quiz.is-vsl-stage .q-vsl-screen{
+  min-height:100dvh!important;
+}
+#prelp-quiz.is-vsl-stage .q-vsl-video-wrap{
+  border:0!important;
+  outline:0!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.55)!important;
+}
+/* Depois que a VSL termina, mantém o bloco inteiro com a mesma cor até começar a LP */
+#prelp-quiz.vsl-finished,
+#prelp-quiz.vsl-finished .prelp-shell,
+#prelp-quiz.vsl-finished .prelp-card,
+#prelp-quiz.vsl-finished .prelp-stage-view,
+#prelp-quiz.vsl-finished .prelp-stage-content,
+#prelp-quiz.vsl-finished .q-vsl-screen{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  background:#0d0905!important;
+  background-color:#0d0905!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+</style>
+
+<script id="lp-sticky-behavior">
+(function(){
+  const bar=document.getElementById('lp-sticky-cta');
+  const pricing=document.getElementById('pricing');
+  const main=document.getElementById('embedded-lp');
+  if(!bar||!pricing||!main)return;
+  function updateSticky(){
+    if(main.hidden){bar.classList.remove('is-visible');bar.setAttribute('aria-hidden','true');return;}
+    const reached=pricing.getBoundingClientRect().top < window.innerHeight*0.35;
+    bar.classList.toggle('is-visible',reached);
+    bar.setAttribute('aria-hidden',reached?'false':'true');
+  }
+  addEventListener('scroll',updateSticky,{passive:true});
+  addEventListener('resize',updateSticky,{passive:true});
+  new MutationObserver(updateSticky).observe(main,{attributes:true,attributeFilter:['hidden']});
+  updateSticky();
 })();
 </script>
 </body>
